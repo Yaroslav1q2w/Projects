@@ -1,0 +1,28 @@
+.basket__wrap {
+    text-align: center;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    
+    .basket__header {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .basket__items {
+        padding-top: 40px;
+        display: grid;
+    }
+    
+    .basket__button {
+        position: absolute;
+        right: 20px;
+        top: 33px;
+    }
+    
+    .empty-basket {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+}
