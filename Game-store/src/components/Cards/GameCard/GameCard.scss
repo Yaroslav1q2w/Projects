@@ -1,0 +1,105 @@
+.game__item {
+    color: white;
+    width: 320px;
+    min-height: 300px;
+    background-color: rgb(36,37,41);
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 30px;
+    justify-self: center;
+    position: relative;
+    
+    .game__item-img {
+        cursor: pointer;
+        
+    }
+    
+    .game__back {
+        display: none;
+        position: absolute;
+        width: 320px;
+        height: 180px;
+        top: 0;
+        background-color: rgba(82, 82, 82, 0.9);
+        text-align: center;
+        letter-spacing: 1px;
+        //display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        &-title {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        &-desc {
+            font-size: 12px;
+            line-height: 1.3;
+            padding: 0 10px 10px 30px;
+        }
+        &-link {
+            padding-bottom: 12px;
+            
+            .link {
+                font-size: 12px;
+                transition: .5s;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-decoration: underline;
+                
+                &:hover {
+                    color: #9f9d9d;
+                    display: inline-block;
+                    transition: .3s;
+                }
+            }
+        }
+        
+    }
+    
+    &-details {
+        padding: 10px 20px;
+        position: relative;
+    }
+    
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    
+    &-title {
+        padding-top: 10px;
+        font-size: 19px;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .game__item-article {
+        display: inline-block;
+        padding-top: 8px;
+        font-size: 12px;
+        font-weight: 200;
+        color: #7a7a7a;
+    }
+    
+    &-description {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 14px;
+        position: relative;
+    }
+    
+    .game__item-price {
+        font-size: 16px;
+    }
+}
+
+.star-icon {
+    position: absolute;
+    top: 17px;
+    right: 7px;
+    cursor: pointer;
+}

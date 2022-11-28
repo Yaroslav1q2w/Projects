@@ -1,14 +1,15 @@
 import React,{useState} from 'react';
-import Button from "../../../Button";
+import Button from "../../Button";
 import "./GameCard.scss"
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 import {useDispatch } from 'react-redux'
-import {increaseFavorite,decreaseFavorite,} from "../../../../reducers"
+import {increaseFavorite,decreaseFavorite,} from "../../../reducers"
 import {Link} from "react-router-dom";
+import 'swiper/css';
 
 
 const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
-    const {title, article, price, image} = cardProps
+    const {title, article, price, image,description} = cardProps
 
     const favoritesLocalStorage = JSON.parse(localStorage.getItem("favoriteCount"))
     const isFavorite = Boolean(favoritesLocalStorage?.find(favorite => favorite.article === article))
@@ -21,7 +22,14 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
 
     return (
         <div className="game__item">
-            <img src={image} alt={title} width={320} height={180}/>
+            <img className="game__item-img" src={image} alt={title} width={320} height={180}/>
+            <div className="game__back">
+                <h2 className="game__back-title">{title}</h2>
+                <p className="game__back-desc">{description}</p>
+                <div className="game__back-link">
+                    <Link to={`/card/${article}`} className="link">перейти</Link>
+                </div>
+            </div>
             <div className="game__item-details">
                 <div className="game__item-header">
                     <Link to={`/card/${article}`}><h3 className="game__item-title">{title}</h3></Link>

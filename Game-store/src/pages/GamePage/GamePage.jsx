@@ -25,7 +25,6 @@ const GamePage = () => {
 
 
     const gameItem = cards?.find(el => el.article == card_id)
-    console.log(gameItem);
 
 
     return (
