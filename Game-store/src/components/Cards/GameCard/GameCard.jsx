@@ -22,12 +22,16 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
 
     return (
         <div className="game__item">
-            <img className="game__item-img" src={image} alt={title} width={320} height={180}/>
-            <div className="game__back">
-                <h2 className="game__back-title">{title}</h2>
-                <p className="game__back-desc">{description}</p>
-                <div className="game__back-link">
-                    <Link to={`/card/${article}`} className="link">перейти</Link>
+            <div className="game__item-img">
+                <img src={image} alt={title} width={320} height={180}/>
+                <div className="game__back">
+                    <div className="game__back-wrap">
+                        <h2 className="game__back-title">{title}</h2>
+                        <p className="game__back-desc">{description}</p>
+                        <div className="game__back-link">
+                            <Link to={`/card/${article}`} className="link">перейти</Link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="game__item-details">

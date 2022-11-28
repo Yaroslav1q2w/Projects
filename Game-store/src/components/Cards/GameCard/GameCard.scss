@@ -11,21 +11,47 @@
     
     .game__item-img {
         cursor: pointer;
+        position: relative;
+    
+        &:hover:before {
+            opacity: 1;
+        }
+        
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            //background-color: rgba(82, 82, 82, 0.9);
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: all .4s ease;
+            opacity: 0;
+        }
         
     }
     
     .game__back {
-        display: none;
         position: absolute;
         width: 320px;
         height: 180px;
         top: 0;
-        background-color: rgba(82, 82, 82, 0.9);
         text-align: center;
         letter-spacing: 1px;
-        //display: flex;
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow: hidden;
+        
+        &-wrap {
+            transform: translateY(170px);
+            transition: transform .4s ease;
+            
+            &:hover {
+                transform: translateY(0);
+            }
+        }
         
         &-title {
             padding: 10px;
@@ -54,7 +80,6 @@
                 }
             }
         }
-        
     }
     
     &-details {
