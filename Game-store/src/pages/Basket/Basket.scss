@@ -5,12 +5,24 @@
     margin: 0 auto;
     
     .basket__header {
-        font-size: 30px;
-        font-weight: bold;
+        
+        &-total--price {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            font-size: 18px;
+        }
+        
+        p {
+            font-size: 30px;
+            font-weight: bold;
+        }
     }
     
     .basket__items {
-        padding-top: 40px;
+        padding-top: 80px;
         display: grid;
     }
     
@@ -18,6 +30,26 @@
         position: absolute;
         right: 20px;
         top: 33px;
+        
+        &-elem {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            width: 140px;
+            height: 35px;
+            color: #fafafa;
+            //background: linear-gradient(to left, #16162d, #012344,#16162d);
+            background: #9f5e08;
+            border: 0;
+            border-radius: 30px;
+            outline: none;
+            margin: 6px;
+            cursor: pointer;
+            transition: .5s;
+    
+            &:hover {
+                background: #623a00;
+            }
+        }
     }
     
     .empty-basket {

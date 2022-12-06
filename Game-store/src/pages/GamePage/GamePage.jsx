@@ -1,15 +1,19 @@
 import React, {useEffect} from 'react';
 import {Link, useParams,useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {cardsSelector} from "../../selectors";
-import {actionFetchCards} from "../../reducers";
+import {cardsSelector, isModalSelector} from "../../selectors";
+import {actionFetchCards, increaseBasket, modalClose, modalOpen} from "../../reducers";
 import {ReactComponent as RightArrow} from "./images/right-arrow.svg"
 
 import "./GamePage.scss"
+import Button from "../../components/Button";
+import {useState} from "react";
+import Modal from "../../components/Modal";
 
 
 
 const GamePage = () => {
+    const [selectedProduct,setSelectedProduct] = useState([])
 
     const navigate = useNavigate();
     const goBack = () => navigate(-1);
@@ -17,6 +21,7 @@ const GamePage = () => {
     const {card_id} = useParams()
     const dispatch = useDispatch()
     const cards = useSelector(cardsSelector)
+    const modal = useSelector(isModalSelector)
 
     useEffect(() => {
         dispatch(actionFetchCards());
@@ -49,7 +54,22 @@ const GamePage = () => {
                             </div>
                             <div className="game__page-description">{gameItem.the_plot}</div>
                         </main>
+                        <div className="footer__button">
+                            <Button children="Добавить в корзину"
+                                    className="footer__button-elem"
+                                    onClick={() => {dispatch(modalOpen());setSelectedProduct(gameItem)}}
+                            />
+                        </div>
                     </div>
+
+                    {modal &&
+                        <Modal data-testid="modal-add-basket"
+                               header="Подтвердите добавление"
+                               text={`Добавить ${selectedProduct.title} в корзину?`}
+                               closeModal={() => dispatch(modalClose())}
+                               onClick={() => dispatch(increaseBasket(selectedProduct))}
+                        />
+                    }
                 </section>}
         </>
     );

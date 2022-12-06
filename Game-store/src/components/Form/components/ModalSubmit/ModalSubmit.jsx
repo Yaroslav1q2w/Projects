@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const ModalSubmit = ({header, closeModal, text, onClick}) => {
 
     return (
-        <div className="modal__submit" onClick={closeModal}>
+        <div className="modal__submit" >
             <div className="modal__submit-wrap" onClick={(e) => e.stopPropagation()}>
                 <div className="modal__submit-content">
                     <strong>{header}</strong> <br/> <hr/>

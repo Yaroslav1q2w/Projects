@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Basket.scss"
 import Modal from "../../components/Modal";
 import PageForm from "../../components/Form/PageForm";
@@ -15,6 +15,7 @@ import {basketSelector, isModalPageFormSelector, isModalSelector,isModalSubmitSe
 const Basket = () => {
 
     const [cardItem, setCardItem] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const modalFinishSubmit = useSelector(isModalSubmitSelector)
     const cards = useSelector(basketSelector)
@@ -29,13 +30,25 @@ const Basket = () => {
                                                      onclick={() => setCardItem(card)}/>
     )
 
+    useEffect(() => {
+        setTotalPrice(cards.reduce((accum,item) => accum + item.price,0))
+    },[cards])
+
 
     return (
         <div className="basket__wrap" data-testid="basket-page">
             <header className="basket__header">
+                <div className="basket__header-total--price">
+                    <span>Общая сумма: {totalPrice} грн.</span>
+                </div>
                 <p>Корзина</p>
+
                 {cards.length > 0 ? <div className="basket__button">
-                                        <Button children="Оформить заказ" data-testid="button-order" className="button" onClick={() => dispatch(formOpen())}/>
+                                        <Button children="Оформить заказ"
+                                                data-testid="button-order"
+                                                className="basket__button-elem"
+                                                onClick={() => dispatch(formOpen())}
+                                        />
                                     </div>
                                   : null}
             </header>

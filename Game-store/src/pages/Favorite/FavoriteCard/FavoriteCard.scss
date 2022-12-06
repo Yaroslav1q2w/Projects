@@ -22,6 +22,12 @@
         font-size: 21px;
         font-weight: bold;
         margin: 0;
+        transition: 0.3s;
+    
+        &:hover {
+            color: #777777;
+            transition: 0.3s;
+        }
     }
     
     &-article {

@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
     
     opacity: 0;
     animation: ani 0.5s forwards;
@@ -23,7 +24,6 @@
         background-color: #5B5B5B;
         width: 400px;
         border-radius: 5px;
-        z-index: 1;
         transform: scale(1);
         transition: 0.5s;
         

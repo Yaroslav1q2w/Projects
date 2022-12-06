@@ -53,7 +53,10 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
                 <span className="game__item-article">Артикул: {article}</span>
                 <div className="game__item-description">
                     <p className="game__item-price">{price} грн.</p>
-                    <Button type="button" children="В корзину" className="button" onClick={() => {isOpenModal(); addToCard()}} />
+                    <Button type="button"
+                            children="В корзину"
+                            className="button"
+                            onClick={() => {isOpenModal(); addToCard()}} />
                 </div>
             </div>
         </div>
