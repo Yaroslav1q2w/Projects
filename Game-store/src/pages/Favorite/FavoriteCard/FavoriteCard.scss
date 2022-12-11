@@ -4,6 +4,11 @@
     margin-bottom: 20px;
     display: flex;
     
+    img {
+        min-width: 320px;
+        height: 180px;
+    }
+    
     &-details {
         padding: 0 20px;
         position: relative;

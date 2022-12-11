@@ -6,6 +6,7 @@ import "./Cards.scss"
 import { useSelector,useDispatch } from 'react-redux'
 import {increaseBasket, modalOpen, modalClose, actionFetchCards} from "../../reducers"
 import {cardsSelector,isModalSelector} from "../../selectors";
+import MenuCategory from "../MenuCategory";
 
 
 const Cards = () => {
@@ -29,6 +30,8 @@ const Cards = () => {
 
     return (
         <div className="section__wrap">
+            <MenuCategory/>
+
             <div className="section__cards-game">{gameCard}</div>
 
             {modal &&

@@ -4,6 +4,7 @@
     max-width: 1100px;
     margin: 0 auto;
     
+    
     .basket__header {
         
         &-total--price {
@@ -34,8 +35,7 @@
         &-elem {
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
-            width: 140px;
-            height: 35px;
+            padding: 12px;
             color: #fafafa;
             //background: linear-gradient(to left, #16162d, #012344,#16162d);
             background: #9f5e08;
@@ -45,6 +45,7 @@
             margin: 6px;
             cursor: pointer;
             transition: .5s;
+            letter-spacing: 0.8px;
     
             &:hover {
                 background: #623a00;
