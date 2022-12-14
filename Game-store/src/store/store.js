@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import {favoriteReducer,todoReducer,basketReducer,modalReducer} from "../reducers"
+import {favoriteReducer,todoReducer,basketReducer,modalReducer,categoriesReducer} from "../reducers"
 
 const store = configureStore({
     reducer: {
         favorite: favoriteReducer,
         todos: todoReducer,
         basket: basketReducer,
-        modal: modalReducer
+        modal: modalReducer,
+        category: categoriesReducer
     },
 })
 

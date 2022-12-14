@@ -5,7 +5,7 @@ import Modal from "../Modal";
 import "./Cards.scss"
 import { useSelector,useDispatch } from 'react-redux'
 import {increaseBasket, modalOpen, modalClose, actionFetchCards} from "../../reducers"
-import {cardsSelector,isModalSelector} from "../../selectors";
+import {cardsSelector, categorySelector, isModalSelector} from "../../selectors";
 import MenuCategory from "../MenuCategory";
 
 
@@ -14,18 +14,27 @@ const Cards = () => {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(actionFetchCards());
-    },[])
-
-
     const cards = useSelector(cardsSelector)
     const modal = useSelector(isModalSelector)
+    const indexCategory = useSelector(categorySelector)
+
+    useEffect(() => {
+        dispatch(actionFetchCards());
+    },[indexCategory])
 
 
     const gameCard = cards?.map(card => <GameCard cardProps={card} isOpenModal={() => dispatch(modalOpen())} key={card.article}
         data-testid="card-item" addToCard={() => setSelectedProduct(card)}
     />)
+
+    const gameCardFilter = cards?.filter(card => {
+            if (card.category === indexCategory) {
+                return  <GameCard cardProps={card} isOpenModal={() => dispatch(modalOpen())} key={card.article}
+                                  data-testid="card-item" addToCard={() => setSelectedProduct(card)}
+                />
+            }
+            })
+
 
 
     return (

@@ -2,6 +2,7 @@ import favoriteReducer, {increaseFavorite,decreaseFavorite} from "./favourite.re
 import todoReducer, {actionFetchCards} from "./todo.reducer"
 import basketReducer, {increaseBasket,decreaseBasket,clearItems} from "./basket.reducer"
 import modalReducer, {modalOpen,modalClose,formClose,formOpen,modalSubmitOpen,modalSubmitClose} from "./modal.reducer"
+import categoriesReducer,{chengeCategory} from "./categories.reducer"
 
 export {
     favoriteReducer,
@@ -20,4 +21,6 @@ export {
     formOpen,
     modalSubmitOpen,
     modalSubmitClose,
+    categoriesReducer,
+    chengeCategory
 }
