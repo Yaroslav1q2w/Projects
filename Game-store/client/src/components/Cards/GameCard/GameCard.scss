@@ -1,0 +1,178 @@
+.game__item {
+    color: white;
+    width: 320px;
+    min-height: 300px;
+    background-color: rgb(36,37,41);
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    margin-bottom: 30px;
+    justify-self: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .game__item-img {
+        cursor: pointer;
+        position: relative;
+        transition: all 0.5s ease;
+        overflow: hidden;
+        width: 320px;
+        height: 180px;
+        
+        img {
+            transition: all 0.5s ease;
+        }
+        
+        &:hover img {
+            transform: scale(1.06);
+            transition: all 0.5s ease;
+        }
+    
+        &:hover:before {
+            opacity: 1;
+        }
+        
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(14, 14, 14, 0.8);
+            transition: all 0.5s ease;
+            opacity: 0;
+            z-index: 1;
+        }
+        
+    }
+    
+    .game__back {
+        position: absolute;
+        width: 320px;
+        height: 180px;
+        top: 0;
+        text-align: center;
+        z-index: 1;
+        transition: all 3s ease;
+        
+        &-wrap {
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.5s ease;
+
+            &:hover {
+                animation: ani 1s forwards;
+            }
+        }
+
+        &-title {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        &-desc {
+            font-size: 12px;
+            line-height: 1.3;
+            padding: 0 10px 10px 30px;
+        }
+        &-link {
+            padding-bottom: 12px;
+            
+            .link {
+                font-size: 12px;
+                transition: .5s;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-decoration: underline;
+                
+                &:hover {
+                    color: #daa266;
+                    display: inline-block;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+    
+    &-details {
+        padding: 0 35px 10px 20px;
+        position: relative;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        //min-height: 152px;
+        height: 190px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .game__title {
+        margin-bottom: 10px;
+        height: 76px;
+    }
+    
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    
+    &-title {
+        padding-top: 10px;
+        font-size: 19px;
+        font-weight: bold;
+        margin: 0;
+        transition: 0.3s;
+    
+        &:hover {
+            color: #949494;
+            transition: 0.3s;
+        }
+    }
+    
+    &-article {
+        display: inline-block;
+        padding-top: 8px;
+        font-size: 12px;
+        font-weight: 200;
+        color: #7a7a7a;
+    }
+    
+    &-genre {
+        background-color: rgb(60, 60, 63);
+        font-size: 13px;
+        font-weight: 600;
+        display: inline-block;
+        padding: 5px 20px;
+        border-radius: 20px;
+        letter-spacing: 1.5px;
+        color: #c9c8c8;
+    }
+    
+    &-description {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 14px;
+        position: relative;
+    }
+    
+    .game__item-price {
+        font-size: 16px;
+    }
+}
+
+.star-icon {
+    position: absolute;
+    top: 17px;
+    right: 7px;
+    cursor: pointer;
+}
