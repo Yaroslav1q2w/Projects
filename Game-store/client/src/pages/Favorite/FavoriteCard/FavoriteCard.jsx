@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 
 const FavoriteCard = ({ cardProps}) => {
-    const {title, article, price, image, genre} = cardProps
+    const {title, article, price, image, genre,_id} = cardProps
 
     const dispatch = useDispatch()
 
@@ -16,7 +16,7 @@ const FavoriteCard = ({ cardProps}) => {
             <img src={image} alt={title} width={280} height={160}/>
             <div className="favorite__item-details">
                 <div className="favorite__item-header">
-                    <Link to={`/card/${article}`}><h3 className="favorite__item-title">{title}</h3></Link>
+                    <Link to={`/edit/${article}`}><h3 className="favorite__item-title">{title}</h3></Link>
                     <span className="favorite__item-article">Артикул: {article}</span>
                     <span className="favorite__item-genre">{genre}</span>
                 </div>

@@ -1,1 +1,1 @@
-export const categorySelector = state => state.category.indexCategory
+export const categorySelector = state => state.category.categoryID

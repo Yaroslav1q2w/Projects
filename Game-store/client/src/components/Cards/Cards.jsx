@@ -21,9 +21,7 @@ const Cards = () => {
 
     useEffect(() => {
         dispatch(actionFetchCards());
-        setTimeout(() => {
-            setIsLoading(false)
-        },1000)
+        setIsLoading(false)
     },[])
 
 
@@ -34,7 +32,7 @@ const Cards = () => {
             return card
         }
     })
-    console.log("text")
+    console.log("cards")
 
     return (
         <div className="section__wrap">

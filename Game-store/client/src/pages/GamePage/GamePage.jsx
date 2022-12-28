@@ -9,6 +9,8 @@ import "./GamePage.scss"
 import Button from "../../components/Button";
 import {useState} from "react";
 import Modal from "../../components/Modal";
+import sendRequest from "../../helpers/sendRequest";
+import {API_URL} from "../../configs/API";
 
 
 
@@ -23,10 +25,17 @@ const GamePage = () => {
     const cards = useSelector(cardsSelector)
     const modal = useSelector(isModalSelector)
 
-    useEffect(() => {
-        dispatch(actionFetchCards());
-        window.scrollTo(0,0)
-    }, [])
+
+    // useEffect(() => {
+    //     sendRequest(`${API_URL}/edit/${card_id}`)
+    //         .then((game) => {
+    //             console.log(game);
+    //             const {image,title,genre,data,developer,platforms,language,the_plot} = game
+    //         })
+    //
+    //
+    //     window.scrollTo(0,0)
+    // }, [])
 
 
     const gameItem = cards?.find(el => el.article == card_id)
@@ -36,13 +45,13 @@ const GamePage = () => {
         <>
             {cards &&
                 <section className="page__game">
-                    <div className="page__game-img" style={{backgroundImage: `url(../../../${gameItem.image})`}}/>
+                    <div className="page__game-img" style={{backgroundImage: `url(${gameItem.image})`}}/>
                     <div className="container__wrap">
                         <main className="main__wrap">
                             <div className="main__wrap-header">
                                 <Link className="btn-back" onClick={goBack}><RightArrow/></Link>
                                 <div className="header__poster">
-                                    <img src={`../../../${gameItem.image}`} alt={gameItem.title}/>
+                                    <img src={gameItem.image} alt={gameItem.title}/>
                                 </div>
                                 <div className="header__content">
                                     <p className="game__page-title">{gameItem.title}</p>

@@ -11,7 +11,7 @@ const RootRouter = () => {
             <Route index element={<Cards/>} />
             <Route path="/basket" element={<Basket/>} />
             <Route path="/favorite" element={<Favorite/>} />
-            <Route path="/card/:card_id" element={<GamePage/>} />
+            <Route path="/edit/:card_id" element={<GamePage/>} />
         </Routes>
     );
 };

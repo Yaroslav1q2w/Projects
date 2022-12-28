@@ -29,7 +29,7 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
                         <h2 className="game__back-title">{title}</h2>
                         <p className="game__back-desc">{description}</p>
                         <div className="game__back-link">
-                            <Link to={`/card/${article}`} className="link">перейти</Link>
+                            <Link to={`/edit/${article}`} className="link">перейти</Link>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
             <div className="game__item-details">
                 <div className="game__title">
                     <div className="game__item-header">
-                        <Link to={`/card/${article}`}><h3 className="game__item-title">{title}</h3></Link>
+                        <Link to={`/edit/${article}`}><h3 className="game__item-title">{title}</h3></Link>
                         <div className="star-icon">
                             {notFavorites && <AiOutlineStar fontSize={26} onClick={() => {
                                 dispatch(increaseFavorite(cardProps))

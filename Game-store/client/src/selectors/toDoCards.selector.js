@@ -1,1 +1,1 @@
-export const cardsSelector = (state => state.todos.todos.cards)
+export const cardsSelector = (state => state.todos.todos.data)

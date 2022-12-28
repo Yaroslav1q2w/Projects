@@ -12,7 +12,7 @@ const BasketCard = ({ cardProps, isOpenModal, onclick}) => {
             <img src={image} alt={title} width={320} height={180}/>
             <div className="basket__item-details">
                 <div className="basket__item-header">
-                    <Link to={`/card/${article}`}><h3 className="basket__item-title">{title}</h3></Link>
+                    <Link to={`/edit/${article}`}><h3 className="basket__item-title">{title}</h3></Link>
                     <span className="basket__item-article">Артикул: {article}</span>
                 </div>
                 <div className="basket__item-description">
