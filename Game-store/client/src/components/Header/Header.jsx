@@ -31,11 +31,11 @@ const Header = () => {
                     <Link to="/" data-testid="home-link" className="header__homepage">
                         <HomePage />
                     </Link>
-                    <Link to="/favorite" data-testid="favorite-link" className="header__favorite">
+                    <Link to="api/favorite" data-testid="favorite-link" className="header__favorite">
                         <FavoriteCards />
                         <span className="header__cart-number">{favoriteCount.length}</span>
                     </Link>
-                    <Link to="/basket" data-testid="basket-link" className="header__basket">
+                    <Link to="api/basket" data-testid="basket-link" className="header__basket">
                         <Basket />
                         <span className="header__cart-number">{basketCount.length}</span>
                     </Link>

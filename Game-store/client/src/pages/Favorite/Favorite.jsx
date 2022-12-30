@@ -7,6 +7,7 @@ import {favouriteSelector} from "../../selectors";
 
 const Favorite = () => {
     const cardsFavorite = useSelector(favouriteSelector)
+    console.log(cardsFavorite);
 
     const renderCard = cardsFavorite.map(card => <FavoriteCard key={card.article} cardProps={card}/>)
 

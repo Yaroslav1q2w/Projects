@@ -9,9 +9,9 @@ const RootRouter = () => {
     return (
         <Routes>
             <Route index element={<Cards/>} />
-            <Route path="/basket" element={<Basket/>} />
-            <Route path="/favorite" element={<Favorite/>} />
-            <Route path="/edit/:card_id" element={<GamePage/>} />
+            <Route path="api/basket" element={<Basket/>} />
+            <Route path="api/favorite" element={<Favorite/>} />
+            <Route path="api/products/:card_id" element={<GamePage/>} />
         </Routes>
     );
 };

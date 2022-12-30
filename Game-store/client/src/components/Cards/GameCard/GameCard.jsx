@@ -9,7 +9,7 @@ import 'swiper/css';
 
 
 const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
-    const {title, article, price, image, description, genre} = cardProps
+    const {title, article, price, image, description, genre, _id} = cardProps
 
     const favoritesLocalStorage = JSON.parse(localStorage.getItem("favoriteCount"))
     const isFavorite = Boolean(favoritesLocalStorage?.find(favorite => favorite.article === article))
@@ -29,7 +29,7 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
                         <h2 className="game__back-title">{title}</h2>
                         <p className="game__back-desc">{description}</p>
                         <div className="game__back-link">
-                            <Link to={`/edit/${article}`} className="link">перейти</Link>
+                            <Link to={`api/products/${_id}`} className="link">перейти</Link>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const GameCard = ({ cardProps, isOpenModal, addToCard}) => {
             <div className="game__item-details">
                 <div className="game__title">
                     <div className="game__item-header">
-                        <Link to={`/edit/${article}`}><h3 className="game__item-title">{title}</h3></Link>
+                        <Link to={`api/products/${_id}`}><h3 className="game__item-title">{title}</h3></Link>
                         <div className="star-icon">
                             {notFavorites && <AiOutlineStar fontSize={26} onClick={() => {
                                 dispatch(increaseFavorite(cardProps))

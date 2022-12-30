@@ -16,7 +16,7 @@ const FavoriteCard = ({ cardProps}) => {
             <img src={image} alt={title} width={280} height={160}/>
             <div className="favorite__item-details">
                 <div className="favorite__item-header">
-                    <Link to={`/edit/${article}`}><h3 className="favorite__item-title">{title}</h3></Link>
+                    <Link to={`/api/products/${_id}`}><h3 className="favorite__item-title">{title}</h3></Link>
                     <span className="favorite__item-article">Артикул: {article}</span>
                     <span className="favorite__item-genre">{genre}</span>
                 </div>
