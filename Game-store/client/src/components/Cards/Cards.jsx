@@ -27,18 +27,13 @@ const Cards = () => {
 	const modal = useSelector(isModalSelector);
 	const indexCategory = useSelector(categorySelector);
 
-	useEffect(() => {
-		dispatch(actionFetchCards());
-		setIsLoading(false);
-	}, []);
+	const category = indexCategory > 0 ? `category=${indexCategory}` : "";
 
-	const gameCardFilter = cards?.filter((card) => {
-		if (indexCategory === 0) {
-			return cards;
-		} else if (indexCategory === card.category) {
-			return card;
-		}
-	});
+	useEffect(() => {
+		dispatch(actionFetchCards(category));
+		setIsLoading(false);
+		console.log(category);
+	}, [category]);
 
 	console.log("card");
 
@@ -48,8 +43,10 @@ const Cards = () => {
 
 			<div className="section__cards-game">
 				{isLoading
-					? [...new Array(9)].map((_, index) => <CardsSceleton key={index} />)
-					: gameCardFilter?.map((card) => (
+					? [...new Array(9)].map((_, index) => (
+							<CardsSceleton key={index} />
+					  ))
+					: cards?.map((card) => (
 							<GameCard
 								cardProps={card}
 								isOpenModal={() => dispatch(modalOpen())}

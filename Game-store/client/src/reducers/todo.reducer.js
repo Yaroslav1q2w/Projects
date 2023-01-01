@@ -1,32 +1,31 @@
-import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
-import {sendRequest} from "../helpers"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { sendRequest } from "../helpers";
 
-import {API_URL} from "../configs/API";
+import { API_URL } from "../configs/API";
 
 const initialState = {
-    todos: []
-}
+	todos: [],
+};
 
-export const actionFetchCards = createAsyncThunk("todos/fetchCards",async () => {
-    const response = await sendRequest(`${API_URL}/products`)
-    console.log(response);
-    return response
-})
-
-export const actionCardPages = createAsyncThunk("todos/fetchCards",async () => {
-    const response = await sendRequest(`${API_URL}/edit/:productID`)
-    return response
-})
+export const actionFetchCards = createAsyncThunk(
+	"todos/fetchCards",
+	async (category) => {
+		const response = await sendRequest(`${API_URL}/products?${category}`);
+		return response;
+	}
+);
 
 const todoReducer = createSlice({
-    name: 'todos',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-        builder.addCase(actionFetchCards.fulfilled,(state,{payload})=> {
-            state.todos = payload
-        })
-    }
-})
+	name: "todos",
+	initialState,
+	reducers: {},
+	extraReducers: (builder) => {
+		builder.addCase(actionFetchCards.fulfilled, (state, { payload }) => {
+			state.todos = payload;
+		});
+	},
+});
 
-export default todoReducer.reducer
+export default todoReducer.reducer;
+
+export const { chengeCategory } = todoReducer.actions;

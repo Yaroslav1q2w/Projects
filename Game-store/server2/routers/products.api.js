@@ -1,35 +1,46 @@
-const {Router} = require('express')
-const router = Router()
+const { Router } = require("express");
+const router = Router();
 
-const Product = require("../moduls/product.mongoose")
+const Product = require("../moduls/product.mongoose");
+const CategoryGame = require("../moduls/category.mongoose");
 
-router.get('/api/products', async (request, response) => {
-    const products = await Product.find();
+router.get("/products", async (request, response) => {
+	const { category } = request.query;
 
-    response.status(200).json({success: true, data: products});
+	if (!category) {
+		const productsAll = await Product.find();
+
+		response.status(200).json({ success: true, data: productsAll });
+	} else {
+		const productsCategory = await Product.find({ category: category });
+
+		response.status(200).json({ success: true, data: productsCategory });
+	}
+
+	// const products = await Product.find();
+
+	// response.status(200).json({ success: true, data: products });
 });
 
+router.get("/products/:id", async (request, response) => {
+	Product.findById(request.params.id, request.body).then((result) => {
+		response.status(200).json(result);
+	});
+});
 
-// router.get('/api/products/:article', async (request, response) => {
-//     const {article} = request.params;
-//     const product = await Product.findById(article);
-//     response.status(200).json({success: true, data: product});
+// router.get("/category", async (request, response) => {
+// 	const { category } = request.query;
+// 	let result;
+// 	// result = await CategoryGame.find({ category: category });
+
+// 	// response.status(200).json({ success: true, data: result });
+
+// 	if (!category) {
+// 		result = await CategoryGame.find();
+// 	} else {
+// 		result = await CategoryGame.find({ category: category });
+// 	}
+// 	return response.status(200).json({ success: true, data: result });
 // });
 
-router.get('/api/products/:id', async (request, response) => {
-    Product
-        .findById(request.params.id, request.body)
-        .then(result => {
-            response
-                .status(200)
-                .json(result)
-        })
-
-
-    // const {article} = request.params;
-    // const product = await Product.findById(article);
-    // response.status(200).json({success: true, data: product});
-});
-
-
-module.exports = router
+module.exports = router;
