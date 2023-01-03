@@ -16,7 +16,7 @@ import modalReducer, {
 	modalSubmitOpen,
 	modalSubmitClose,
 } from "./modal.reducer";
-import categoriesReducer, { chengeCategory } from "./categories.reducer";
+import filterReducer, { chengeCategory, setFilters } from "./filter.reducer";
 
 export {
 	favoriteReducer,
@@ -35,6 +35,7 @@ export {
 	formOpen,
 	modalSubmitOpen,
 	modalSubmitClose,
-	categoriesReducer,
+	filterReducer,
+	setFilters,
 	chengeCategory,
 };

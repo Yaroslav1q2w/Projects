@@ -5,6 +5,7 @@ import { API_URL } from "../configs/API";
 
 const initialState = {
 	todos: [],
+	isLoading: true,
 };
 
 export const actionFetchCards = createAsyncThunk(
@@ -20,8 +21,13 @@ const todoReducer = createSlice({
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
+		builder.addCase(actionFetchCards.pending, (state) => {
+			state.isLoading = true;
+			state.todos = [];
+		});
 		builder.addCase(actionFetchCards.fulfilled, (state, { payload }) => {
 			state.todos = payload;
+			state.isLoading = false;
 		});
 	},
 });

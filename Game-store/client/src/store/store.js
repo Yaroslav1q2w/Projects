@@ -5,7 +5,7 @@ import {
 	todoReducer,
 	basketReducer,
 	modalReducer,
-	categoriesReducer,
+	filterReducer,
 } from "../reducers";
 
 const store = configureStore({
@@ -14,7 +14,7 @@ const store = configureStore({
 		todos: todoReducer,
 		basket: basketReducer,
 		modal: modalReducer,
-		category: categoriesReducer,
+		filter: filterReducer,
 	},
 });
 
