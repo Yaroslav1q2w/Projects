@@ -6,7 +6,11 @@ import {
 	isModalSubmitSelector,
 	isModalPageFormSelector,
 } from "./modal.selector";
-import { categorySelector } from "./filter.selector";
+import {
+	categorySelector,
+	pageCountSelector,
+	currentLimitSelector,
+} from "./filter.selector";
 
 export {
 	basketSelector,
@@ -18,4 +22,6 @@ export {
 	isModalPageFormSelector,
 	selectedProduct,
 	categorySelector,
+	pageCountSelector,
+	currentLimitSelector,
 };

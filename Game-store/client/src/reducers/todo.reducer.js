@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { sendRequest } from "../helpers";
+import { sendRequest } from "../helpers/sendRequest";
 
 import { API_URL } from "../configs/API";
 
@@ -10,8 +10,12 @@ const initialState = {
 
 export const actionFetchCards = createAsyncThunk(
 	"todos/fetchCards",
-	async (category) => {
-		const response = await sendRequest(`${API_URL}/products?${category}`);
+	async ({ category, limit, page }) => {
+		const response = await sendRequest(
+			`${API_URL}/products?${category}&${limit}&${page}`
+		);
+		console.log(limit);
+		console.log(`${API_URL}/products?${category}&${limit}&${page}`);
 		return response;
 	}
 );

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import GameCard from "./GameCard";
 import Modal from "../Modal";
 import CardsSceleton from "../CardsSceleton";
+import MenuCategory from "../MenuCategory";
+import Pagination from "../Pagination";
 import "./Cards.scss";
 import { useSelector, useDispatch } from "react-redux";
 import qs from "qs";
@@ -12,15 +14,15 @@ import {
 	modalOpen,
 	modalClose,
 	actionFetchCards,
-	setFilters,
 } from "../../reducers";
 import {
 	cardsSelector,
 	categorySelector,
 	isLoadingSelector,
 	isModalSelector,
+	pageCountSelector,
+	currentLimitSelector,
 } from "../../selectors";
-import MenuCategory from "../MenuCategory";
 
 const Cards = () => {
 	const [selectedProduct, setSelectedProduct] = useState([]);
@@ -30,8 +32,13 @@ const Cards = () => {
 
 	const cards = useSelector(cardsSelector);
 	const modal = useSelector(isModalSelector);
-	const categoryID = useSelector(categorySelector);
 	const isLoading = useSelector(isLoadingSelector);
+
+	const categoryID = useSelector(categorySelector);
+	const pageCount = useSelector(pageCountSelector);
+	const limitCount = useSelector(currentLimitSelector);
+
+	console.log(cards);
 
 	// useEffect(() => {
 	// 	if (window.location.search) {
@@ -41,17 +48,21 @@ const Cards = () => {
 	// 	}
 	// });
 
-	useEffect(() => {
-		let category = categoryID > 0 ? `category=${categoryID}` : "";
-
-		dispatch(actionFetchCards(category));
-	}, [categoryID]);
-
 	// useEffect(() => {
 	// 	const queryString = qs.stringify({ categoryID });
 
 	// 	navigate(`?${queryString}`);
 	// }, [categoryID]);
+
+	useEffect(() => {
+		let category = categoryID > 0 ? `category=${categoryID}` : "";
+		let limit = `_limit=${limitCount}`;
+		let page = `_page=${pageCount}`;
+
+		dispatch(actionFetchCards({ category, limit, page }));
+
+		window.scrollTo(0, 0);
+	}, [categoryID, pageCount, limitCount]);
 
 	const skeleton = [...new Array(9)].map((_, index) => (
 		<CardsSceleton key={index} />
@@ -75,6 +86,8 @@ const Cards = () => {
 			<div className="section__cards-game">
 				{isLoading ? skeleton : cardGames}
 			</div>
+
+			<Pagination />
 
 			{modal && (
 				<Modal

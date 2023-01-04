@@ -2,24 +2,28 @@ const { Router } = require("express");
 const router = Router();
 
 const Product = require("../moduls/product.mongoose");
-const CategoryGame = require("../moduls/category.mongoose");
 
 router.get("/products", async (request, response) => {
 	const { category } = request.query;
 
+	const limit = request.query._limit || 9;
+	const page = request.query._page || 1;
+
 	if (!category) {
-		const productsAll = await Product.find();
+		const productsAll = await Product.find()
+			.skip((page - 1) * limit)
+			.limit(limit);
 
 		response.status(200).json({ success: true, data: productsAll });
 	} else {
-		const productsCategory = await Product.find({ category: category });
+		const productsCategory = await Product.find({
+			category: category,
+		})
+			.skip((page - 1) * limit)
+			.limit(limit);
 
 		response.status(200).json({ success: true, data: productsCategory });
 	}
-
-	// const products = await Product.find();
-
-	// response.status(200).json({ success: true, data: products });
 });
 
 router.get("/products/:id", async (request, response) => {
@@ -27,20 +31,5 @@ router.get("/products/:id", async (request, response) => {
 		response.status(200).json(result);
 	});
 });
-
-// router.get("/category", async (request, response) => {
-// 	const { category } = request.query;
-// 	let result;
-// 	// result = await CategoryGame.find({ category: category });
-
-// 	// response.status(200).json({ success: true, data: result });
-
-// 	if (!category) {
-// 		result = await CategoryGame.find();
-// 	} else {
-// 		result = await CategoryGame.find({ category: category });
-// 	}
-// 	return response.status(200).json({ success: true, data: result });
-// });
 
 module.exports = router;

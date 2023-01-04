@@ -10,7 +10,7 @@ import styled from "styled-components";
 import "./GamePage.scss";
 import Button from "../../components/Button";
 import Modal from "../../components/Modal";
-import sendRequest from "../../helpers/sendRequest";
+import { sendRequest } from "../../helpers/sendRequest";
 import { API_URL } from "../../configs/API";
 
 const Loader = styled(Box)`

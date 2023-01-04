@@ -16,7 +16,7 @@ import modalReducer, {
 	modalSubmitOpen,
 	modalSubmitClose,
 } from "./modal.reducer";
-import filterReducer, { chengeCategory, setFilters } from "./filter.reducer";
+import filterReducer, { chengeCategory, setPageCount } from "./filter.reducer";
 
 export {
 	favoriteReducer,
@@ -36,6 +36,6 @@ export {
 	modalSubmitOpen,
 	modalSubmitClose,
 	filterReducer,
-	setFilters,
 	chengeCategory,
+	setPageCount,
 };
