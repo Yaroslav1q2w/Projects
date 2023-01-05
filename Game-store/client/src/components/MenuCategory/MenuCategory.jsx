@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { chengeCategory } from "../../reducers";
+import { chengeCategory, setPageCount } from "../../reducers";
 import { categorySelector } from "../../selectors";
 
 import {
@@ -27,13 +27,18 @@ const MenuCategory = () => {
 		"Стратегии",
 	];
 
+	const onChengeCategory = (index) => {
+		dispatch(chengeCategory(index));
+		dispatch(setPageCount(1));
+	};
+
 	return (
 		<CategoryWrap>
 			<CategoryList>
 				{categories.map((item, index) => (
 					<CategoryListItem
 						className={indexCategory === index ? "active" : ""}
-						onClick={() => dispatch(chengeCategory(index))}
+						onClick={() => onChengeCategory(index)}
 						key={index}
 					>
 						<LineItemTop />
