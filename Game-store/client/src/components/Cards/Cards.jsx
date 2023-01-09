@@ -6,8 +6,6 @@ import MenuCategory from "../MenuCategory";
 import Pagination from "../Pagination";
 import "./Cards.scss";
 import { useSelector, useDispatch } from "react-redux";
-import qs from "qs";
-import { useNavigate } from "react-router-dom";
 
 import {
 	increaseBasket,
@@ -27,7 +25,6 @@ import {
 const Cards = () => {
 	const [selectedProduct, setSelectedProduct] = useState([]);
 
-	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const cards = useSelector(cardsSelector);
@@ -38,53 +35,33 @@ const Cards = () => {
 	const pageCount = useSelector(pageCountSelector);
 	const limitCount = useSelector(currentLimitSelector);
 
-	console.log(cards);
-
-	// useEffect(() => {
-	// 	if (window.location.search) {
-	// 		const params = qs.parse(window.location.search.substring(1));
-
-	// 		setFilters(params);
-	// 	}
-	// });
-
-	// useEffect(() => {
-	// 	const queryString = qs.stringify({ categoryID });
-
-	// 	navigate(`?${queryString}`);
-	// }, [categoryID]);
-
 	useEffect(() => {
 		let category = categoryID > 0 ? `category=${categoryID}` : "";
 		let limit = `_limit=${limitCount}`;
 		let page = `_page=${pageCount}`;
 
 		dispatch(actionFetchCards({ category, limit, page }));
-
+		console.log("cardUse");
 		window.scrollTo(0, 0);
-	}, [categoryID, pageCount, limitCount]);
-
-	const skeleton = [...new Array(9)].map((_, index) => (
-		<CardsSceleton key={index} />
-	));
-
-	const cardGames = cards?.map((card) => (
-		<GameCard
-			cardProps={card}
-			isOpenModal={() => dispatch(modalOpen())}
-			key={card.article}
-			addToCard={() => setSelectedProduct(card)}
-		/>
-	));
-
-	console.log("card");
+	}, [categoryID, pageCount]);
 
 	return (
 		<div className="section__wrap">
 			<MenuCategory />
 
 			<div className="section__cards-game">
-				{isLoading ? skeleton : cardGames}
+				{isLoading
+					? [...new Array(9)].map((_, index) => (
+							<CardsSceleton key={index} />
+					  ))
+					: cards?.map((card) => (
+							<GameCard
+								cardProps={card}
+								isOpenModal={() => dispatch(modalOpen())}
+								key={card.article}
+								addToCard={() => setSelectedProduct(card)}
+							/>
+					  ))}
 			</div>
 
 			<Pagination />

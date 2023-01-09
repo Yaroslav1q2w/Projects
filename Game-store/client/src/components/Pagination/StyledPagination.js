@@ -25,6 +25,11 @@ export const PagesListItem = styled.li`
 	border-radius: 16px;
 	box-shadow: 0 0 4px #2196f3;
 
+	&:hover {
+		transition-delay: 0.1s;
+		box-shadow: 0 0 12px #2196f3;
+	}
+
 	&.active {
 		transition-delay: 0.2s;
 		box-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3;
