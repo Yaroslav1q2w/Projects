@@ -40,7 +40,7 @@ app.all("*", (request, response) => {
 const start = async () => {
 	try {
 		mongoose
-			.connect(MONGO_URL, {
+			.connect(process.env.MONGO_URL, {
 				useNewUrlParser: true,
 			})
 			.then(() => {
