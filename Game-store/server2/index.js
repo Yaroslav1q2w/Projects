@@ -24,7 +24,7 @@ app.use(
 	})
 );
 
-// const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 // const MONGO_URL =
 // 	"mongodb+srv://admin:admin@cluster0.vqljl7l.mongodb.net/node-blog?retryWrites=true&w=majority";
@@ -48,7 +48,7 @@ const start = async () => {
 			})
 			.catch((err) => console.log("DB error", err));
 
-		app.listen(process.env.PORT || 5000, () => {
+		app.listen(PORT, () => {
 			console.log(`Server is running on :${PORT}`);
 		});
 	} catch (error) {
