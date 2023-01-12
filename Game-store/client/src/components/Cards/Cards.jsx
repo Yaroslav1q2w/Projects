@@ -54,7 +54,7 @@ const Cards = () => {
 					? [...new Array(9)].map((_, index) => (
 							<CardsSceleton key={index} />
 					  ))
-					: cards?.map((card) => (
+					: cards.map((card) => (
 							<GameCard
 								cardProps={card}
 								isOpenModal={() => dispatch(modalOpen())}
