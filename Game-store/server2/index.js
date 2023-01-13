@@ -16,13 +16,13 @@ app.use(bodyParser.json());
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.use(
-	session({
-		secret: "some secret value",
-		resave: false,
-		saveUninitialized: false,
-	})
-);
+// app.use(
+// 	session({
+// 		secret: "some secret value",
+// 		resave: false,
+// 		saveUninitialized: false,
+// 	})
+// );
 
 const PORT = process.env.PORT || 5000;
 
