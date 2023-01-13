@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5000;
 // const MONGO_URL =
 // 	"mongodb+srv://admin:admin@cluster0.vqljl7l.mongodb.net/node-blog?retryWrites=true&w=majority";
 
-app.use("/api", apiRouter);
+app.use(apiRouter);
 app.use("/api", urlencodedParser, usersApiRouter);
 app.use("/auth", urlencodedParser, authApiRouter);
 
