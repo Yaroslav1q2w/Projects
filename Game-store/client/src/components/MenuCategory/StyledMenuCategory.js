@@ -45,7 +45,8 @@ export const CategoryListItem = styled.li`
 	position: relative;
 	color: #2196f3;
 	text-transform: uppercase;
-	font-size: 18px;
+	font-weight: 600;
+	font-size: 15px;
 	letter-spacing: 1.5px;
 	overflow: hidden;
 	padding: 12px;

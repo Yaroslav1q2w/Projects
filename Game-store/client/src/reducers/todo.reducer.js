@@ -36,5 +36,3 @@ const todoReducer = createSlice({
 });
 
 export default todoReducer.reducer;
-
-export const { chengeCategory } = todoReducer.actions;

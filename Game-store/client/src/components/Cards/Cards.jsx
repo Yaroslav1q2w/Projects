@@ -41,9 +41,11 @@ const Cards = () => {
 		let page = `_page=${pageCount}`;
 
 		dispatch(actionFetchCards({ category, limit, page }));
-		console.log("cardUse");
+
 		window.scrollTo(0, 0);
 	}, [categoryID, pageCount]);
+
+	console.log(cards);
 
 	return (
 		<div className="section__wrap">
