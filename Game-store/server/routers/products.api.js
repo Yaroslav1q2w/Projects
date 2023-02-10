@@ -6,7 +6,7 @@ const Product = require("../moduls/product.mongoose");
 router.get("/products", async (request, response) => {
 	const { category } = request.query;
 
-	const limit = request.query._limit || 9;
+	const limit = request.query._limit;
 	const page = request.query._page || 1;
 
 	if (!category) {
@@ -14,7 +14,13 @@ router.get("/products", async (request, response) => {
 			.skip((page - 1) * limit)
 			.limit(limit);
 
-		response.status(200).json({ success: true, data: productsAll });
+		const count = await Product.find().countDocuments();
+
+		response.status(200).json({
+			success: true,
+			data: productsAll,
+			totalPages: Math.ceil(count / limit),
+		});
 	} else {
 		const productsCategory = await Product.find({
 			category: category,
@@ -22,7 +28,14 @@ router.get("/products", async (request, response) => {
 			.skip((page - 1) * limit)
 			.limit(limit);
 
-		response.status(200).json({ success: true, data: productsCategory });
+		const count = await Product.find({ category: category }).countDocuments();
+		console.log(count);
+
+		response.status(200).json({
+			success: true,
+			data: productsCategory,
+			totalPages: Math.ceil(count / limit),
+		});
 	}
 });
 

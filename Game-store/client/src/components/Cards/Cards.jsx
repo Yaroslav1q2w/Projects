@@ -45,8 +45,6 @@ const Cards = () => {
 		window.scrollTo(0, 0);
 	}, [categoryID, pageCount]);
 
-	console.log(cards);
-
 	return (
 		<div className="section__wrap">
 			<MenuCategory />

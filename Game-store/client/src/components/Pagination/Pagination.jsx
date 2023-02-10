@@ -8,8 +8,13 @@ import { PagesList, PagesListItem, PagesWrap } from "./StyledPagination";
 const Pagination = () => {
 	const dispatch = useDispatch();
 	const pageCount = useSelector(pageCountSelector);
+	const totalCount = useSelector((state) => state.todos.todos.totalPages);
 
-	const pages = [1, 2, 3, 4, 5];
+	// const pages = [1, 2, 3, 4, 5];
+	const pages = [];
+	for (let i = 0; i < totalCount; i++) {
+		pages.push(i + 1);
+	}
 
 	return (
 		<PagesWrap>
