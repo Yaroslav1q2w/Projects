@@ -16,18 +16,10 @@ app.use(bodyParser.json());
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-// app.use(
-// 	session({
-// 		secret: "some secret value",
-// 		resave: false,
-// 		saveUninitialized: false,
-// 	})
-// );
-
 const PORT = process.env.PORT || 4444;
 
-// const MONGO_URL =
-// 	"mongodb+srv://admin:admin@cluster0.vqljl7l.mongodb.net/node-blog?retryWrites=true&w=majority";
+const MONGO_URL =
+	"mongodb+srv://admin:admin@cluster0.vqljl7l.mongodb.net/node-blog?retryWrites=true&w=majority";
 
 app.use(apiRouter);
 app.use("/api", urlencodedParser, usersApiRouter);
@@ -40,7 +32,7 @@ app.all("*", (request, response) => {
 const start = async () => {
 	try {
 		mongoose
-			.connect(process.env.MONGO_URL, {
+			.connect(MONGO_URL, {
 				useNewUrlParser: true,
 			})
 			.then(() => {
