@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import GameCard from "./GameCard";
 import Modal from "../Modal";
 import CardsSceleton from "../CardsSceleton";
 import MenuCategory from "../MenuCategory";
 import Pagination from "../Pagination";
-import "./Cards.scss";
 import { useSelector, useDispatch } from "react-redux";
-
 import {
 	increaseBasket,
 	modalOpen,
@@ -21,6 +19,7 @@ import {
 	pageCountSelector,
 	currentLimitSelector,
 } from "../../selectors";
+import { Container, SectionGames } from "./StyledCards";
 
 const Cards = () => {
 	const [selectedProduct, setSelectedProduct] = useState([]);
@@ -46,14 +45,12 @@ const Cards = () => {
 	}, [categoryID, pageCount]);
 
 	return (
-		<div className="section__wrap">
+		<Container>
 			<MenuCategory />
 
-			<div className="section__cards-game">
+			<SectionGames>
 				{isLoading
-					? [...new Array(9)].map((_, index) => (
-							<CardsSceleton key={index} />
-					  ))
+					? [...new Array(9)].map((_, index) => <CardsSceleton key={index} />)
 					: cards.map((card) => (
 							<GameCard
 								cardProps={card}
@@ -62,20 +59,19 @@ const Cards = () => {
 								addToCard={() => setSelectedProduct(card)}
 							/>
 					  ))}
-			</div>
+			</SectionGames>
 
 			<Pagination />
 
 			{modal && (
 				<Modal
-					data-testid="modal-add-basket"
 					header="Подтвердите добавление"
 					text={`Добавить ${selectedProduct.title} в корзину?`}
 					closeModal={() => dispatch(modalClose())}
 					onClick={() => dispatch(increaseBasket(selectedProduct))}
 				/>
 			)}
-		</div>
+		</Container>
 	);
 };
 

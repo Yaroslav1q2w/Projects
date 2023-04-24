@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chengeCategory, setPageCount } from "../../reducers";
 import { categorySelector } from "../../selectors";

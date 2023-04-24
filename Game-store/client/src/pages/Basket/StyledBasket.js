@@ -1,0 +1,59 @@
+import styled from "styled-components";
+
+export const Container = styled.section`
+	text-align: center;
+	position: relative;
+	max-width: 1100px;
+	margin: 0 auto;
+`;
+
+export const Header = styled.header`
+	.total__price {
+		position: absolute;
+		top: 50px;
+		left: 20px;
+		letter-spacing: 1px;
+		word-spacing: 1px;
+		font-size: 18px;
+	}
+
+	p {
+		font-size: 30px;
+		font-weight: bold;
+	}
+`;
+
+export const ButtonSubmit = styled.div`
+	position: absolute;
+	right: 20px;
+	top: 33px;
+
+	.basket__button-elem {
+		font-family: "Montserrat", sans-serif;
+		font-style: normal;
+		padding: 12px;
+		color: #fafafa;
+		background: #9f5e08;
+		border: 0;
+		border-radius: 30px;
+		outline: none;
+		margin: 6px;
+		cursor: pointer;
+		transition: 0.5s;
+		letter-spacing: 0.8px;
+
+		&:hover {
+			background: #623a00;
+		}
+	}
+`;
+
+export const BasketItems = styled.main`
+	padding-top: 80px;
+	display: grid;
+
+	.empty-basket {
+		font-size: 30px;
+		font-weight: bold;
+	}
+`;

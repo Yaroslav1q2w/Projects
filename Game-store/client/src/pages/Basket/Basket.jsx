@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import "./Basket.scss";
+import { useEffect, useState } from "react";
 import Modal from "../../components/Modal";
 import PageForm from "../../components/Form/PageForm";
 import BasketCard from "./BasketCard";
 import Button from "../../components/Button";
 import ModalSubmit from "../../components/Form/components/ModalSubmit";
-
 import { useSelector, useDispatch } from "react-redux";
 import {
 	decreaseBasket,
@@ -22,6 +20,7 @@ import {
 	isModalSelector,
 	isModalSubmitSelector,
 } from "../../selectors";
+import { Container, Header, ButtonSubmit, BasketItems } from "./StyledBasket";
 
 const Basket = () => {
 	const [cardItem, setCardItem] = useState([]);
@@ -32,7 +31,6 @@ const Basket = () => {
 	const modal = useSelector(isModalSelector);
 	const formPage = useSelector(isModalPageFormSelector);
 
-	console.log(cards);
 	const dispatch = useDispatch();
 
 	const renderCard = cards.map((card) => (
@@ -49,26 +47,26 @@ const Basket = () => {
 	}, [cards]);
 
 	return (
-		<div className="basket__wrap" data-testid="basket-page">
-			<header className="basket__header">
-				<div className="basket__header-total--price">
+		<Container>
+			<Header>
+				<div className="total__price">
 					<span>Общая сумма: {totalPrice} грн.</span>
 				</div>
 				<p>Корзина</p>
 
 				{cards.length > 0 ? (
-					<div className="basket__button">
+					<ButtonSubmit>
 						<Button
 							children="Оформить заказ"
 							data-testid="button-order"
 							className="basket__button-elem"
 							onClick={() => dispatch(formOpen())}
 						/>
-					</div>
+					</ButtonSubmit>
 				) : null}
-			</header>
+			</Header>
 
-			<div className="basket__items">
+			<BasketItems>
 				{cards.length < 1 ? (
 					<div className="empty-basket">
 						<BiCartAlt fontSize={180} />
@@ -76,7 +74,7 @@ const Basket = () => {
 				) : null}
 
 				{renderCard}
-			</div>
+			</BasketItems>
 
 			{modal && (
 				<Modal
@@ -97,7 +95,7 @@ const Basket = () => {
 					onClick={() => dispatch(clearItems())}
 				/>
 			)}
-		</div>
+		</Container>
 	);
 };
 

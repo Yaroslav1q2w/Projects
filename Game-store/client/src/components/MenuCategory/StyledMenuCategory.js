@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const CategoryWrap = styled.div`
@@ -46,7 +45,7 @@ export const CategoryListItem = styled.li`
 	color: #2196f3;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-size: 15px;
+	font-size: 13px;
 	letter-spacing: 1.5px;
 	overflow: hidden;
 	padding: 12px;
@@ -78,8 +77,6 @@ export const CategoryListItem = styled.li`
 	&.active {
 		transition-delay: 0.3s;
 		box-shadow: 0 0 10px #2196f3;
-		//background-color: #2196f3 ;
-		//color: rgb(25,26,28);
 	}
 
 	span {

@@ -1,2 +1,1 @@
-import ModalSubmit from "./ModalSubmit";
-export default ModalSubmit
+export { default } from "./ModalSubmit";

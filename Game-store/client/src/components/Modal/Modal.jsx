@@ -1,45 +1,43 @@
-import React from 'react';
 import Button from "../Button";
 
-import "./Modal.scss"
-import PropTypes from "prop-types";
+import {
+	Container,
+	MainWrapp,
+	Header,
+	Content,
+	ModalButtons,
+} from "./StyledModal";
+import "./Modal.scss";
 
-
-const Modal = ({header, closeModal, text, onClick}) => {
-
-    return (
-        <div className="modal" onClick={closeModal} data-testid="modal">
-            <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-                <header className="modal__header">
-                    {header}
-                    <span className="modal__icon-delete" data-testid="modal-exit" onClick={closeModal}></span>
-                </header>
-                <div className="main__content">
-                    {text}
-                </div>
-                <div className="button__modals">
-                    <Button
-                        className="button"
-                        children="Ok"
-                        backgroundColor="#3c3c64"
-                        onClick={() => {onClick(); closeModal()}}
-                    />
-                    <Button
-                        className="button"
-                        children="Cancel"
-                        backgroundColor="#2b2b46"
-                        onClick={closeModal}
-                    />
-                </div>
-            </div>
-        </div>
-    );
+const Modal = ({ header, closeModal, text, onClick }) => {
+	return (
+		<Container onClick={closeModal}>
+			<MainWrapp onClick={(e) => e.stopPropagation()}>
+				<Header>
+					{header}
+					<span className="modal__icon-delete" onClick={closeModal}></span>
+				</Header>
+				<Content>{text}</Content>
+				<ModalButtons>
+					<Button
+						className="button"
+						children="Ok"
+						backgroundColor="#3c3c64"
+						onClick={() => {
+							onClick();
+							closeModal();
+						}}
+					/>
+					<Button
+						className="button"
+						children="Cancel"
+						backgroundColor="#2b2b46"
+						onClick={closeModal}
+					/>
+				</ModalButtons>
+			</MainWrapp>
+		</Container>
+	);
 };
-
-Modal.propTypes = {
-    header: PropTypes.string,
-    text: PropTypes.string,
-    closeModal: PropTypes.func,
-}
 
 export default Modal;

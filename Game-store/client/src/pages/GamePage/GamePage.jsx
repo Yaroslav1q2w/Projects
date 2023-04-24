@@ -91,9 +91,7 @@ const GamePage = () => {
 									</p>
 								</div>
 							</div>
-							<div className="game__page-description">
-								{game.the_plot}
-							</div>
+							<div className="game__page-description">{game.the_plot}</div>
 						</main>
 
 						<div className="footer__button">
