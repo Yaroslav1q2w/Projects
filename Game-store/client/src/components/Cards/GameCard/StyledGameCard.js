@@ -28,7 +28,7 @@ export const ImageItem = styled.div`
 	}
 
 	&:hover img {
-		transform: scale(1.06);
+		transform: scale(1.08);
 		transition: all 0.5s ease;
 	}
 

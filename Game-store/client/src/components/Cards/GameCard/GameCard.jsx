@@ -33,20 +33,18 @@ const GameCard = ({ cardProps, isOpenModal, addToCard }) => {
 
 	return (
 		<Wrapper>
-			<ImageItem>
-				<img src={image} alt={title} width={320} height={180} />
-				<GameBack>
-					<GameBackWrapp>
-						<h2 className="game__back-title">{title}</h2>
-						<p className="game__back-desc">{description}</p>
-						<div className="game__back-link">
-							<Link to={`api/products/${_id}`} className="link">
-								перейти
-							</Link>
-						</div>
-					</GameBackWrapp>
-				</GameBack>
-			</ImageItem>
+			<Link to={`api/products/${_id}`}>
+				<ImageItem>
+					<img src={image} alt={title} width={320} height={180} />
+					<GameBack>
+						<GameBackWrapp>
+							<h2 className="game__back-title">{title}</h2>
+							<p className="game__back-desc">{description}</p>
+							<div className="game__back-link"></div>
+						</GameBackWrapp>
+					</GameBack>
+				</ImageItem>
+			</Link>
 			<Details>
 				<div className="game__title-wrapp">
 					<HeaderGame>
