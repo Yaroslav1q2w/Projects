@@ -14,7 +14,6 @@ export const actionFetchCards = createAsyncThunk(
 		const response = await sendRequest(
 			`${API_URL}/products?${category}&${limit}&${page}`
 		);
-		console.log(`${API_URL}/products?${category}&${limit}&${page}`);
 		return response;
 	}
 );

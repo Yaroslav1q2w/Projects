@@ -3,9 +3,10 @@ import { useSelector } from "react-redux";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { favouriteSelector } from "../../selectors";
 import { Container, TitleFavourite, FavoriteItems } from "./StyledFavourite";
+import { ICard } from "../../types/data";
 
-const Favourite = () => {
-	const cardsFavorite = useSelector(favouriteSelector);
+const Favourite: React.FC = () => {
+	const cardsFavorite: ICard[] = useSelector(favouriteSelector);
 
 	const renderCard = cardsFavorite.map((card) => (
 		<FavoriteCard key={card.article} cardProps={card} />

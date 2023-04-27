@@ -9,10 +9,19 @@ import {
 } from "./StyledModal";
 import "./Modal.scss";
 
-const Modal = ({ header, closeModal, text, onClick }) => {
+interface ModalProps {
+	header: string;
+	closeModal: () => void;
+	text: React.ReactNode;
+	onClick: () => void;
+}
+
+const Modal: React.FC<ModalProps> = ({ header, closeModal, text, onClick }) => {
 	return (
 		<Container onClick={closeModal}>
-			<MainWrapp onClick={(e) => e.stopPropagation()}>
+			<MainWrapp
+				onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+			>
 				<Header>
 					{header}
 					<span className="modal__icon-delete" onClick={closeModal}></span>
@@ -20,20 +29,15 @@ const Modal = ({ header, closeModal, text, onClick }) => {
 				<Content>{text}</Content>
 				<ModalButtons>
 					<Button
+						type="button"
 						className="button"
 						children="Ok"
-						backgroundColor="#3c3c64"
 						onClick={() => {
 							onClick();
 							closeModal();
 						}}
 					/>
-					<Button
-						className="button"
-						children="Cancel"
-						backgroundColor="#2b2b46"
-						onClick={closeModal}
-					/>
+					<Button className="button" children="Cancel" onClick={closeModal} />
 				</ModalButtons>
 			</MainWrapp>
 		</Container>

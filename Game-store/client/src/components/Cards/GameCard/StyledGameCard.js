@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
 	color: white;
 	width: 320px;
-	min-height: 300px;
+	min-height: 320px;
 	background-color: rgb(36, 37, 41);
 	border-radius: 0 0 15px 15px;
 	position: relative;
@@ -126,7 +126,7 @@ export const HeaderGame = styled.div`
 	align-items: baseline;
 
 	.title {
-		padding-top: 10px;
+		padding-top: 14px;
 		font-size: 19px;
 		font-weight: bold;
 		margin: 0;

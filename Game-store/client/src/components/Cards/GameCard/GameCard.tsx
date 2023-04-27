@@ -15,19 +15,36 @@ import {
 	Genre,
 	Description,
 } from "./StyledGameCard";
+import { ICard } from "../../../types/data";
 
-const GameCard = ({ cardProps, isOpenModal, addToCard }) => {
+export interface GameProps extends ICard {
+	cardProps: ICard;
+	isOpenModal: () => void;
+	addToCard: () => void;
+}
+
+const GameCard: React.FC<GameProps> = ({
+	cardProps,
+	isOpenModal,
+	addToCard,
+}) => {
 	const { title, article, price, image, description, genre, _id } = cardProps;
 
 	const favoritesLocalStorage = JSON.parse(
-		localStorage.getItem("favoriteCount")
+		localStorage.getItem("favoriteCount") ?? "[]"
 	);
 	const isFavorite = Boolean(
-		favoritesLocalStorage?.find((favorite) => favorite.article === article)
+		favoritesLocalStorage?.find(
+			(favorite: ICard) => favorite.article === article
+		)
 	);
 
-	const [addFavorites, setAddFavorites] = useState(!isFavorite ? false : true);
-	const [notFavorites, setNotFavorites] = useState(isFavorite ? false : true);
+	const [addFavorites, setAddFavorites] = useState<boolean>(
+		!isFavorite ? false : true
+	);
+	const [notFavorites, setNotFavorites] = useState<boolean>(
+		isFavorite ? false : true
+	);
 
 	const dispatch = useDispatch();
 

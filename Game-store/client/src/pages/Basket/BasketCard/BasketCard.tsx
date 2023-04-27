@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import { Wrapper, ItemDetails, Header, Description } from "./StyledBaasketCard";
 import { IoCloseSharp } from "react-icons/io5";
+import { ICard } from "../../../types/data";
 
-const BasketCard = ({ cardProps, isOpenModal, onclick }) => {
+interface BasketCardProps {
+	cardProps: ICard;
+	isOpenModal: () => void;
+	onСlick: () => void;
+}
+
+const BasketCard: React.FC<BasketCardProps> = ({
+	cardProps,
+	isOpenModal,
+	onСlick,
+}) => {
 	const { title, article, price, image, genre, _id } = cardProps;
 
 	return (
@@ -22,7 +33,7 @@ const BasketCard = ({ cardProps, isOpenModal, onclick }) => {
 							fontSize={36}
 							onClick={() => {
 								isOpenModal();
-								onclick();
+								onСlick();
 							}}
 						/>
 					</div>

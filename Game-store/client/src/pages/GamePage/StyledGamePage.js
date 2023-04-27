@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Box } from "@mui/material";
 
 export const Container = styled.section`
 	position: relative;
@@ -19,7 +20,7 @@ export const Container = styled.section`
 			z-index: 1;
 			height: 100%;
 			width: 100%;
-			background-color: rgba(#000, 0.9);
+			background-color: rgba(0, 0, 0, 0.8);
 		}
 	}
 `;
@@ -122,6 +123,7 @@ export const PageDescription = styled.div`
 	letter-spacing: 1.5px;
 	word-spacing: 1px;
 	text-align: center;
+	font-family: "Montserrat", sans-serif;
 `;
 
 export const FooterButton = styled.div`
@@ -150,4 +152,9 @@ export const FooterButton = styled.div`
 			background: #01722b;
 		}
 	}
+`;
+
+export const Loader = styled(Box)`
+	z-index: 10;
+	position: relative;
 `;

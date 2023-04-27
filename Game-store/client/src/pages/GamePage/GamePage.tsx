@@ -1,32 +1,37 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { isModalSelector } from "../../selectors";
 import { increaseBasket, modalClose, modalOpen } from "../../reducers";
-import { ReactComponent as RightArrow } from "./images/right-arrow.svg";
-import { Box, CircularProgress } from "@mui/material";
-import styled from "styled-components";
+import { CircularProgress } from "@mui/material";
 
-import "./GamePage.scss";
+import {
+	Container,
+	ContainerWrapp,
+	MainWrapp,
+	HeaderPoster,
+	HeaderContent,
+	PageDescription,
+	FooterButton,
+	Loader,
+} from "./StyledGamePage";
+
 import Button from "../../components/Button";
 import Modal from "../../components/Modal";
 import { sendRequest } from "../../helpers/sendRequest";
 import { API_URL } from "../../configs/API";
+import { ICard } from "../../types/data";
+import RightArrowSvg from "./images/RightArrowSvg";
 
-const Loader = styled(Box)`
-	z-index: 10;
-	position: relative;
-`;
-
-const GamePage = () => {
-	const [selectedProduct, setSelectedProduct] = useState([]);
-	const [game, setGame] = useState({});
-	const [loader, setLoader] = useState(true);
+const GamePage: React.FC = () => {
+	const [selectedProduct, setSelectedProduct] = useState<ICard | null>(null);
+	const [game, setGame] = useState<ICard | null>(null);
+	const [loader, setLoader] = useState<boolean>(true);
 
 	const navigate = useNavigate();
 	const goBack = () => navigate(-1);
 
-	const { card_id } = useParams();
+	const { card_id } = useParams<{ card_id: string }>();
 	const dispatch = useDispatch();
 	const modal = useSelector(isModalSelector);
 
@@ -53,48 +58,48 @@ const GamePage = () => {
 					<CircularProgress color="inherit" size={90} />
 				</Loader>
 			) : (
-				<section className="page__game">
+				<Container>
 					<div
 						className="page__game-img"
-						style={{ backgroundImage: `url(${game.image})` }}
+						style={{ backgroundImage: `url(${game?.image})` }}
 					/>
-					<div className="container__wrap">
-						<main className="main__wrap">
+					<ContainerWrapp>
+						<MainWrapp>
 							<div className="main__wrap-header">
-								<Link className="btn-back" onClick={goBack}>
-									<RightArrow />
+								<Link to="#" className="btn-back" onClick={goBack}>
+									<RightArrowSvg />
 								</Link>
-								<div className="header__poster">
-									<img src={game.image} alt={game.title} />
-								</div>
-								<div className="header__content">
-									<p className="game__page-title">{game.title}</p>
-									<p className="game__page-subname">{game.title}</p>
+								<HeaderPoster>
+									<img src={game?.image} alt={game?.title} />
+								</HeaderPoster>
+								<HeaderContent>
+									<p className="game__page-title">{game?.title}</p>
+									<p className="game__page-subname">{game?.title}</p>
 									<p className="game__page-info">
-										Жанр:<span className="colored">{game.genre}</span>
+										Жанр:<span className="colored">{game?.genre}</span>
 									</p>
 									<p className="game__page-info">
 										Дата выпуска:
-										<span className="colored">{game.data}</span>
+										<span className="colored">{game?.data}</span>
 									</p>
 									<p className="game__page-info">
 										Разработчик:
-										<span className="colored">{game.developer}</span>
+										<span className="colored">{game?.developer}</span>
 									</p>
 									<p className="game__page-info">
 										Платформы:
-										<span className="colored">{game.platforms}</span>
+										<span className="colored">{game?.platforms}</span>
 									</p>
 									<p className="game__page-info">
 										Языки интерфейса:
-										<span className="colored">{game.language}</span>
+										<span className="colored">{game?.language}</span>
 									</p>
-								</div>
+								</HeaderContent>
 							</div>
-							<div className="game__page-description">{game.the_plot}</div>
-						</main>
+							<PageDescription>{game?.the_plot}</PageDescription>
+						</MainWrapp>
 
-						<div className="footer__button">
+						<FooterButton>
 							<Button
 								children="Добавить в корзину"
 								className="footer__button-elem"
@@ -103,10 +108,10 @@ const GamePage = () => {
 									setSelectedProduct(game);
 								}}
 							/>
-						</div>
-					</div>
+						</FooterButton>
+					</ContainerWrapp>
 
-					{modal && (
+					{modal && selectedProduct && (
 						<Modal
 							data-testid="modal-add-basket"
 							header="Подтвердите добавление"
@@ -115,7 +120,7 @@ const GamePage = () => {
 							onClick={() => dispatch(increaseBasket(selectedProduct))}
 						/>
 					)}
-				</section>
+				</Container>
 			)}
 		</>
 	);

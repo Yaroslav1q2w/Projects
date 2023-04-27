@@ -8,8 +8,13 @@ import {
 	Header,
 	Description,
 } from "./StyledFavoriteCard";
+import { ICard } from "../../../types/data";
 
-const FavoriteCard = ({ cardProps }) => {
+interface FavoriteCardProps {
+	cardProps: ICard;
+}
+
+const FavoriteCard: React.FC<FavoriteCardProps> = ({ cardProps }) => {
 	const { title, article, price, image, genre, _id } = cardProps;
 
 	const dispatch = useDispatch();

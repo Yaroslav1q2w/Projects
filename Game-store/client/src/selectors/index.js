@@ -1,6 +1,10 @@
 import { basketSelector, selectedProduct } from "./basket.selector";
 import { favouriteSelector } from "./favourite.selector";
-import { cardsSelector, isLoadingSelector } from "./toDoCards.selector";
+import {
+	cardsSelector,
+	isLoadingSelector,
+	isTotalCount,
+} from "./toDoCards.selector";
 import {
 	isModalSelector,
 	isModalSubmitSelector,
@@ -24,4 +28,5 @@ export {
 	categorySelector,
 	pageCountSelector,
 	currentLimitSelector,
+	isTotalCount,
 };

@@ -26,7 +26,7 @@ const MenuCategory = () => {
 		"Стратегии",
 	];
 
-	const onChengeCategory = (index) => {
+	const onChengeCategory = (index: number) => {
 		dispatch(chengeCategory(index));
 		dispatch(setPageCount(1));
 	};

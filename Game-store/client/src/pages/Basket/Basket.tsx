@@ -21,29 +21,35 @@ import {
 	isModalSubmitSelector,
 } from "../../selectors";
 import { Container, Header, ButtonSubmit, BasketItems } from "./StyledBasket";
+import { ICard } from "../../types/data";
 
 const Basket = () => {
-	const [cardItem, setCardItem] = useState([]);
+	const [cardItem, setCardItem] = useState<ICard | null>(null);
 	const [totalPrice, setTotalPrice] = useState(0);
 
-	const modalFinishSubmit = useSelector(isModalSubmitSelector);
-	const cards = useSelector(basketSelector);
-	const modal = useSelector(isModalSelector);
-	const formPage = useSelector(isModalPageFormSelector);
+	const modalFinishSubmit: boolean = useSelector(isModalSubmitSelector);
+	const cards: ICard[] = useSelector(basketSelector);
+	const modal: boolean = useSelector(isModalSelector);
+	const formPage: boolean = useSelector(isModalPageFormSelector);
 
 	const dispatch = useDispatch();
 
-	const renderCard = cards.map((card) => (
+	const renderCard = cards.map((card: ICard) => (
 		<BasketCard
 			key={card.article}
 			cardProps={card}
 			isOpenModal={() => dispatch(modalOpen())}
-			onclick={() => setCardItem(card)}
+			onСlick={() => setCardItem(card)}
 		/>
 	));
 
 	useEffect(() => {
-		setTotalPrice(cards.reduce((accum, item) => accum + item.price, 0));
+		setTotalPrice(
+			cards.reduce(
+				(accum: number, item: { price: number }) => accum + item.price,
+				0
+			)
+		);
 	}, [cards]);
 
 	return (
@@ -58,7 +64,6 @@ const Basket = () => {
 					<ButtonSubmit>
 						<Button
 							children="Оформить заказ"
-							data-testid="button-order"
 							className="basket__button-elem"
 							onClick={() => dispatch(formOpen())}
 						/>
@@ -79,7 +84,7 @@ const Basket = () => {
 			{modal && (
 				<Modal
 					header="Подтвердите удаления"
-					text={`Вы уверенны что хотите удалить ${cardItem.title} с корзины?`}
+					text={`Вы уверенны что хотите удалить ${cardItem?.title} с корзины?`}
 					closeModal={() => dispatch(modalClose())}
 					onClick={() => dispatch(decreaseBasket(cardItem))}
 				/>

@@ -5,10 +5,24 @@ import {
 	ButtonContainer,
 } from "./StyledmodalSubmit";
 
-const ModalSubmit = ({ header, closeModal, text, onClick }) => {
+interface ModalSubmitProps {
+	header: string;
+	closeModal: () => void;
+	onClick: () => void;
+	text: string;
+}
+
+const ModalSubmit = ({
+	header,
+	closeModal,
+	text,
+	onClick,
+}: ModalSubmitProps) => {
 	return (
 		<ModalContainer>
-			<ModalWrapp onClick={(e) => e.stopPropagation()}>
+			<ModalWrapp
+				onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
+			>
 				<div className="modal__submit-content">
 					<strong>{header}</strong> <br /> <hr />
 					{text}
@@ -17,7 +31,6 @@ const ModalSubmit = ({ header, closeModal, text, onClick }) => {
 					<Button
 						className="button__submit_form"
 						children="Ok"
-						backgroundColor="#3c3c64"
 						onClick={() => {
 							onClick();
 							closeModal();
