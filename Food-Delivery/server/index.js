@@ -16,8 +16,8 @@ const PORT = process.env.PORT || 4444;
 const MONGO_URL =
 	"mongodb+srv://user:user@cluster0.y1d6xtb.mongodb.net/?retryWrites=true&w=majority";
 
-app.use("/api", apiProducts);
-app.use("/api", apiOrders);
+app.use(apiProducts);
+app.use(apiOrders);
 
 app.all("*", (request, response) => {
 	response.status(404).send("resource not found");

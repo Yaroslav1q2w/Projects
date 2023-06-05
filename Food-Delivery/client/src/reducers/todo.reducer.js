@@ -12,7 +12,7 @@ export const actionFetchCards = createAsyncThunk(
 	"todos/fetchCards",
 	async ({ category, limit, page }) => {
 		const response = await sendRequest(
-			`${API_URL}/api/products?${category}&${limit}&${page}`
+			`${API_URL}/products?${category}&${limit}&${page}`
 		);
 		return response;
 	}
