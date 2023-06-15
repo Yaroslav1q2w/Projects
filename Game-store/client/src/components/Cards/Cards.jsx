@@ -42,7 +42,7 @@ const Cards = () => {
 		dispatch(actionFetchCards({ category, limit, page }));
 
 		window.scrollTo(0, 0);
-	}, [categoryID, pageCount]);
+	}, [categoryID, pageCount, dispatch, limitCount]);
 
 	return (
 		<Container>
