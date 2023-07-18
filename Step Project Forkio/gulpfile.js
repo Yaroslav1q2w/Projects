@@ -24,7 +24,7 @@ gulp.task("scripts", () => {
 	return gulp
 		.src("./src/script/script.js")
 		.pipe(uglify())
-		.pipe(gulp.dest("dist/script/"))
+		.pipe(gulp.dest("dist/"))
 		.pipe(browserSync.stream());
 });
 
