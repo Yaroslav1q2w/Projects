@@ -10,15 +10,15 @@ const imagemin = require("gulp-imagemin");
 const fileInclude = require("gulp-file-include"); // Подключение html секций
 const prettyHtml = require("gulp-pretty-html"); // Пакет позволяет сделать html красивым
 
-gulp.task("server", () => {
-	return browserSync.init({
-		server: {
-			baseDir: ["dist"], //Если запускать локально то расдкоментировать  код
-		},
-		port: 9000,
-		open: false,
-	});
-});
+// gulp.task("server", () => {
+// 	return browserSync.init({
+// 		server: {
+// 			baseDir: ["dist"], //Если запускать локально то расдкоментировать  код
+// 		},
+// 		port: 9000,
+// 		open: false,
+// 	});
+// });
 
 gulp.task("scripts", () => {
 	return gulp
