@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PagesWrap = styled.div`
-	margin-left: 40px;
 	margin-bottom: 60px;
 `;
 

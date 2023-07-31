@@ -73,8 +73,8 @@ const GamePage: React.FC = () => {
 									<img src={game?.image} alt={game?.title} />
 								</HeaderPoster>
 								<HeaderContent>
-									<p className="game__page-title">{game?.title}</p>
-									<p className="game__page-subname">{game?.title}</p>
+									<h3 className="game__page-title">{game?.title}</h3>
+									<h4 className="game__page-subname">{game?.title}</h4>
 									<p className="game__page-info">
 										Жанр:<span className="colored">{game?.genre}</span>
 									</p>

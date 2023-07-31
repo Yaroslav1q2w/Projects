@@ -19,6 +19,7 @@ export const HeaderWrapp = styled.header`
 			padding-bottom: 3px;
 			text-shadow: 2px 2px 1px #995400;
 			color: #ffd700;
+			margin: 0;
 		}
 
 		&-text {

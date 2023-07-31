@@ -8,36 +8,7 @@ export const CategoryWrap = styled.div`
 export const CategoryList = styled.ul`
 	display: flex;
 	list-style: none;
-	font-family: Consolas;
-`;
-
-export const LineItemTop = styled.span`
-	top: 0;
-	left: -180px;
-	width: 100%;
-	height: 1px;
-	background: linear-gradient(90deg, transparent, #2196f3);
-`;
-export const LineItemRight = styled.span`
-	top: -100%;
-	right: 0;
-	width: 1px;
-	height: 100%;
-	background: linear-gradient(180deg, transparent, #2196f3);
-`;
-export const LineItemBottom = styled.span`
-	bottom: 0;
-	right: -180px;
-	width: 100%;
-	height: 1px;
-	background: linear-gradient(270deg, transparent, #2196f3);
-`;
-export const LineItemLeft = styled.span`
-	bottom: -100%;
-	left: 0;
-	width: 1px;
-	height: 100%;
-	background: linear-gradient(0deg, transparent, #2196f3);
+	padding: 0;
 `;
 
 export const CategoryListItem = styled.li`

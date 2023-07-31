@@ -29,7 +29,7 @@ export const ContainerWrapp = styled.h2`
 	position: absolute;
 	z-index: 1;
 	width: 100%;
-	padding: 30px;
+	padding: 0 30px;
 	box-sizing: border-box;
 `;
 
