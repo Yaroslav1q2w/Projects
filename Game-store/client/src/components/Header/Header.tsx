@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { basketSelector, favouriteSelector } from "../../selectors";
-import { chengeCategory } from "../../reducers";
+import { chengeCategory, setPageCount } from "../../reducers";
 import {
 	HeaderContainer,
 	HeaderWrapp,
@@ -23,10 +23,15 @@ const Header = () => {
 		localStorage.setItem("FavouriteCount", JSON.stringify(favoriteCount));
 	}, [basketCount, favoriteCount]);
 
+	const LogoOnclick = () => {
+		dispatch(chengeCategory(0));
+		dispatch(setPageCount(1));
+	};
+
 	return (
 		<HeaderContainer>
 			<HeaderWrapp>
-				<Link to="/" onClick={() => dispatch(chengeCategory(0))}>
+				<Link to="/" onClick={LogoOnclick}>
 					<div className="header__logo">
 						<h3 className="logo">Game Store</h3>
 						<p className="header__logo-text">магазин компьютерных игр</p>
