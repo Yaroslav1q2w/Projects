@@ -7,8 +7,15 @@ export const Container = styled.section`
 `;
 
 export const SectionGames = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 0 26px;
+	gap: 20px 40px;
 	margin-bottom: 20px;
+
+	@media screen and (max-width: 700px) {
+		gap: 10px 20px;
+		padding: 0 10px;
+	}
 `;

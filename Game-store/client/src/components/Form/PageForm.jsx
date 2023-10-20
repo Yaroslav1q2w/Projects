@@ -5,8 +5,7 @@ import { validationSchema } from "./validation";
 import { useDispatch, useSelector } from "react-redux";
 import { formClose } from "../../reducers";
 import Button from "../Button";
-import { ContainerForm, Header } from "./StyledPageForm";
-import { IoCloseSharp } from "react-icons/io5";
+import { ContainerForm, Header, CloseItemForm } from "./StyledPageForm";
 import { basketSelector } from "../../selectors";
 
 const PageForm = () => {
@@ -48,8 +47,7 @@ const PageForm = () => {
 						<Header>
 							<h3 className="header__title">Заполните свои данные</h3>
 							<div className="close__form">
-								<IoCloseSharp
-									fontSize={36}
+								<CloseItemForm
 									onClick={() => {
 										dispatch(formClose());
 									}}
@@ -86,11 +84,13 @@ const PageForm = () => {
 							error={errors.phone && touched.phone}
 							type="tel"
 						/>
-						<Button
-							type="submit"
-							children="Отправить"
-							className="form__button"
-						/>
+						<div className="btn__form">
+							<Button
+								type="submit"
+								children="Отправить"
+								className="form__button"
+							/>
+						</div>
 					</Form>
 				)}
 			</Formik>

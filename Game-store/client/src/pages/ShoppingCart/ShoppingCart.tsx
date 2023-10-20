@@ -25,6 +25,7 @@ import {
 	Header,
 	ButtonSubmit,
 	BasketItems,
+	HeaderInfo,
 } from "./StyledShoppingCart";
 import { ICard } from "../../types/data";
 
@@ -61,20 +62,23 @@ const ShoppingCart = () => {
 	return (
 		<Container>
 			<Header>
-				<div className="total__price">
-					<span>Общая сумма: {totalPrice} грн.</span>
-				</div>
-				<p>Корзина</p>
+				<h1>Корзина</h1>
 
-				{cards.length > 0 ? (
-					<ButtonSubmit>
-						<Button
-							children="Оформить заказ"
-							className="basket__button-elem"
-							onClick={() => dispatch(formOpen())}
-						/>
-					</ButtonSubmit>
-				) : null}
+				<HeaderInfo>
+					<div className="total__price">
+						<span>Общая сумма: {totalPrice} грн.</span>
+					</div>
+
+					{cards.length > 0 ? (
+						<ButtonSubmit>
+							<Button
+								children="Оформить заказ"
+								className="basket__button-elem"
+								onClick={() => dispatch(formOpen())}
+							/>
+						</ButtonSubmit>
+					) : null}
+				</HeaderInfo>
 			</Header>
 
 			<BasketItems>

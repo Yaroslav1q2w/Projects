@@ -9,9 +9,9 @@ import {
 	IconIncrease,
 	IconDecrease,
 	CounterWrap,
+	CloseItem,
 } from "./StyledBaasketCard";
 import { useDispatch } from "react-redux";
-import { IoCloseSharp } from "react-icons/io5";
 import { ICard } from "../../../types/data";
 import { addCount, removeBasket } from "../../../reducers";
 
@@ -60,8 +60,7 @@ const CartItem: React.FC<BasketCardProps> = ({
 						/>
 					</CounterWrap>
 					<div className="item__remove">
-						<IoCloseSharp
-							fontSize={36}
+						<CloseItem
 							onClick={() => {
 								isOpenModal();
 								onСlick();

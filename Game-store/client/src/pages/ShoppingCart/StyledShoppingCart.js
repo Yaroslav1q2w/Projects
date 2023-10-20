@@ -1,15 +1,38 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-	text-align: center;
 	position: relative;
-	max-width: 1100px;
+	max-width: 1180px;
 	margin: 0 auto;
+	padding: 0 20px;
+
+	@media screen and (max-width: 700px) {
+		padding: 0 10px;
+	}
 `;
 
 export const Header = styled.header`
+	h1 {
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 6px;
+
+		@media screen and (max-width: 700px) {
+			font-size: 22px;
+		}
+	}
+`;
+
+export const HeaderInfo = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 10px 10px 0;
+
 	.total__price {
-		position: absolute;
+		display: inline-block;
 		top: 50px;
 		left: 20px;
 		letter-spacing: 1px;
@@ -18,16 +41,26 @@ export const Header = styled.header`
 		border: 1px solid #cd853f;
 		padding: 10px 20px;
 		border-radius: 20px;
+
+		@media screen and (max-width: 700px) {
+			top: 50px;
+			left: 20px;
+			letter-spacing: 1px;
+			word-spacing: 1px;
+			font-size: 12px;
+			border: 1px solid #cd853f;
+			padding: 10px 20px;
+			border-radius: 20px;
+		}
 	}
 
-	p {
-		font-size: 30px;
-		font-weight: bold;
+	@media screen and (max-width: 420px) {
+		flex-direction: column;
+		gap: 20px;
 	}
 `;
 
 export const ButtonSubmit = styled.div`
-	position: absolute;
 	right: 20px;
 	top: 44px;
 
@@ -48,15 +81,24 @@ export const ButtonSubmit = styled.div`
 		&:hover {
 			background: #623a00;
 		}
+
+		@media screen and (max-width: 700px) {
+			font-size: 10px;
+		}
 	}
 `;
 
 export const BasketItems = styled.main`
-	padding-top: 100px;
-	display: grid;
+	padding: 80px 12px 0;
 
 	.empty-basket {
 		font-size: 30px;
 		font-weight: bold;
+		display: flex;
+		justify-content: center;
+	}
+
+	@media screen and (max-width: 700px) {
+		padding-top: 30px;
 	}
 `;

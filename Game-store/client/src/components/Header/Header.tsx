@@ -1,7 +1,4 @@
 import { useEffect } from "react";
-import Basket from "./Basket";
-import FavoriteCards from "./FavoritCards";
-import HomePage from "./HomePage";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { basketSelector, favouriteSelector } from "../../selectors";
@@ -10,6 +7,9 @@ import {
 	HeaderContainer,
 	HeaderWrapp,
 	HeaderDescription,
+	HomeIcon,
+	FavouriteIcon,
+	ShoppingCartIcon,
 } from "./StyledHeader";
 
 const Header = () => {
@@ -19,8 +19,8 @@ const Header = () => {
 	const favoriteCount = useSelector(favouriteSelector);
 
 	useEffect(() => {
-		localStorage.setItem("basketCount", JSON.stringify(basketCount));
-		localStorage.setItem("favoriteCount", JSON.stringify(favoriteCount));
+		localStorage.setItem("ShoppingCardCount", JSON.stringify(basketCount));
+		localStorage.setItem("FavouriteCount", JSON.stringify(favoriteCount));
 	}, [basketCount, favoriteCount]);
 
 	return (
@@ -34,14 +34,14 @@ const Header = () => {
 				</Link>
 				<HeaderDescription>
 					<Link to="/" data-testid="home-link" className="header__homepage">
-						<HomePage />
+						<HomeIcon />
 					</Link>
 					<Link
 						to="api/favorite"
 						data-testid="favorite-link"
 						className="header__favorite"
 					>
-						<FavoriteCards />
+						<FavouriteIcon />
 						<span className="header__cart-number">{favoriteCount.length}</span>
 					</Link>
 					<Link
@@ -49,7 +49,7 @@ const Header = () => {
 						data-testid="basket-link"
 						className="header__basket"
 					>
-						<Basket />
+						<ShoppingCartIcon />
 						<span className="header__cart-number">{basketCount.length}</span>
 					</Link>
 				</HeaderDescription>

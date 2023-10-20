@@ -6,6 +6,7 @@ import {
 	Header,
 	Content,
 	ModalButtons,
+	CloseIconWrap,
 } from "./StyledModal";
 import "./Modal.scss";
 
@@ -24,7 +25,9 @@ const Modal: React.FC<ModalProps> = ({ header, closeModal, text, onClick }) => {
 			>
 				<Header>
 					{header}
-					<span className="modal__icon-delete" onClick={closeModal}></span>
+					<CloseIconWrap onClick={closeModal}>
+						<span className="modal__icon-delete"></span>
+					</CloseIconWrap>
 				</Header>
 				<Content>{text}</Content>
 				<ModalButtons>

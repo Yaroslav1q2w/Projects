@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 	color: white;
-	width: 320px;
+	max-width: 320px;
 	min-height: 320px;
 	background-color: rgb(36, 37, 41);
 	border-radius: 0 0 15px 15px;
@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	width: 100%;
 `;
 
 export const ImageItem = styled.div`
@@ -20,11 +21,13 @@ export const ImageItem = styled.div`
 	position: relative;
 	transition: all 0.5s ease;
 	overflow: hidden;
-	width: 320px;
+	max-width: 320px;
 	height: 180px;
 
 	img {
 		transition: all 0.5s ease;
+		width: 100%;
+		max-height: 180px;
 	}
 
 	&:hover img {
@@ -52,7 +55,7 @@ export const ImageItem = styled.div`
 
 export const GameBack = styled.div`
 	position: absolute;
-	width: 320px;
+	max-width: 320px;
 	height: 180px;
 	top: 0;
 	text-align: center;
@@ -117,6 +120,14 @@ export const Details = styled.div`
 	.game__title-wrapp {
 		margin-bottom: 10px;
 		height: 90px;
+
+		@media screen and (max-width: 500px) {
+			height: 70px;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		padding: 0 30px 10px 20px;
 	}
 `;
 
@@ -136,6 +147,10 @@ export const HeaderGame = styled.div`
 			color: #949494;
 			transition: 0.3s;
 		}
+
+		@media screen and (max-width: 500px) {
+			font-size: 16px;
+		}
 	}
 
 	.star-icon {
@@ -152,6 +167,10 @@ export const Article = styled.span`
 	font-size: 12px;
 	font-weight: 200;
 	color: #7a7a7a;
+
+	@media screen and (max-width: 500px) {
+		font-size: 10px;
+	}
 `;
 
 export const Genre = styled.span`
@@ -163,6 +182,10 @@ export const Genre = styled.span`
 	border-radius: 20px;
 	letter-spacing: 1.5px;
 	color: #c9c8c8;
+
+	@media screen and (max-width: 500px) {
+		font-size: 11px;
+	}
 `;
 
 export const Description = styled.div`
@@ -170,11 +193,14 @@ export const Description = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 10px;
-	font-size: 14px;
 	position: relative;
 
 	.game__item-price {
 		font-size: 16px;
+
+		@media screen and (max-width: 500px) {
+			font-size: 14px;
+		}
 	}
 
 	.button {
@@ -184,6 +210,7 @@ export const Description = styled.div`
 		height: 35px;
 		color: #fafafa;
 		background: #8b4513;
+		box-shadow: 0px 0px 8px #8b4513;
 		border: 0;
 		border-radius: 10px;
 		outline: none;

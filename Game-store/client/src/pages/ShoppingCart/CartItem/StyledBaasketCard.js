@@ -4,6 +4,8 @@ import {
 	IoIosRemoveCircleOutline,
 } from "react-icons/io";
 
+import { IoCloseSharp } from "react-icons/io5";
+
 export const Wrapper = styled.div`
 	color: white;
 	width: 100%;
@@ -15,8 +17,14 @@ export const Wrapper = styled.div`
 	border-bottom: 1px solid #343434;
 
 	img {
-		min-width: 320px;
-		height: 180px;
+		max-width: 320px;
+		height: auto;
+		height: 100%;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 700px) {
+		flex-direction: column;
 	}
 `;
 
@@ -24,9 +32,17 @@ export const ItemDetails = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 10px 34px;
+	padding: 10px 34px 0px;
 	position: relative;
 	width: 100%;
+
+	@media screen and (max-width: 700px) {
+		padding: 6px 14px 0px;
+	}
+
+	@media screen and (max-width: 500px) {
+		padding: 6px 0px 0px;
+	}
 `;
 
 export const HeaderWrapp = styled.div`
@@ -51,6 +67,10 @@ export const Header = styled.div`
 			color: #777777;
 			transition: 0.3s;
 		}
+
+		@media screen and (max-width: 700px) {
+			font-size: 16px;
+		}
 	}
 
 	.basket__item-article {
@@ -64,6 +84,14 @@ export const Header = styled.div`
 
 export const PriceItem = styled.p`
 	font-size: 20px;
+
+	@media screen and (max-width: 700px) {
+		font-size: 16px;
+	}
+
+	@media screen and (max-width: 360px) {
+		font-size: 12px;
+	}
 `;
 
 export const Description = styled.div`
@@ -71,7 +99,6 @@ export const Description = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 10px;
-	font-size: 14px;
 	position: relative;
 
 	.item__remove {
@@ -88,17 +115,23 @@ export const Description = styled.div`
 		letter-spacing: 1.5px;
 		color: #cd853f;
 		box-shadow: 0 0 10px #ffd700;
+
+		@media screen and (max-width: 700px) {
+			font-size: 11px;
+		}
 	}
 `;
 
 export const CounterWrap = styled.div`
 	display: flex;
 	align-items: center;
-	position: absolute;
-	left: 360px;
 
 	.count {
 		font-size: 16px;
+
+		@media screen and (max-width: 360px) {
+			font-size: 12px;
+		}
 	}
 `;
 
@@ -106,10 +139,26 @@ export const IconIncrease = styled(IoIosAddCircleOutline)`
 	color: #cd853f;
 	cursor: pointer;
 	margin: 12px;
+
+	@media screen and (max-width: 360px) {
+		font-size: 24px;
+	}
 `;
 
 export const IconDecrease = styled(IoIosRemoveCircleOutline)`
 	color: #cd853f;
 	cursor: pointer;
 	margin: 12px;
+
+	@media screen and (max-width: 360px) {
+		font-size: 24px;
+	}
+`;
+
+export const CloseItem = styled(IoCloseSharp)`
+	font-size: 36px;
+
+	@media screen and (max-width: 360px) {
+		font-size: 26px;
+	}
 `;

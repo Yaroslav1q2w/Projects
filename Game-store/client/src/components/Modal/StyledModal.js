@@ -29,11 +29,13 @@ export const MainWrapp = styled.div`
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
 	background-color: #5b5b5b;
-	width: 400px;
+	max-width: 400px;
+	width: 100%;
 	border-radius: 5px;
 	transform: scale(1);
 	transition: 0.5s;
 	box-shadow: 0 0 8px #5b5b5b;
+	margin: 12px;
 `;
 
 export const Header = styled.header`
@@ -45,15 +47,27 @@ export const Header = styled.header`
 	position: relative;
 	letter-spacing: 1px;
 	word-spacing: 1px;
+	position: relative;
+
+	@media screen and (max-width: 400px) {
+		font-size: 14px;
+		padding: 12px 20px;
+	}
+`;
+
+export const CloseIconWrap = styled.div`
+	position: absolute;
+	right: 13px;
+	top: 12px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+
+	@media screen and (max-width: 400px) {
+		top: 7px;
+	}
 
 	.modal__icon-delete {
-		position: absolute;
-		right: 11px;
-		top: 12px;
-		width: 32px;
-		height: 32px;
-		cursor: pointer;
-
 		&:hover {
 			opacity: 1;
 		}
@@ -81,6 +95,11 @@ export const Content = styled.div`
 	line-height: 1.3;
 	padding: 26px;
 	letter-spacing: 1px;
+
+	@media screen and (max-width: 400px) {
+		font-size: 12px;
+		padding: 20px;
+	}
 `;
 
 export const ModalButtons = styled.div`
@@ -88,6 +107,10 @@ export const ModalButtons = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 20px;
+
+	@media screen and (max-width: 400px) {
+		padding-bottom: 10px;
+	}
 
 	.button {
 		font-family: "Montserrat", sans-serif;
@@ -103,6 +126,12 @@ export const ModalButtons = styled.div`
 		cursor: pointer;
 		transition: 0.5s;
 		letter-spacing: 0.8px;
+
+		@media screen and (max-width: 400px) {
+			width: 100px;
+			height: 26px;
+			font-size: 12px;
+		}
 
 		&:hover {
 			background: #323275;

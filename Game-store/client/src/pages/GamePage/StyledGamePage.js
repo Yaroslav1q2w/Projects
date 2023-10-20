@@ -21,16 +21,24 @@ export const Container = styled.section`
 			height: 100%;
 			width: 100%;
 			background-color: rgba(0, 0, 0, 0.8);
+
+			@media screen and (max-width: 900px) {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
 		}
 	}
 `;
 
-export const ContainerWrapp = styled.h2`
+export const ContainerWrapp = styled.div`
 	position: absolute;
 	z-index: 1;
 	width: 100%;
 	padding: 0 30px;
 	box-sizing: border-box;
+
+	@media screen and (max-width: 700px) {
+		padding: 0 10px;
+	}
 `;
 
 export const MainWrapp = styled.div`
@@ -68,16 +76,24 @@ export const MainWrapp = styled.div`
 			transition: transform 0.8s;
 		}
 	}
+
+	@media screen and (max-width: 900px) {
+		padding-top: 40px;
+	}
 `;
 
 export const HeaderPoster = styled.div`
 	padding-right: 30px;
-
-	width: 580px;
+	width: 100%;
+	max-width: 580px;
 	flex-shrink: 0;
 
 	img {
 		width: 100%;
+	}
+
+	@media screen and (max-width: 900px) {
+		display: none;
 	}
 `;
 
@@ -86,12 +102,20 @@ export const HeaderContent = styled.div`
 	color: #fff;
 	width: 100%;
 
+	@media screen and (max-width: 600px) {
+		padding: 4px;
+	}
+
 	.game__page-title {
 		padding: 0;
 		font-size: 38px;
 		font-weight: 700;
 		text-align: center;
 		text-shadow: 0px 3px 2px #5b5b5d;
+
+		@media screen and (max-width: 500px) {
+			font-size: 24px;
+		}
 	}
 
 	.game__page-subname {
@@ -100,6 +124,10 @@ export const HeaderContent = styled.div`
 		text-align: center;
 		margin-bottom: 35px;
 		line-height: 1;
+
+		@media screen and (max-width: 500px) {
+			font-size: 18px;
+		}
 	}
 
 	.game__page-info {
@@ -107,37 +135,53 @@ export const HeaderContent = styled.div`
 		margin-top: 14px;
 		font-size: 19px;
 		font-weight: 700;
-		line-height: 1.1;
+		line-height: 1.3;
 		letter-spacing: 1px;
 		word-spacing: 1px;
+		color: rgb(255, 215, 0);
+
+		@media screen and (max-width: 500px) {
+			font-size: 15px;
+		}
 	}
 
 	.colored {
 		font-size: 17px;
 		font-weight: 400;
 		padding-left: 10px;
+		color: #fff;
+
+		@media screen and (max-width: 500px) {
+			font-size: 13px;
+		}
 	}
 `;
 
 export const PageDescription = styled.div`
 	font-size: 17px;
 	padding-top: 10px;
-	width: 800px;
-	margin: 50px auto;
+	max-width: 800px;
+	margin: 50px auto 120px;
 	line-height: 1.7;
 	letter-spacing: 1.5px;
 	word-spacing: 1px;
 	text-align: center;
 	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+
+	@media screen and (max-width: 500px) {
+		font-size: 13px;
+		margin: 20px 0 100px;
+	}
 `;
 
 export const FooterButton = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: -20px;
-	margin-bottom: 50px;
-	padding-left: 450px;
+	right: 400px;
+	bottom: 60px;
+	position: absolute;
 
 	.footer__button-elem {
 		font-family: "Montserrat", sans-serif;
@@ -145,6 +189,7 @@ export const FooterButton = styled.div`
 		color: #fafafa;
 		padding: 12px 14px;
 		background: #00481e;
+		box-shadow: 0px 0px 14px #00481e;
 		border: 0;
 		border-radius: 30px;
 		outline: none;
@@ -155,7 +200,20 @@ export const FooterButton = styled.div`
 
 		&:hover {
 			background: #01722b;
+			box-shadow: 0px 0px 14px #01722b;
 		}
+
+		@media screen and (max-width: 500px) {
+			font-size: 12px;
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		right: 100px;
+	}
+
+	@media screen and (max-width: 500px) {
+		right: 40px;
 	}
 `;
 

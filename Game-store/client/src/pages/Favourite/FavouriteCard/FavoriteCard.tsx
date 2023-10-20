@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
 import { decreaseFavorite } from "../../../reducers";
 import { Link } from "react-router-dom";
-import { AiFillStar } from "react-icons/ai";
 import {
 	Wrapper,
 	ItemDetails,
 	Header,
 	Description,
+	StarIcon,
 } from "./StyledFavoriteCard";
 import { ICard } from "../../../types/data";
 
@@ -21,7 +21,8 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({ cardProps }) => {
 
 	return (
 		<Wrapper>
-			<img src={image} alt={title} width={280} height={160} />
+			<img src={image} alt={title} />
+
 			<ItemDetails>
 				<Header>
 					<Link to={`/api/products/${_id}`}>
@@ -33,10 +34,7 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({ cardProps }) => {
 				<Description>
 					<p className="favorite__item-price">{price} грн.</p>
 					<div className="close-card">
-						<AiFillStar
-							fontSize={30}
-							onClick={() => dispatch(decreaseFavorite(cardProps))}
-						/>
+						<StarIcon onClick={() => dispatch(decreaseFavorite(cardProps))} />
 					</div>
 				</Description>
 			</ItemDetails>

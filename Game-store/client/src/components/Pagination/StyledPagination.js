@@ -8,6 +8,10 @@ export const PagesList = styled.ul`
 	display: flex;
 	list-style: none;
 	font-family: Consolas;
+
+	@media screen and (max-width: 500px) {
+		padding-left: 20px;
+	}
 `;
 
 export const PagesListItem = styled.li`
@@ -39,5 +43,10 @@ export const PagesListItem = styled.li`
 	span {
 		position: absolute;
 		display: block;
+	}
+
+	@media screen and (max-width: 500px) {
+		font-size: 16px;
+		padding: 8px 14px;
 	}
 `;

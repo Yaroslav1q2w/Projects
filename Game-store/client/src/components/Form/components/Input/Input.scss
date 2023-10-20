@@ -1,22 +1,29 @@
 .form-item {
 	&.has-validation {
 		margin-bottom: 20px;
-		
+
 		.form-control {
 			color: #dad9d9;
 			padding: 10px;
-			border: 0.5px solid rgba(255,255,255,0.3);
-			background: linear-gradient(180deg, rgba(100,106,150,0.4) 0%,rgba(182,186,214,0.25)100%);
-			box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+			border: 0.5px solid rgba(255, 255, 255, 0.3);
+			background: linear-gradient(
+				180deg,
+				rgba(100, 106, 150, 0.4) 0%,
+				rgba(182, 186, 214, 0.25) 100%
+			);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 			border-radius: 30px;
 			outline: none;
-			width: 290px;
-			
+			width: 270px;
 
 			&:hover,
-			&:focus{
+			&:focus {
 				border-color: #1e9834;
 				box-shadow: 0 0 0 0.25rem rgba(0, 236, 10, 0.25);
+			}
+
+			@media screen and (max-width: 400px) {
+				width: 220px;
 			}
 		}
 

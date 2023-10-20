@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IoCloseSharp } from "react-icons/io5";
 
 export const ContainerForm = styled.div`
 	background: rgba(50, 61, 109, 0.5);
@@ -7,7 +8,6 @@ export const ContainerForm = styled.div`
 	backdrop-filter: blur(5px);
 	border-radius: 20px;
 	padding: 20px;
-	width: 360px;
 	position: absolute;
 	top: 40px;
 	right: 25px;
@@ -22,6 +22,11 @@ export const ContainerForm = styled.div`
 		100% {
 			transform: translateY(0);
 		}
+	}
+
+	.btn__form {
+		display: flex;
+		justify-content: center;
 	}
 
 	.form__button {
@@ -48,6 +53,10 @@ export const ContainerForm = styled.div`
 			box-shadow: 0 0 5px #717171;
 		}
 	}
+
+	@media screen and (max-width: 400px) {
+		right: 18px;
+	}
 `;
 
 export const Header = styled.header`
@@ -61,9 +70,21 @@ export const Header = styled.header`
 		line-height: 1;
 		margin: 0;
 		padding-left: 20px;
+
+		@media screen and (max-width: 400px) {
+			font-size: 14px;
+		}
 	}
 
 	.close__form {
 		cursor: pointer;
+	}
+`;
+
+export const CloseItemForm = styled(IoCloseSharp)`
+	font-size: 36px;
+
+	@media screen and (max-width: 400px) {
+		font-size: 26px;
 	}
 `;

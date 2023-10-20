@@ -15,15 +15,14 @@ const Favourite: React.FC = () => {
 	return (
 		<Container>
 			<TitleFavourite>Избранное</TitleFavourite>
-			<FavoriteItems>
-				{cardsFavorite.length < 1 ? (
-					<div className="empty-favorite">
-						<FaStarHalfAlt fontSize={130} />
-					</div>
-				) : null}
 
-				{renderCard}
-			</FavoriteItems>
+			{cardsFavorite.length < 1 ? (
+				<div className="empty-favorite">
+					<FaStarHalfAlt fontSize={130} />
+				</div>
+			) : null}
+
+			<FavoriteItems>{renderCard}</FavoriteItems>
 		</Container>
 	);
 };

@@ -5,11 +5,23 @@ export const Container = styled.section`
 	max-width: 1100px;
 	margin: 0 auto;
 	padding-bottom: 50px;
+	padding: 0 14px;
+
+	.empty-favorite {
+		display: flex;
+		justify-content: center;
+		padding-top: 100px;
+	}
 `;
 
 export const TitleFavourite = styled.h2`
 	font-size: 30px;
 	font-weight: bold;
+	padding-top: 6px;
+
+	@media screen and (max-width: 600px) {
+		font-size: 22px;
+	}
 `;
 
 export const FavoriteItems = styled.div`
@@ -20,9 +32,9 @@ export const FavoriteItems = styled.div`
 	gap: 20px;
 	position: relative;
 
-	.empty-favorite {
-		position: absolute;
-		top: 100px;
-		left: 480px;
+	@media screen and (max-width: 1000px) {
+		grid-template-columns: 1fr;
+		padding-top: 30px;
+		gap: 10px;
 	}
 `;
