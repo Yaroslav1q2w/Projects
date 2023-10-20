@@ -16,6 +16,6 @@ export const SectionGames = styled.div`
 
 	@media screen and (max-width: 700px) {
 		gap: 10px 20px;
-		padding: 0 10px;
+		padding: 30px 10px;
 	}
 `;
