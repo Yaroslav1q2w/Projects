@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,9 +17,11 @@ export const ModalWrapp = styled.div`
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
 	background-color: #5d3131;
-	width: 400px;
+	max-width: 400px;
 	border-radius: 20px;
 	z-index: 1;
+	text-align: center;
+	margin: 0 10px;
 
 	.modal__submit-content {
 		color: #ffffff;
