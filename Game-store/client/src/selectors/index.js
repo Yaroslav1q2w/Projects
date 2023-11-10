@@ -17,6 +17,11 @@ import {
 	pageCountSelector,
 	currentLimitSelector,
 } from "./filter.selector";
+import {
+	registrationSelector,
+	errorDataRegister,
+} from "./registration.selector";
+import { authSelector, errorDataAuth } from "./auth.selector";
 
 export {
 	orderSelector,
@@ -32,4 +37,8 @@ export {
 	pageCountSelector,
 	currentLimitSelector,
 	isTotalCount,
+	registrationSelector,
+	errorDataRegister,
+	authSelector,
+	errorDataAuth,
 };

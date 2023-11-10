@@ -9,6 +9,7 @@ export const CategoryList = styled.ul`
 	display: flex;
 	list-style: none;
 	padding: 0;
+	font-family: "Alegreya Sans SC", sans-serif;
 `;
 
 export const CategoryListItem = styled.li`
@@ -16,7 +17,7 @@ export const CategoryListItem = styled.li`
 	color: #fff5cc;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-size: 13px;
+	font-size: 14px;
 	letter-spacing: 1.5px;
 	overflow: hidden;
 	padding: 12px;

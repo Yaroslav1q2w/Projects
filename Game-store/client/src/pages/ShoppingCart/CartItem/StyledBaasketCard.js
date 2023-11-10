@@ -76,9 +76,10 @@ export const Header = styled.div`
 	.basket__item-article {
 		display: inline-block;
 		padding-top: 8px;
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 200;
 		color: #7a7a7a;
+		font-family: "Alegreya Sans SC", sans-serif;
 	}
 `;
 
@@ -107,7 +108,7 @@ export const Description = styled.div`
 
 	.item-developer {
 		background-color: rgb(47, 47, 51);
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: 600;
 		display: inline-block;
 		padding: 5px 20px;
@@ -115,6 +116,7 @@ export const Description = styled.div`
 		letter-spacing: 1.5px;
 		color: #cd853f;
 		box-shadow: 0 0 10px #ffd700;
+		font-family: "Alegreya Sans SC", sans-serif;
 
 		@media screen and (max-width: 700px) {
 			font-size: 11px;

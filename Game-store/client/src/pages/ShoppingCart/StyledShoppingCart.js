@@ -13,10 +13,11 @@ export const Container = styled.section`
 
 export const Header = styled.header`
 	h1 {
-		font-size: 30px;
+		font-size: 32px;
 		font-weight: bold;
 		text-align: center;
 		padding-top: 6px;
+		font-family: "Alegreya Sans SC", sans-serif;
 
 		@media screen and (max-width: 700px) {
 			font-size: 22px;
@@ -37,10 +38,11 @@ export const HeaderInfo = styled.div`
 		left: 20px;
 		letter-spacing: 1px;
 		word-spacing: 1px;
-		font-size: 18px;
+		font-size: 20px;
 		border: 1px solid #cd853f;
 		padding: 10px 20px;
 		border-radius: 20px;
+		font-family: "Alegreya Sans SC", sans-serif;
 
 		@media screen and (max-width: 700px) {
 			top: 50px;
@@ -77,6 +79,7 @@ export const ButtonSubmit = styled.div`
 		cursor: pointer;
 		transition: 0.5s;
 		letter-spacing: 0.8px;
+		font-family: "Alegreya Sans SC", sans-serif;
 
 		&:hover {
 			background: #623a00;

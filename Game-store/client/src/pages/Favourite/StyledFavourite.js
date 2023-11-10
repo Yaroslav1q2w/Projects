@@ -15,9 +15,10 @@ export const Container = styled.section`
 `;
 
 export const TitleFavourite = styled.h2`
-	font-size: 30px;
+	font-size: 32px;
 	font-weight: bold;
 	padding-top: 6px;
+	font-family: "Alegreya Sans SC", sans-serif;
 
 	@media screen and (max-width: 600px) {
 		font-size: 22px;

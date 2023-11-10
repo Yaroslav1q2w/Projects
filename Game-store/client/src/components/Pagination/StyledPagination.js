@@ -7,7 +7,7 @@ export const PagesWrap = styled.div`
 export const PagesList = styled.ul`
 	display: flex;
 	list-style: none;
-	font-family: Consolas;
+	font-family: "Josefin Sans", sans-serif;
 
 	@media screen and (max-width: 500px) {
 		padding-left: 20px;

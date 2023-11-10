@@ -65,8 +65,8 @@ const Cards = () => {
 
 			{modal && (
 				<Modal
-					header="Подтвердите добавление"
-					text={`Добавить ${selectedProduct.title} в корзину?`}
+					header="Підтвердіть додавання"
+					text={`Додати ${selectedProduct.title} до кошика?`}
 					closeModal={() => dispatch(modalClose())}
 					onClick={() => dispatch(increaseBasket(selectedProduct))}
 				/>

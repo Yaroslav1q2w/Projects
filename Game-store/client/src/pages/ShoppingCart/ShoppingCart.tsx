@@ -62,17 +62,17 @@ const ShoppingCart = () => {
 	return (
 		<Container>
 			<Header>
-				<h1>Корзина</h1>
+				<h1>Кошик</h1>
 
 				<HeaderInfo>
 					<div className="total__price">
-						<span>Общая сумма: {totalPrice} грн.</span>
+						<span>Загальна сума: {totalPrice} грн.</span>
 					</div>
 
 					{cards.length > 0 ? (
 						<ButtonSubmit>
 							<Button
-								children="Оформить заказ"
+								children="Оформити замовлення"
 								className="basket__button-elem"
 								onClick={() => dispatch(formOpen())}
 							/>
@@ -93,8 +93,8 @@ const ShoppingCart = () => {
 
 			{modal && (
 				<Modal
-					header="Подтвердите удаления"
-					text={`Вы уверенны что хотите удалить ${cardItem?.title} с корзины?`}
+					header="Підтвердіть видалення"
+					text={`Ви впевнені що хочете видалити ${cardItem?.title} з кошика?`}
 					closeModal={() => dispatch(modalClose())}
 					onClick={() => dispatch(decreaseBasket(cardItem))}
 				/>
@@ -104,8 +104,8 @@ const ShoppingCart = () => {
 
 			{modalFinishSubmit && (
 				<ModalSubmit
-					header="Спасибо за покупку!"
-					text="Данные оправлены в обработку, спасибо за Ваш заказ."
+					header="Дякую за покупку!"
+					text="Дані оправлені в обробку, дякую за Ваше замовлення."
 					closeModal={() => dispatch(modalSubmitClose())}
 					onClick={() => dispatch(clearItems())}
 				/>

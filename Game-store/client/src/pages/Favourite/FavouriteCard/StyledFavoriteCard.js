@@ -78,9 +78,10 @@ export const Header = styled.div`
 	.favorite__item-article {
 		display: inline-block;
 		padding-top: 8px;
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 200;
 		color: #7a7a7a;
+		font-family: "Alegreya Sans SC", sans-serif;
 
 		@media screen and (max-width: 600px) {
 			font-size: 10px;
@@ -95,6 +96,7 @@ export const Header = styled.div`
 		color: #2196f3;
 		display: block;
 		margin-top: 20px;
+		font-family: "Alegreya Sans SC", sans-serif;
 
 		@media screen and (max-width: 460px) {
 			font-size: 12px;

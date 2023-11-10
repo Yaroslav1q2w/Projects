@@ -20,13 +20,13 @@ const MenuCategory = () => {
 	const [menuBurgerOpen, setMenuBurgerOpen] = useState(false);
 
 	const categories = [
-		"Все",
+		"Всі",
 		"Шутер",
-		"Экшен",
-		"Приключения",
+		"Екшен",
+		"Пригоди",
 		"Спорт",
 		"Гонки",
-		"Стратегии",
+		"Стратегії",
 	];
 
 	const onChengeCategory = (index: number) => {

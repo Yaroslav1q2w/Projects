@@ -79,19 +79,19 @@ const GamePage: React.FC = () => {
 										Жанр:<span className="colored">{game?.genre}</span>
 									</p>
 									<p className="game__page-info">
-										Дата выпуска:
+										Дата випуску:
 										<span className="colored">{game?.data}</span>
 									</p>
 									<p className="game__page-info">
-										Разработчик:
+										Розробник:
 										<span className="colored">{game?.developer}</span>
 									</p>
 									<p className="game__page-info">
-										Платформы:
+										Платформи:
 										<span className="colored">{game?.platforms}</span>
 									</p>
 									<p className="game__page-info">
-										Языки интерфейса:
+										Мови інтерфейсу:
 										<span className="colored">{game?.language}</span>
 									</p>
 								</HeaderContent>
@@ -101,7 +101,7 @@ const GamePage: React.FC = () => {
 
 						<FooterButton>
 							<Button
-								children="Добавить в корзину"
+								children="Додати до кошику"
 								className="footer__button-elem"
 								onClick={() => {
 									dispatch(modalOpen());
@@ -113,9 +113,8 @@ const GamePage: React.FC = () => {
 
 					{modal && selectedProduct && (
 						<Modal
-							data-testid="modal-add-basket"
-							header="Подтвердите добавление"
-							text={`Добавить ${selectedProduct.title} в корзину?`}
+							header="Підтвердіть додавання"
+							text={`Додати ${selectedProduct.title} до кошика?`}
 							closeModal={() => dispatch(modalClose())}
 							onClick={() => dispatch(increaseBasket(selectedProduct))}
 						/>

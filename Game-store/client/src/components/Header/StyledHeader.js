@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { BiCartAlt } from "react-icons/bi";
+import { FaUserCircle } from "react-icons/fa";
 
 export const HeaderContainer = styled.header`
 	background-color: #282828;
 	box-shadow: 0px 8px 10px 0px #282828;
 `;
 
-export const HeaderWrapp = styled.header`
+export const HeaderWrapp = styled.div`
 	height: 80px;
 	max-width: 1180px;
 	margin: 0 auto;
@@ -16,6 +17,7 @@ export const HeaderWrapp = styled.header`
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 20px;
+	position: relative;
 
 	.header__logo {
 		.logo {
@@ -32,19 +34,16 @@ export const HeaderWrapp = styled.header`
 		}
 
 		&-text {
-			font-size: 10px;
+			font-size: 12px;
 			font-weight: 600;
 			text-transform: uppercase;
 			text-shadow: 1px 1px 1px #5b5b5d;
 			color: #c0c0c0;
-
+			font-family: "Alegreya Sans SC", sans-serif;
 			@media screen and (max-width: 600px) {
 				font-size: 8px;
 			}
 		}
-	}
-
-	@media screen and (max-width: 600px) {
 	}
 `;
 
@@ -58,7 +57,7 @@ export const HeaderDescription = styled.div`
 		cursor: pointer;
 
 		@media screen and (max-width: 500px) {
-			padding: 2px;
+			display: none;
 		}
 	}
 
@@ -79,6 +78,29 @@ export const HeaderDescription = styled.div`
 		@media screen and (max-width: 500px) {
 			padding: 9px;
 		}
+	}
+`;
+
+export const UserRegister = styled.button`
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+	margin-left: 30px;
+	background: none;
+	border: none;
+	color: #fff;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 14px;
+
+	span {
+		@media screen and (max-width: 500px) {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		margin-left: 10px;
 	}
 `;
 
@@ -104,4 +126,8 @@ export const ShoppingCartIcon = styled(BiCartAlt)`
 	@media screen and (max-width: 500px) {
 		font-size: 21px;
 	}
+`;
+
+export const IconMyAccount = styled(FaUserCircle)`
+	font-size: 22px;
 `;

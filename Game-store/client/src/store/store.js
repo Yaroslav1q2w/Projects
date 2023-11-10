@@ -6,6 +6,8 @@ import {
 	basketReducer,
 	modalReducer,
 	filterReducer,
+	authReducer,
+	registrationReducer,
 } from "../reducers";
 
 const store = configureStore({
@@ -15,6 +17,8 @@ const store = configureStore({
 		basket: basketReducer,
 		modal: modalReducer,
 		filter: filterReducer,
+		auth: authReducer,
+		register: registrationReducer,
 	},
 });
 

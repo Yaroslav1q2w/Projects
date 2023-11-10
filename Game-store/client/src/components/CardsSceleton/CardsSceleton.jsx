@@ -5,7 +5,7 @@ const SceletonWrap = styled(ContentLoader)`
 	width: 320px;
 	min-height: 300px;
 	background-color: rgb(36, 37, 41);
-	border-radius: 0 0 15px 15px;
+	border-radius: 15px;
 	position: relative;
 	margin-bottom: 30px;
 	justify-self: center;

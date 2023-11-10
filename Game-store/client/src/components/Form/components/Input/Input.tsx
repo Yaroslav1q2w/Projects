@@ -6,14 +6,15 @@ interface InputProps {
 	type: string;
 	placeholder: string;
 	name: string;
+	className: string;
 }
 
-const Input = ({ type, placeholder, name }: InputProps) => {
+const Input = ({ type, placeholder, name, className }: InputProps) => {
 	return (
 		<div className="form-item has-validation">
 			<Field
 				type={type}
-				className="form-control"
+				className={className}
 				name={name}
 				placeholder={placeholder}
 			/>

@@ -21,6 +21,12 @@ import modalReducer, {
 } from "./modal.reducer";
 import filterReducer, { chengeCategory, setPageCount } from "./filter.reducer";
 
+import authReducer, { fetchAuthData, clearDataAuth } from "./auth.reducer";
+import registrationReducer, {
+	registerFetchData,
+	clearDataRegister,
+} from "./registration.reducer";
+
 export {
 	favoriteReducer,
 	increaseFavorite,
@@ -46,4 +52,10 @@ export {
 	filterReducer,
 	chengeCategory,
 	setPageCount,
+	authReducer,
+	fetchAuthData,
+	clearDataAuth,
+	registrationReducer,
+	registerFetchData,
+	clearDataRegister,
 };

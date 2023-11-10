@@ -9,12 +9,12 @@ const Favourite: React.FC = () => {
 	const cardsFavorite: ICard[] = useSelector(favouriteSelector);
 
 	const renderCard = cardsFavorite.map((card) => (
-		<FavoriteCard key={card.article} cardProps={card} />
+		<FavoriteCard key={card.article + 1} cardProps={card} />
 	));
 
 	return (
 		<Container>
-			<TitleFavourite>Избранное</TitleFavourite>
+			<TitleFavourite>Вибране</TitleFavourite>
 
 			{cardsFavorite.length < 1 ? (
 				<div className="empty-favorite">

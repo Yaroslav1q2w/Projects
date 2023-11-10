@@ -98,6 +98,7 @@ export const HeaderPoster = styled.div`
 `;
 
 export const HeaderContent = styled.div`
+	font-family: "Alegreya Sans SC", sans-serif;
 	padding: 20px;
 	color: #fff;
 	width: 100%;
@@ -112,6 +113,7 @@ export const HeaderContent = styled.div`
 		font-weight: 700;
 		text-align: center;
 		text-shadow: 0px 3px 2px #5b5b5d;
+		font-family: "Josefin Sans", sans-serif;
 
 		@media screen and (max-width: 500px) {
 			font-size: 24px;
@@ -124,6 +126,7 @@ export const HeaderContent = styled.div`
 		text-align: center;
 		margin-bottom: 35px;
 		line-height: 1;
+		font-family: "Josefin Sans", sans-serif;
 
 		@media screen and (max-width: 500px) {
 			font-size: 18px;
@@ -166,7 +169,8 @@ export const PageDescription = styled.div`
 	letter-spacing: 1.5px;
 	word-spacing: 1px;
 	text-align: center;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Alegreya Sans SC", sans-serif;
+
 	font-weight: bold;
 
 	@media screen and (max-width: 500px) {
@@ -184,7 +188,8 @@ export const FooterButton = styled.div`
 	position: absolute;
 
 	.footer__button-elem {
-		font-family: "Montserrat", sans-serif;
+		font-family: "Alegreya Sans SC", sans-serif;
+
 		font-style: normal;
 		color: #fafafa;
 		padding: 12px 14px;
@@ -197,6 +202,7 @@ export const FooterButton = styled.div`
 		cursor: pointer;
 		transition: 0.5s;
 		letter-spacing: 0.8px;
+		font-size: 15px;
 
 		&:hover {
 			background: #01722b;

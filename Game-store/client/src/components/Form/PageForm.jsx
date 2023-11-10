@@ -42,7 +42,7 @@ const PageForm = () => {
 				onSubmit={(values) => formInfoUser(values)}
 				validationSchema={validationSchema}
 			>
-				{({ errors, touched }) => (
+				{() => (
 					<Form>
 						<Header>
 							<h3 className="header__title">Заполните свои данные</h3>
@@ -57,32 +57,32 @@ const PageForm = () => {
 						<Input
 							name="name"
 							placeholder="Имя"
-							error={errors.name && touched.name}
 							type="text"
+							className="form-control"
 						/>
 						<Input
 							name="lastName"
 							placeholder="Фамилия"
-							error={errors.lastName && touched.lastName}
 							type="text"
+							className="form-control"
 						/>
 						<Input
 							name="age"
 							placeholder="Возраст"
-							error={errors.age && touched.age}
 							type="number"
+							className="form-control"
 						/>
 						<Input
 							name="region"
 							placeholder="Адрес доставки"
-							error={errors.region && touched.region}
 							type="text"
+							className="form-control"
 						/>
 						<Input
 							name="phone"
 							placeholder="Телефон"
-							error={errors.phone && touched.phone}
 							type="tel"
+							className="form-control"
 						/>
 						<div className="btn__form">
 							<Button

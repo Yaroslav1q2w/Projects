@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 	max-width: 320px;
 	min-height: 320px;
 	background-color: rgb(36, 37, 41);
-	border-radius: 0 0 15px 15px;
+	border-radius: 15px;
 	position: relative;
 	margin-bottom: 30px;
 	justify-self: center;
@@ -23,6 +23,7 @@ export const ImageItem = styled.div`
 	overflow: hidden;
 	max-width: 320px;
 	height: 180px;
+	border-radius: 15px 15px 0 0;
 
 	img {
 		transition: all 0.5s ease;
@@ -84,9 +85,10 @@ export const GameBackWrapp = styled.div`
 	}
 
 	.game__back-desc {
-		font-size: 12px;
+		font-size: 13px;
 		line-height: 1.3;
 		padding: 0 10px 10px 30px;
+		font-family: "Alegreya Sans SC", sans-serif;
 	}
 
 	.game__back-link {
@@ -164,9 +166,10 @@ export const HeaderGame = styled.div`
 export const Article = styled.span`
 	display: inline-block;
 	padding-top: 8px;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 200;
 	color: #7a7a7a;
+	font-family: "Alegreya Sans SC", sans-serif;
 
 	@media screen and (max-width: 500px) {
 		font-size: 10px;
@@ -175,13 +178,14 @@ export const Article = styled.span`
 
 export const Genre = styled.span`
 	background-color: rgb(60, 60, 63);
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 600;
 	display: inline-block;
 	padding: 5px 20px;
 	border-radius: 20px;
 	letter-spacing: 1.5px;
 	color: #c9c8c8;
+	font-family: "Alegreya Sans SC", sans-serif;
 
 	@media screen and (max-width: 500px) {
 		font-size: 11px;
@@ -204,7 +208,8 @@ export const Description = styled.div`
 	}
 
 	.button {
-		font-family: "Montserrat", sans-serif;
+		font-family: "Alegreya Sans SC", sans-serif;
+
 		font-style: normal;
 		width: 140px;
 		height: 35px;
@@ -218,6 +223,7 @@ export const Description = styled.div`
 		cursor: pointer;
 		transition: 0.5s;
 		letter-spacing: 0.8px;
+		font-size: 14px;
 
 		&:hover {
 			background: #a0522d;

@@ -5,6 +5,8 @@ const app = express();
 
 const apiRouter = require("./routers/products.api");
 const apiOrders = require("./routers/orders.api");
+const apiRegister = require("./routers/register.api");
+const apiAuth = require("./routers/auth.api");
 
 app.use(cors());
 app.use(express.static("./public"));
@@ -18,6 +20,8 @@ const MONGO_URL =
 
 app.use("/api", apiRouter);
 app.use("/api", apiOrders);
+app.use("/api", apiRegister);
+app.use("/api", apiAuth);
 
 app.all("*", (request, response) => {
 	response.status(404).send("resource not found");

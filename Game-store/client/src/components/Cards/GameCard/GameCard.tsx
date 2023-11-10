@@ -100,7 +100,7 @@ const GameCard: React.FC<GameProps> = ({
 					<p className="game__item-price">{price} грн.</p>
 					<Button
 						type="button"
-						children="В корзину"
+						children="В кошик"
 						className="button"
 						onClick={() => {
 							isOpenModal();
