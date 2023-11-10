@@ -3,15 +3,14 @@ import AnimateHeight from "react-animate-height";
 import { Link } from "react-router-dom";
 
 export const WrappAnimate = styled(AnimateHeight)`
-	background: rgba(50, 61, 109, 0.5);
+	background: rgb(50, 50, 50);
 	position: absolute;
 	top: 90px;
 	right: 100px;
-	z-index: 3;
-	backdrop-filter: blur(12px);
+	z-index: 10;
 	width: 360px;
 	border-radius: 4px;
-	box-shadow: 0 0 10px #a1a0a6;
+	box-shadow: 0 0 16px #a1a0a6;
 
 	@media screen and (max-width: 500px) {
 		width: 260px;
@@ -47,7 +46,7 @@ export const Header = styled.div`
 		font-weight: 400;
 		position: relative;
 		z-index: 2;
-		background-color: #c0c0c0;
+		background-color: rgb(152, 185, 95);
 		border-radius: 6px;
 		font-size: 17px;
 	}
@@ -62,18 +61,16 @@ export const InputsWrapp = styled.div`
 	.form__elem {
 		color: #dad9d9;
 		padding: 10px;
-		border: 0.5px solid rgba(255, 255, 255, 0.3);
 		background: none;
 		font-family: "Alegreya Sans SC", sans-serif;
-
 		border: none;
 		border-bottom: 1px solid #ccc;
-
 		outline: none;
 		width: 320px;
+		border-radius: 0;
 
 		&:focus {
-			border-bottom: 2px solid #2196f3;
+			border-bottom: 1px solid green;
 		}
 		&::placeholder {
 			color: #ccc;

@@ -24,6 +24,7 @@ export const InputsWrappRegister = styled.div`
 		font-size: 15px;
 		color: #a3a3a3;
 		padding: 10px;
+		border-radius: 0;
 
 		:hover {
 			border-bottom: 1px solid #9e9d9d;
