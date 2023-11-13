@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 	width: 100%;
-	padding-top: 20px;
 `;
 
 export const InputsWrappRegister = styled.div`
@@ -10,6 +9,7 @@ export const InputsWrappRegister = styled.div`
 	flex-direction: column;
 	gap: 20px;
 	width: 100%;
+	padding-top: 40px;
 	letter-spacing: 1px;
 
 	.form__elem-register {
@@ -48,6 +48,17 @@ export const InputsWrappRegister = styled.div`
 		letter-spacing: 1.4px;
 		line-height: 16px;
 	}
+`;
+
+export const Header = styled.div`
+	color: white;
+	text-align: center;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.5;
+
+	letter-spacing: 1px;
+	font-family: "Alegreya Sans SC", sans-serif;
 `;
 
 export const ButtonRegister = styled.div`

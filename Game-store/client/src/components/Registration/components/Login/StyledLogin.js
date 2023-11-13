@@ -56,7 +56,6 @@ export const Header = styled.div`
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 1.5;
-	margin-top: 20px;
 	letter-spacing: 1px;
 	font-family: "Alegreya Sans SC", sans-serif;
 `;

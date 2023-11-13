@@ -4,6 +4,7 @@ import {
 	InputsWrappRegister,
 	ButtonRegister,
 	ErrorMessage,
+	Header,
 } from "./StyledRegister";
 import { validationRegisterSchema } from "./validation";
 import Input from "../../../Form/components/Input";
@@ -36,6 +37,9 @@ const Register = () => {
 			>
 				{() => (
 					<Form>
+						<Header>
+							Будь ласка, введіть свої дані для створення облікового запису
+						</Header>
 						<InputsWrappRegister>
 							<label>
 								<p className="label__text">login</p>

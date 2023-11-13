@@ -3,6 +3,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { BiCartAlt } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
 	background-color: #282828;
@@ -51,20 +52,15 @@ export const HeaderDescription = styled.div`
 	display: flex;
 	align-items: center;
 
-	.header__favorite {
-		padding: 5px;
-		font-size: 14px;
-		cursor: pointer;
-
-		@media screen and (max-width: 500px) {
-			display: none;
-		}
-	}
-
 	.header__basket {
 		padding: 5px;
 		cursor: pointer;
 		font-size: 14px;
+		transition: all 0.5s ease 0s;
+
+		&:hover {
+			color: rgb(255, 223, 52);
+		}
 
 		@media screen and(max-width: 500px) {
 			padding: 2px;
@@ -74,6 +70,11 @@ export const HeaderDescription = styled.div`
 	.header__homepage {
 		padding-right: 12px;
 		cursor: pointer;
+		transition: all 0.5s ease 0s;
+
+		&:hover {
+			color: rgb(255, 223, 52);
+		}
 
 		@media screen and (max-width: 500px) {
 			padding: 9px;
@@ -86,18 +87,34 @@ export const UserRegister = styled.button`
 	align-items: center;
 	gap: 10px;
 	cursor: pointer;
-	margin-left: 30px;
 	background: none;
 	border: none;
 	color: #fff;
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 14px;
+	transition: all 0.5s ease 0s;
+
+	&:hover {
+		color: rgb(255, 223, 52);
+	}
 
 	span {
 		@media screen and (max-width: 500px) {
 			display: none;
 		}
 	}
+`;
+
+export const Linklogin = styled.div`
+	margin-left: 30px;
+
+	@media screen and (max-width: 500px) {
+		margin-left: 10px;
+	}
+`;
+
+export const LinkMyAccount = styled(Link)`
+	margin-left: 30px;
 
 	@media screen and (max-width: 500px) {
 		margin-left: 10px;
@@ -109,14 +126,6 @@ export const HomeIcon = styled(AiOutlineHome)`
 
 	@media screen and (max-width: 500px) {
 		font-size: 24px;
-	}
-`;
-
-export const FavouriteIcon = styled(FaStarHalfAlt)`
-	font-size: 24px;
-
-	@media screen and (max-width: 500px) {
-		font-size: 20px;
 	}
 `;
 

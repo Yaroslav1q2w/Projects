@@ -91,7 +91,7 @@ export const ButtonSubmit = styled.div`
 	}
 `;
 
-export const BasketItems = styled.main`
+export const BasketItems = styled.div`
 	padding: 80px 12px 0;
 
 	.empty-basket {

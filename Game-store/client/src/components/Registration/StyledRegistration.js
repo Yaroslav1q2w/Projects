@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 export const BoxWrappRegister = styled.div`
 	max-width: 500px;
 	width: 100%;
-
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -20,10 +19,10 @@ export const Header = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	font-size: 34px;
+	font-size: 30px;
 	letter-spacing: 2px;
 	text-align: center;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 	color: #ccc;
 	font-weight: 600;
 

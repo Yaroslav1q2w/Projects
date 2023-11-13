@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,17 +15,20 @@ import {
 	HeaderWrapp,
 	HeaderDescription,
 	HomeIcon,
-	FavouriteIcon,
 	ShoppingCartIcon,
 	UserRegister,
 	IconMyAccount,
+	LinkMyAccount,
+	Linklogin,
 } from "./StyledHeader";
 import DropdownRegister from "./components/DropdownRegister";
-interface HeaderProps {}
+import ShoppingBag from "./components/ShoppingBag/index.js";
 
-const Header: React.FC<HeaderProps> = () => {
+const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const dropdownRef = useRef<HTMLDivElement>(null);
+	const [isShoppingBag, setIsShoppingBag] = useState(false);
+
+	const dropdownRef = useRef(null);
 	const navigate = useNavigate();
 
 	const dispatch = useDispatch();
@@ -47,11 +51,8 @@ const Header: React.FC<HeaderProps> = () => {
 	}, [basketCount, favouriteCount]);
 
 	useEffect(() => {
-		const handleClick = (event: MouseEvent) => {
-			if (
-				dropdownRef.current &&
-				dropdownRef.current.contains(event.target as Node)
-			) {
+		const handleClick = (event) => {
+			if (dropdownRef.current && dropdownRef.current.contains(event.target)) {
 				return;
 			}
 			setIsOpen(false);
@@ -68,7 +69,7 @@ const Header: React.FC<HeaderProps> = () => {
 		dispatch(setPageCount(1));
 	};
 
-	const toggleDropdown = (event: React.MouseEvent) => {
+	const toggleDropdown = (event) => {
 		event.stopPropagation();
 		setIsOpen(!isOpen);
 	};
@@ -88,17 +89,19 @@ const Header: React.FC<HeaderProps> = () => {
 
 	const buttonAuthorization =
 		registerData || authData ? (
-			<Link to="/api/my-account">
+			<LinkMyAccount to="/api/my-account">
 				<UserRegister>
 					<IconMyAccount />
 					<span>My account</span>
 				</UserRegister>
-			</Link>
+			</LinkMyAccount>
 		) : (
-			<UserRegister onClick={toggleDropdown}>
-				<IconMyAccount />
-				<span>Sign Up / Log In</span>
-			</UserRegister>
+			<Linklogin>
+				<UserRegister onClick={toggleDropdown}>
+					<IconMyAccount />
+					<span>Sign Up / Log In</span>
+				</UserRegister>
+			</Linklogin>
 		);
 
 	return (
@@ -114,14 +117,15 @@ const Header: React.FC<HeaderProps> = () => {
 					<Link to="/" className="header__homepage">
 						<HomeIcon />
 					</Link>
-					<Link to="api/favorite" className="header__favorite">
-						<FavouriteIcon />
-						<span className="header__cart-number">{favouriteCount.length}</span>
-					</Link>
-					<Link to="api/basket" className="header__basket">
+
+					<a
+						href="#"
+						onClick={() => setIsShoppingBag(!isShoppingBag)}
+						className="header__basket"
+					>
 						<ShoppingCartIcon />
-						<span className="header__cart-number">{basketCount.length}</span>
-					</Link>
+						<span>{basketCount.length + favouriteCount.length}</span>
+					</a>
 
 					{buttonAuthorization}
 				</HeaderDescription>
@@ -130,6 +134,11 @@ const Header: React.FC<HeaderProps> = () => {
 					active={isOpen ? "auto" : 0}
 					ref={dropdownRef}
 					closeFormPages={handlerCloseForm}
+				/>
+
+				<ShoppingBag
+					isShoppingBag={isShoppingBag}
+					closeShoppingBag={() => setIsShoppingBag(!isShoppingBag)}
 				/>
 			</HeaderWrapp>
 		</HeaderContainer>

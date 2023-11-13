@@ -1,4 +1,4 @@
-const { model, Schema } = require("mongoose");
+const { Schema, model, mongoose } = require("mongoose");
 
 const registerSchema = new Schema({
 	firstName: {
@@ -28,6 +28,8 @@ const registerSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+	selectedProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+	shoppingCart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
 	created_at: {
 		type: Date,
 		default: Date.now,

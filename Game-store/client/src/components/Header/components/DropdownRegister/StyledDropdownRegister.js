@@ -9,7 +9,7 @@ export const WrappAnimate = styled(AnimateHeight)`
 	right: 100px;
 	z-index: 10;
 	width: 360px;
-	border-radius: 4px;
+	border-radius: 2px;
 	box-shadow: 0 0 16px #a1a0a6;
 
 	@media screen and (max-width: 500px) {
