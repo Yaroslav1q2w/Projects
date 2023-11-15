@@ -39,7 +39,7 @@ const ShoppingBag = ({ isShoppingBag, closeShoppingBag }) => {
 			<Description>
 				<NameItem>{card.title}</NameItem>
 				<Price>
-					Price : <span className="price">{card.price} грн.</span>
+					<span className="price">{card.price} грн.</span>
 				</Price>
 			</Description>
 
@@ -70,7 +70,7 @@ const ShoppingBag = ({ isShoppingBag, closeShoppingBag }) => {
 
 							<FooterContent>
 								<TotalPrice>
-									Total : <span>{totalPrice} грн.</span>
+									Всього : <br /> <span>{totalPrice} грн.</span>
 								</TotalPrice>
 								<ButtonShoppingBag
 									onClick={() => closeShoppingBag()}

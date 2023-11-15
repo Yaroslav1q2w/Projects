@@ -110,21 +110,11 @@ export const NameItem = styled.h3`
 export const Price = styled.p`
 	display: inline-block;
 	padding-top: 6px;
-	font-size: 13px;
-	text-transform: uppercase;
-
-	& .price {
-		font-size: 14px;
-		text-transform: lowercase;
-		font-weight: 650;
-	}
+	font-size: 15px;
+	font-weight: 550;
 
 	@media screen and (max-width: 500px) {
 		font-size: 12px;
-
-		& .price {
-			font-size: 13px;
-		}
 	}
 `;
 
@@ -153,13 +143,14 @@ export const FooterContent = styled.div`
 
 	@media screen and (max-width: 500px) {
 		top: 20px;
+		padding: 0 6px;
 	}
 `;
 
 export const TotalPrice = styled.div`
 	font-size: 22px;
 	font-weight: 600;
-	text-transform: uppercase;
+	text-align: center;
 
 	span {
 		font-size: 18px;
