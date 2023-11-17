@@ -30,7 +30,13 @@ router.post("/login", async (req, res) => {
 			isAdmin: user.isAdmin,
 			email: user.email,
 			address: user.address,
-		}; // Create JWT Payload
+			user: {
+				// Додайте інші необхідні поля користувача
+				// ...
+				selectedProducts: user.selectedProducts,
+				shoppingCart: user.shoppingCart,
+			},
+		};
 
 		const token = jwt.sign(payload, "secretKey", {
 			expiresIn: 36000,
