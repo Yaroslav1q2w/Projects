@@ -6,11 +6,11 @@ export const MainContent = styled.div`
 	justify-content: center;
 `;
 
-export const Header = styled.h3`
-	margin: 0;
-	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-	font-weight: 700;
-	font-size: 22px;
-	line-height: 33px;
-	text-transform: uppercase;
+export const Title = styled.h2`
+	color: rgb(255, 215, 0);
+	letter-spacing: 0.5px;
+	font-size: 30px;
+	letter-spacing: 1.5px;
+	font-weight: 500;
+	font-family: "Alegreya Sans SC", sans-serif;
 `;

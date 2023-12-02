@@ -1,10 +1,9 @@
-import { MainContent, Header, Container } from "./StyledDashboard";
+import { Container, Title } from "./StyledDashboard";
 
 const Dashboard = () => {
 	return (
 		<Container>
-			<Header>Dashboard</Header>
-			<MainContent></MainContent>
+			<Title>Панель керування</Title>
 		</Container>
 	);
 };

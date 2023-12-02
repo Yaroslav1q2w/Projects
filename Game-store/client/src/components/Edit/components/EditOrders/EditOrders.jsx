@@ -1,5 +1,11 @@
+import { Container, Title } from "./StyledOrders";
+
 const EditOrders = () => {
-	return <h1>EditOrders</h1>;
+	return (
+		<Container>
+			<Title>Замовлення</Title>
+		</Container>
+	);
 };
 
 export default EditOrders;
