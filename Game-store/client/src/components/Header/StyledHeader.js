@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { AiOutlineHome } from "react-icons/ai";
-import { FaStarHalfAlt } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
 import { BiCartAlt } from "react-icons/bi";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -46,6 +46,10 @@ export const HeaderWrapp = styled.div`
 			}
 		}
 	}
+
+	@media screen and (max-width: 500px) {
+		padding: 0 10px;
+	}
 `;
 
 export const HeaderDescription = styled.div`
@@ -62,7 +66,7 @@ export const HeaderDescription = styled.div`
 			color: rgb(255, 223, 52);
 		}
 
-		@media screen and(max-width: 500px) {
+		@media screen and (max-width: 500px) {
 			padding: 2px;
 		}
 	}
@@ -76,7 +80,7 @@ export const HeaderDescription = styled.div`
 			color: rgb(255, 223, 52);
 		}
 
-		@media screen and (max-width: 500px) {
+		@media screen and (max-width: 350px) {
 			padding: 9px;
 		}
 	}
@@ -105,26 +109,38 @@ export const UserRegister = styled.button`
 	}
 `;
 
-export const Linklogin = styled.div`
-	margin-left: 30px;
+export const EditLink = styled(Link)`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4px 0;
+	transition: all 0.5s ease 0s;
 
-	@media screen and (max-width: 500px) {
-		margin-left: 10px;
+	&:hover {
+		color: rgb(255, 223, 52);
+	}
+`;
+
+export const Linklogin = styled.div`
+	margin-left: 14px;
+
+	@media screen and (max-width: 340px) {
+		margin-left: 6px;
 	}
 `;
 
 export const LinkMyAccount = styled(Link)`
-	margin-left: 30px;
+	margin-left: 14px;
 
-	@media screen and (max-width: 500px) {
-		margin-left: 10px;
+	@media screen and (max-width: 340px) {
+		margin-left: 6px;
 	}
 `;
 
 export const HomeIcon = styled(AiOutlineHome)`
 	font-size: 28px;
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 340px) {
 		font-size: 24px;
 	}
 `;
@@ -132,11 +148,20 @@ export const HomeIcon = styled(AiOutlineHome)`
 export const ShoppingCartIcon = styled(BiCartAlt)`
 	font-size: 25px;
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 340px) {
 		font-size: 21px;
 	}
 `;
 
 export const IconMyAccount = styled(FaUserCircle)`
 	font-size: 22px;
+`;
+
+export const EditIcon = styled(IoSettingsSharp)`
+	font-size: 22px;
+	margin-left: 14px;
+
+	@media screen and (max-width: 340px) {
+		margin-left: 8px;
+	}
 `;

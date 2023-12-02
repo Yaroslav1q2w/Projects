@@ -3,6 +3,18 @@ const router = Router();
 const jwtMiddleware = require("../middleware/jwtMiddleware");
 const Product = require("../models/product.mongoose");
 
+// Отримуємо всі продукти
+
+router.get("/allProducts", async (request, response) => {
+	const productsAll = await Product.find();
+	response.status(200).json({
+		success: true,
+		data: productsAll,
+	});
+});
+
+// Отримуємо всі продукти по сторінкам та категоріям
+
 router.get("/products", async (request, response) => {
 	const { category } = request.query;
 
@@ -39,63 +51,31 @@ router.get("/products", async (request, response) => {
 	}
 });
 
+// Отримуємо один продукт
+
 router.get("/products/:id", async (request, response) => {
 	Product.findById(request.params.id, request.body).then((result) => {
 		response.status(200).json(result);
 	});
 });
 
-router.post("/add-to-product", jwtMiddleware, async (req, res) => {
+// Створюємо новий продукт
+
+router.post("/products", async (request, response) => {
 	try {
-		const { productId } = req.body;
-		const userId = req.user.id; // userId доступний через middleware
+		const newProductData = request.body;
+		const newProduct = new Product(newProductData);
+		const savedProduct = await newProduct.save();
 
-		const user = await Register.findById(userId);
-
-		if (!user) {
-			return res.status(404).json({ message: "Користувач не знайдений" });
-		}
-
-		const product = await Product.findById(productId);
-
-		if (!product) {
-			return res.status(404).json({ message: "Товар не знайдений" });
-		}
-
-		user.shoppingCart.push(product);
-		await user.save();
-
-		res.json({ success: true, message: "Товар додано до кошика" });
+		response.status(201).json({
+			success: true,
+			data: savedProduct,
+		});
 	} catch (error) {
-		console.error(error);
-		res.status(500).json({ message: "Помилка сервера" });
-	}
-});
-
-router.post("/add-to-favorites", jwtMiddleware, async (req, res) => {
-	try {
-		const { productId } = req.body;
-		const userId = req.user.id;
-
-		const user = await Register.findById(userId);
-
-		if (!user) {
-			return res.status(404).json({ message: "Користувач не знайдений" });
-		}
-
-		const product = await Product.findById(productId);
-
-		if (!product) {
-			return res.status(404).json({ message: "Товар не знайдений" });
-		}
-
-		user.selectedProducts.push(product);
-		await user.save();
-
-		res.json({ success: true, message: "Товар додано до вибраних" });
-	} catch (error) {
-		console.error(error);
-		res.status(500).json({ message: "Помилка сервера" });
+		response.status(500).json({
+			success: false,
+			error: error.message,
+		});
 	}
 });
 

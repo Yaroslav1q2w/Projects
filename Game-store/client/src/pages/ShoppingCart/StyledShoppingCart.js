@@ -41,7 +41,7 @@ export const HeaderInfo = styled.div`
 		font-size: 20px;
 		border: 1px solid #cd853f;
 		padding: 10px 20px;
-		border-radius: 20px;
+		border-radius: 6px;
 		font-family: "Alegreya Sans SC", sans-serif;
 
 		@media screen and (max-width: 700px) {
@@ -73,7 +73,7 @@ export const ButtonSubmit = styled.div`
 		color: #fafafa;
 		background: #9f5e08;
 		border: 0;
-		border-radius: 30px;
+		border-radius: 4px;
 		outline: none;
 		margin: 6px;
 		cursor: pointer;

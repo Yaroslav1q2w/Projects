@@ -5,6 +5,14 @@ const jwt = require("jsonwebtoken");
 const Register = require("../models/register.mongoose");
 const generateSecretKey = require("../configs/generateSecretKey");
 
+router.get("/customers", async (request, response) => {
+	const customersAll = await Register.find();
+	response.status(200).json({
+		success: true,
+		data: customersAll,
+	});
+});
+
 router.post("/customers", async (req, res) => {
 	const { firstName, lastName, login, email, password, address, isAdmin } =
 		req.body;

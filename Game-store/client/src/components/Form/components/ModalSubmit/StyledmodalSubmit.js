@@ -11,22 +11,34 @@ export const ModalContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
+	opacity: 0;
+	animation: ani 0.6s forwards;
+
+	@keyframes ani {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 `;
 
 export const ModalWrapp = styled.div`
 	font-family: "Montserrat", sans-serif;
 	font-style: normal;
-	background-color: #5d3131;
+	background-color: #fff;
 	max-width: 400px;
-	border-radius: 20px;
+
 	z-index: 1;
 	text-align: center;
 	margin: 0 10px;
 
 	.modal__submit-content {
-		color: #ffffff;
-		font-size: 17px;
+		color: #000;
+		font-size: 20px;
 		line-height: 1.5;
+		font-weight: 500;
 		padding: 15px 15px 20px 15px;
 		letter-spacing: 1px;
 
@@ -45,10 +57,8 @@ export const ButtonContainer = styled.div`
 		width: 140px;
 		height: 35px;
 		color: #fafafa;
-		//background: linear-gradient(to left, #16162d, #012344,#16162d);
-		background: #9b2a05;
+		background: green;
 		border: 0;
-		border-radius: 20px;
 		outline: none;
 		margin: 6px;
 		cursor: pointer;

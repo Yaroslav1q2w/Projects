@@ -194,9 +194,7 @@ export const FooterButton = styled.div`
 		color: #fafafa;
 		padding: 12px 14px;
 		background: #00481e;
-		box-shadow: 0px 0px 14px #00481e;
 		border: 0;
-		border-radius: 30px;
 		outline: none;
 		margin: 6px;
 		cursor: pointer;

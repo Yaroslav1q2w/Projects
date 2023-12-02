@@ -20,9 +20,12 @@ import {
 	IconMyAccount,
 	LinkMyAccount,
 	Linklogin,
+	EditIcon,
+	EditLink,
 } from "./StyledHeader";
 import DropdownRegister from "./components/DropdownRegister";
 import ShoppingBag from "./components/ShoppingBag/index.js";
+import { useUserData } from "../../hooks/useUserData";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +33,13 @@ const Header = () => {
 
 	const dropdownRef = useRef(null);
 	const navigate = useNavigate();
-
 	const dispatch = useDispatch();
 	const basketCount = useSelector(basketSelector);
 	const favouriteCount = useSelector(favouriteSelector);
 	const isAuth = useSelector(authSelector);
 	const isRegistration = useSelector(registrationSelector);
+
+	const user = useUserData();
 
 	const registerDataString = localStorage.getItem("registerData");
 	const authDataString = localStorage.getItem("authData");
@@ -126,6 +130,12 @@ const Header = () => {
 						<ShoppingCartIcon />
 						<span>{basketCount.length + favouriteCount.length}</span>
 					</a>
+
+					{user?.isAdmin && (
+						<EditLink to="/api/edit">
+							<EditIcon />
+						</EditLink>
+					)}
 
 					{buttonAuthorization}
 				</HeaderDescription>

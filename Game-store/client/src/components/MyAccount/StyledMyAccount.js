@@ -53,7 +53,7 @@ export const ButtonItem = styled.div`
 	gap: 10px;
 	padding: 30px;
 	border: 1px solid rgb(255, 215, 0);
-	border-radius: 14px;
+	border-radius: 6px;
 	margin: 20px;
 	font-size: 20px;
 	cursor: pointer;

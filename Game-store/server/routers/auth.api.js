@@ -31,8 +31,6 @@ router.post("/login", async (req, res) => {
 			email: user.email,
 			address: user.address,
 			user: {
-				// Додайте інші необхідні поля користувача
-				// ...
 				selectedProducts: user.selectedProducts,
 				shoppingCart: user.shoppingCart,
 			},

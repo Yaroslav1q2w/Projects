@@ -2,7 +2,11 @@ import favoriteReducer, {
 	increaseFavorite,
 	decreaseFavorite,
 } from "./favourite.reducer";
-import todoReducer, { actionFetchCards } from "./todo.reducer";
+import todoReducer, {
+	actionFetchCards,
+	actionFetchAllProducts,
+	actionCreateProduct,
+} from "./todo.reducer";
 import orderReducer, { createOrder, fetchOrders } from "./order.reducer";
 import basketReducer, {
 	increaseBasket,
@@ -16,8 +20,6 @@ import modalReducer, {
 	modalClose,
 	formClose,
 	formOpen,
-	modalSubmitOpen,
-	modalSubmitClose,
 } from "./modal.reducer";
 import filterReducer, { chengeCategory, setPageCount } from "./filter.reducer";
 
@@ -25,6 +27,7 @@ import authReducer, { fetchAuthData, clearDataAuth } from "./auth.reducer";
 import registrationReducer, {
 	registerFetchData,
 	clearDataRegister,
+	actionFetchAllCustomers,
 } from "./registration.reducer";
 
 export {
@@ -33,6 +36,8 @@ export {
 	decreaseFavorite,
 	todoReducer,
 	actionFetchCards,
+	actionFetchAllProducts,
+	actionCreateProduct,
 	orderReducer,
 	fetchOrders,
 	createOrder,
@@ -47,8 +52,6 @@ export {
 	modalClose,
 	formClose,
 	formOpen,
-	modalSubmitOpen,
-	modalSubmitClose,
 	filterReducer,
 	chengeCategory,
 	setPageCount,
@@ -58,4 +61,5 @@ export {
 	registrationReducer,
 	registerFetchData,
 	clearDataRegister,
+	actionFetchAllCustomers,
 };

@@ -1,6 +1,6 @@
 import { Formik, Form } from "formik";
 import Input from "./components/Input/Input";
-import { createOrder, modalSubmitOpen } from "../../reducers";
+import { createOrder } from "../../reducers";
 import { validationSchema } from "./validation";
 import { useDispatch, useSelector } from "react-redux";
 import { formClose } from "../../reducers";
@@ -26,7 +26,6 @@ const PageForm = () => {
 
 		dispatch(createOrder(data));
 		dispatch(formClose());
-		dispatch(modalSubmitOpen());
 	};
 
 	return (

@@ -5,6 +5,7 @@ import {
 	ButtonRegister,
 	ErrorMessage,
 	Header,
+	InputCheckbox,
 } from "./StyledRegister";
 import { validationRegisterSchema } from "./validation";
 import Input from "../../../Form/components/Input";
@@ -12,15 +13,21 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { errorDataRegister } from "../../../../selectors";
 import { registerFetchData } from "../../../../reducers";
+import { useState } from "react";
 
 const Register = () => {
 	const dispatch = useDispatch();
 
-	const errorMessage = useSelector(errorDataRegister);
+	const [isAdmin, setIsAdmin] = useState(false);
 
 	const handleSubmit = (values) => {
-		dispatch(registerFetchData(values));
+		dispatch(registerFetchData({ ...values, isAdmin }));
+
+		console.log({ ...values, isAdmin });
 	};
+
+	const errorMessage = useSelector(errorDataRegister);
+
 	return (
 		<Wrapper>
 			<Formik
@@ -99,6 +106,15 @@ const Register = () => {
 									type="password"
 								/>
 							</label>
+
+							<div>
+								<p className="label__text">Is Admin</p>
+								<InputCheckbox
+									type="checkbox"
+									checked={isAdmin}
+									onChange={() => setIsAdmin(!isAdmin)}
+								/>
+							</div>
 
 							{errorMessage && (
 								<ErrorMessage className="error-message">

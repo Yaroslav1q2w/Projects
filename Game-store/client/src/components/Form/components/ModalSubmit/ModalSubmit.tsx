@@ -6,25 +6,18 @@ import {
 } from "./StyledmodalSubmit";
 
 interface ModalSubmitProps {
-	header: string;
-	closeModal: () => void;
 	onClick: () => void;
 	text: string;
 }
 
-const ModalSubmit = ({
-	header,
-	closeModal,
-	text,
-	onClick,
-}: ModalSubmitProps) => {
+const ModalSubmit = ({ text, onClick }: ModalSubmitProps) => {
 	return (
 		<ModalContainer>
 			<ModalWrapp
 				onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
 			>
 				<div className="modal__submit-content">
-					<strong>{header}</strong> <br /> <hr />
+					<hr />
 					{text}
 				</div>
 				<ButtonContainer>
@@ -33,7 +26,6 @@ const ModalSubmit = ({
 						children="Ok"
 						onClick={() => {
 							onClick();
-							closeModal();
 						}}
 					/>
 				</ButtonContainer>

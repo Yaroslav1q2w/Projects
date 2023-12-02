@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 const MyAccount = () => {
 	const { firstName, lastName } = useUserData();
 
+	console.log(useUserData());
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 

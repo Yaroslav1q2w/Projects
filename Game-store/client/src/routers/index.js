@@ -5,6 +5,7 @@ import Favourite from "../pages/Favourite";
 import GamePage from "../pages/GamePage";
 import Registration from "../components/Registration";
 import MyAccount from "../components/MyAccount";
+import Edit from "../components/Edit";
 
 const RootRouter = () => {
 	return (
@@ -12,6 +13,7 @@ const RootRouter = () => {
 			<Route index element={<Cards />} />
 			<Route path="api/basket" element={<ShoppingCart />} />
 			<Route path="api/favorite" element={<Favourite />} />
+			<Route path="api/edit/*" element={<Edit />} />
 			<Route path="api/my-account" element={<MyAccount />} />
 			<Route path="api/registration" element={<Registration />} />
 			<Route path="api/products/:card_id" element={<GamePage />} />

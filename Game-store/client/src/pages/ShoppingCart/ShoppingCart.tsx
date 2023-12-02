@@ -10,7 +10,6 @@ import {
 	modalOpen,
 	modalClose,
 	formOpen,
-	modalSubmitClose,
 	clearItems,
 } from "../../reducers";
 import { BiCartAlt } from "react-icons/bi";
@@ -104,9 +103,7 @@ const ShoppingCart = () => {
 
 			{modalFinishSubmit && (
 				<ModalSubmit
-					header="Дякую за покупку!"
 					text="Дані оправлені в обробку, дякую за Ваше замовлення."
-					closeModal={() => dispatch(modalSubmitClose())}
 					onClick={() => dispatch(clearItems())}
 				/>
 			)}

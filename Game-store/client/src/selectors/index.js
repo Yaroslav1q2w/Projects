@@ -4,6 +4,7 @@ import {
 	cardsSelector,
 	isLoadingSelector,
 	isTotalCount,
+	allcCardsSelector,
 } from "./toDoCards.selector";
 import { orderSelector } from "./order.selector";
 
@@ -20,6 +21,7 @@ import {
 import {
 	registrationSelector,
 	errorDataRegister,
+	registerAllCustomers,
 } from "./registration.selector";
 import { authSelector, errorDataAuth } from "./auth.selector";
 
@@ -41,4 +43,6 @@ export {
 	errorDataRegister,
 	authSelector,
 	errorDataAuth,
+	allcCardsSelector,
+	registerAllCustomers,
 };

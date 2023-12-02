@@ -84,6 +84,40 @@ export const ButtonRegister = styled.div`
 	}
 `;
 
+export const InputCheckbox = styled.input`
+	appearance: none;
+	width: 26px;
+	height: 26px;
+	border: 2px solid #facb7d;
+	border-radius: 4px;
+	outline: none;
+	box-sizing: border-box;
+	margin-top: 30px;
+	margin-left: 4px;
+	position: relative;
+	cursor: pointer;
+
+	&:checked {
+		background-color: #facb7d;
+		box-sizing: border-box;
+		border-color: #facb7d;
+		margin-bottom: 4px;
+	}
+
+	&:checked::before {
+		content: "\u2714";
+		display: block;
+		width: 24px;
+		height: 22px;
+		color: white;
+		font-size: 22px;
+		line-height: 16px;
+		text-align: center;
+		position: relative;
+		top: 3px;
+	}
+`;
+
 export const ErrorMessage = styled.div`
 	padding: 5px 0 0 15px;
 	margin: 0;

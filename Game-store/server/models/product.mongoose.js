@@ -1,7 +1,7 @@
 const { Schema, model, mongoose } = require("mongoose");
 
 const product = new mongoose.Schema({
-	src: {
+	image: {
 		type: String,
 		require: true,
 	},
@@ -35,7 +35,6 @@ const product = new mongoose.Schema({
 	},
 	count: {
 		type: Number,
-		require: true,
 	},
 	the_plot: {
 		type: String,
