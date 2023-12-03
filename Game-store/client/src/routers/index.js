@@ -5,7 +5,7 @@ import Favourite from "../pages/Favourite";
 import GamePage from "../pages/GamePage";
 import Registration from "../components/Registration";
 import MyAccount from "../components/MyAccount";
-import Edit from "../components/Edit";
+import Edit from "../pages/Edit";
 
 const RootRouter = () => {
 	return (
