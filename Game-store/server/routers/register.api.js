@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const Register = require("../models/register.mongoose");
 const generateSecretKey = require("../configs/generateSecretKey");
 
+// Отримання всіх користувачів
 router.get("/customers", async (request, response) => {
 	const customersAll = await Register.find();
 	response.status(200).json({
@@ -13,6 +14,7 @@ router.get("/customers", async (request, response) => {
 	});
 });
 
+// Реєстрація нового користувача
 router.post("/customers", async (req, res) => {
 	const { firstName, lastName, login, email, password, address, isAdmin } =
 		req.body;
@@ -69,6 +71,25 @@ router.post("/customers", async (req, res) => {
 	} catch (error) {
 		console.error(error);
 		res.status(500).json({ message: "Помилка сервера" });
+	}
+});
+
+// Оновлення інформації про користувача
+router.put("/customers/:customerId", async (req, res) => {
+	const customerId = req.params.customerId;
+	const updatedData = req.body; // дані, які ви хочете оновити
+
+	try {
+		const updatedCustomer = await Register.findByIdAndUpdate(
+			customerId,
+			{ $set: updatedData },
+			{ new: true }
+		);
+
+		res.json({ success: true, updatedCustomer });
+	} catch (error) {
+		console.error(error);
+		res.status(500).json({ success: false, message: "Помилка сервера" });
 	}
 });
 

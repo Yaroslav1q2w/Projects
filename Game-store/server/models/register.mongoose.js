@@ -21,18 +21,24 @@ const registerSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	address: {
-		type: String,
-	},
 	isAdmin: {
 		type: Boolean,
 		default: false,
+	},
+	phone: {
+		type: String,
+	},
+	age: {
+		type: Number,
 	},
 	selectedProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
 	shoppingCart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
 	created_at: {
 		type: Date,
 		default: Date.now,
+	},
+	region: {
+		type: String,
 	},
 });
 

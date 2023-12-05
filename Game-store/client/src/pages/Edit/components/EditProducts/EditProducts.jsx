@@ -22,8 +22,8 @@ import {
 	actionFetchAllProducts,
 } from "../../../../reducers";
 import { Formik, Form } from "formik";
-import Input from "../../../../components/Form/components/Input";
-import ModalSubmit from "../../../../components/Form/components/ModalSubmit";
+import Input from "../../../../components/OrderForm/components/Input";
+import ModalSubmit from "../../../../components/Modal/ModalSubmit";
 
 const EditProducts = () => {
 	const [newProduct, setNewProduct] = useState({});

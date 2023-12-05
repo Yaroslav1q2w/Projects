@@ -6,6 +6,7 @@ import GamePage from "../pages/GamePage";
 import Registration from "../components/Registration";
 import MyAccount from "../components/MyAccount";
 import Edit from "../pages/Edit";
+import OrderForm from "../components/OrderForm";
 
 const RootRouter = () => {
 	return (
@@ -16,6 +17,7 @@ const RootRouter = () => {
 			<Route path="api/edit/*" element={<Edit />} />
 			<Route path="api/my-account" element={<MyAccount />} />
 			<Route path="api/registration" element={<Registration />} />
+			<Route path="api/order-form" element={<OrderForm />} />
 			<Route path="api/products/:card_id" element={<GamePage />} />
 		</Routes>
 	);

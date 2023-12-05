@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
 import Modal from "../../components/Modal";
-import PageForm from "../../components/Form/PageForm";
 import CartItem from "./CartItem";
 import Button from "../../components/Button";
-import ModalSubmit from "../../components/Form/components/ModalSubmit";
+import ModalSubmit from "../../components/Modal/ModalSubmit";
 import { useSelector, useDispatch } from "react-redux";
 import {
 	decreaseBasket,
 	modalOpen,
 	modalClose,
 	formOpen,
-	clearItems,
+	formClose,
 } from "../../reducers";
 import { BiCartAlt } from "react-icons/bi";
 import {
 	basketSelector,
 	isModalPageFormSelector,
 	isModalSelector,
-	isModalSubmitSelector,
 } from "../../selectors";
 import {
 	Container,
@@ -27,17 +25,22 @@ import {
 	HeaderInfo,
 } from "./StyledShoppingCart";
 import { ICard } from "../../types/data";
+import { useUserData } from "../../hooks/useUserData";
+import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
+	const navigate = useNavigate();
+
 	const [cardItem, setCardItem] = useState<ICard | null>(null);
 	const [totalPrice, setTotalPrice] = useState(0);
 
-	const modalFinishSubmit: boolean = useSelector(isModalSubmitSelector);
+	const dispatch = useDispatch();
+
 	const cards: ICard[] = useSelector(basketSelector);
 	const modal: boolean = useSelector(isModalSelector);
 	const formPage: boolean = useSelector(isModalPageFormSelector);
 
-	const dispatch = useDispatch();
+	const user = useUserData();
 
 	const renderCard = cards.map((card: ICard) => (
 		<CartItem
@@ -58,6 +61,19 @@ const ShoppingCart = () => {
 		);
 	}, [cards]);
 
+	const handleOrderButtonClick = () => {
+		if (user) {
+			navigate("/api/order-form");
+		} else {
+			dispatch(formOpen());
+		}
+	};
+
+	const handlerRegister = () => {
+		navigate("/api/registration");
+		dispatch(dispatch(formClose()));
+	};
+
 	return (
 		<Container>
 			<Header>
@@ -73,7 +89,7 @@ const ShoppingCart = () => {
 							<Button
 								children="Оформити замовлення"
 								className="basket__button-elem"
-								onClick={() => dispatch(formOpen())}
+								onClick={handleOrderButtonClick}
 							/>
 						</ButtonSubmit>
 					) : null}
@@ -99,12 +115,10 @@ const ShoppingCart = () => {
 				/>
 			)}
 
-			{formPage && <PageForm />}
-
-			{modalFinishSubmit && (
+			{formPage && (
 				<ModalSubmit
-					text="Дані оправлені в обробку, дякую за Ваше замовлення."
-					onClick={() => dispatch(clearItems())}
+					text="Створіть обліковий запис, або зареєструйтесь будь ласка"
+					onClick={handlerRegister}
 				/>
 			)}
 		</Container>

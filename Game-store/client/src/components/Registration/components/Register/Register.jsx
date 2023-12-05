@@ -8,7 +8,7 @@ import {
 	InputCheckbox,
 } from "./StyledRegister";
 import { validationRegisterSchema } from "./validation";
-import Input from "../../../Form/components/Input";
+import Input from "../../../OrderForm/components/Input";
 import { useDispatch, useSelector } from "react-redux";
 
 import { errorDataRegister } from "../../../../selectors";

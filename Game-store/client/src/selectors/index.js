@@ -8,11 +8,7 @@ import {
 } from "./toDoCards.selector";
 import { orderSelector } from "./order.selector";
 
-import {
-	isModalSelector,
-	isModalSubmitSelector,
-	isModalPageFormSelector,
-} from "./modal.selector";
+import { isModalSelector, isModalPageFormSelector } from "./modal.selector";
 import {
 	categorySelector,
 	pageCountSelector,
@@ -32,7 +28,6 @@ export {
 	cardsSelector,
 	isLoadingSelector,
 	isModalSelector,
-	isModalSubmitSelector,
 	isModalPageFormSelector,
 	selectedProduct,
 	categorySelector,

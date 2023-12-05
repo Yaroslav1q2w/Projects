@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Formik, Form } from "formik";
 import { validationSchema } from "./validation";
-import Input from "../../../Form/components/Input";
+import Input from "../../../OrderForm/components/Input";
 import {
 	WrappAnimate,
 	BoxWrapp,
