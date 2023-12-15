@@ -31,15 +31,33 @@ const registerSchema = new Schema({
 	age: {
 		type: Number,
 	},
-	selectedProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
-	shoppingCart: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
-	created_at: {
-		type: Date,
-		default: Date.now,
-	},
 	region: {
 		type: String,
 	},
+	orders: [
+		{
+			products: [
+				{
+					productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
+					quantity: { type: Number },
+					title: { type: String },
+					image: { type: String, required: true },
+					price: { type: Number, required: true },
+					article: { type: Number, required: true },
+					developer: { type: String, required: true },
+					description: { type: String, required: true },
+					genre: { type: String, required: true },
+					language: { type: String, required: true },
+					count: { type: Number },
+					the_plot: { type: String, required: true },
+					data: { type: String, required: true },
+					platforms: { type: String, required: true },
+					category: { type: Number, required: true },
+				},
+			],
+			orderDate: { type: Date, default: Date.now },
+		},
+	],
 });
 
 module.exports = model("Register", registerSchema);

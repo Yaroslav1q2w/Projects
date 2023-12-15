@@ -8,6 +8,8 @@ import {
 	filterReducer,
 	authReducer,
 	registrationReducer,
+	userReducer,
+	ordersReducer,
 } from "../reducers";
 
 const store = configureStore({
@@ -19,6 +21,8 @@ const store = configureStore({
 		filter: filterReducer,
 		auth: authReducer,
 		register: registrationReducer,
+		user: userReducer,
+		orders: ordersReducer,
 	},
 });
 

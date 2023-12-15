@@ -22,8 +22,6 @@ const Register = () => {
 
 	const handleSubmit = (values) => {
 		dispatch(registerFetchData({ ...values, isAdmin }));
-
-		console.log({ ...values, isAdmin });
 	};
 
 	const errorMessage = useSelector(errorDataRegister);

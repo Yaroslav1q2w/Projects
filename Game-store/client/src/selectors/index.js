@@ -20,6 +20,7 @@ import {
 	registerAllCustomers,
 } from "./registration.selector";
 import { authSelector, errorDataAuth } from "./auth.selector";
+import { userSelector } from "./user.selectors";
 
 export {
 	orderSelector,
@@ -40,4 +41,5 @@ export {
 	errorDataAuth,
 	allcCardsSelector,
 	registerAllCustomers,
+	userSelector,
 };

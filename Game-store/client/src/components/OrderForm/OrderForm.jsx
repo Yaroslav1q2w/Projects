@@ -1,6 +1,6 @@
 import { Formik, Form } from "formik";
 import Input from "./components/Input/Input";
-import { createOrder } from "../../reducers";
+import { createOrder, updateUserInfo } from "../../reducers";
 import { validationSchema } from "./validation";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -32,20 +32,7 @@ const OrderForm = () => {
 	console.log(cards);
 
 	const user = useUserData();
-
-	// const formInfoUser = (values) => {
-	// 	const data = {
-	// 		name: values.name,
-	// 		lastName: values.lastName,
-	// 		region: values.region,
-	// 		phone: values.phone,
-	// 		age: values.age,
-	// 		products: cards,
-	// 	};
-
-	// 	dispatch(createOrder(data));
-	// 	dispatch(formClose());
-	// };
+	console.log(user);
 
 	const orderCards = cards?.map((card) => (
 		<CardWrappOrder key={card._id}>
@@ -65,6 +52,23 @@ const OrderForm = () => {
 		0
 	);
 
+	const handleSubmit = async (values) => {
+		try {
+			// Оновлення інформації про користувача
+			await dispatch(updateUserInfo({ userId: user._id, updatedData: values }));
+
+			console.log("updateUserInfo", { userId: user._id, updatedData: values });
+			console.log("createOrder", { userId: user._id, products: cards });
+			// Створення замовлення та оновлення користувача
+			await dispatch(createOrder({ userId: user._id, products: cards }));
+
+			// Додаткові дії, якщо потрібно після успішного оновлення і створення замовлення
+			// ...
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	return (
 		<ContainerOrder>
 			<ContentInner>
@@ -82,7 +86,7 @@ const OrderForm = () => {
 								region: "",
 								phone: "",
 							}}
-							onSubmit={(values) => console.log(values)}
+							onSubmit={handleSubmit}
 							validationSchema={validationSchema}
 						>
 							{() => (

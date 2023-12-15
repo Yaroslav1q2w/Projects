@@ -1,45 +1,44 @@
-const { Router } = require("express");
-const router = Router();
-
+const express = require("express");
+const router = express.Router();
 const Order = require("../models/orders.mongoose");
+const Register = require("../models/register.mongoose");
 
-router.post("/orders", async (request, response) => {
+router.post("/orders", async (req, res) => {
+	const { userId, products } = req.body;
+
 	try {
-		const { name, lastName, region, phone, age, products } = request.body;
+		const user = await Register.findById(userId);
 
-		const newUser = new Order({
-			name,
-			lastName,
-			region,
-			phone,
-			age,
-			products,
+		const newOrder = new Order({
+			user: user,
+			products: products.map((product) => ({
+				productId: product._id,
+				quantity: product.count,
+				title: product.title,
+				image: product.image,
+				price: product.price,
+				article: product.article,
+				developer: product.developer,
+				description: product.description,
+				genre: product.genre,
+				language: product.language,
+				the_plot: product.the_plot,
+				data: product.data,
+				platforms: product.platforms,
+				category: product.category,
+			})),
+			orderDate: new Date(),
 		});
 
-		const savedUser = await newUser.save();
+		const savedOrder = await newOrder.save();
 
-		response.status(201).json({
-			success: true,
-			data: savedUser,
-		});
+		user.orders.push(savedOrder);
+		await user.save();
+
+		res.json({ success: true, order: savedOrder, updatedUser: user });
 	} catch (error) {
-		response.status(500).json({
-			success: false,
-			error: "Сталася помилка при створенні замовлення",
-		});
-	}
-});
-
-router.get("/orders", async (request, response) => {
-	try {
-		const customerAll = await Order.find();
-
-		response.status(200).json(customerAll);
-	} catch (error) {
-		response.status(500).json({
-			success: false,
-			error: "Сталася помилка при запиту на отримання замовлень",
-		});
+		console.error(error);
+		res.status(500).json({ success: false, message: "Помилка сервера" });
 	}
 });
 

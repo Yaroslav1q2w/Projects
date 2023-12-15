@@ -7,7 +7,6 @@ import todoReducer, {
 	actionFetchAllProducts,
 	actionCreateProduct,
 } from "./todo.reducer";
-import orderReducer, { createOrder, fetchOrders } from "./order.reducer";
 import basketReducer, {
 	increaseBasket,
 	decreaseBasket,
@@ -29,6 +28,8 @@ import registrationReducer, {
 	clearDataRegister,
 	actionFetchAllCustomers,
 } from "./registration.reducer";
+import userReducer, { updateUserInfo, fetchUserInfo } from "./user.reducer";
+import ordersReducer, { createOrder } from "./orders.reducer";
 
 export {
 	favoriteReducer,
@@ -38,9 +39,6 @@ export {
 	actionFetchCards,
 	actionFetchAllProducts,
 	actionCreateProduct,
-	orderReducer,
-	fetchOrders,
-	createOrder,
 	basketReducer,
 	increaseBasket,
 	decreaseBasket,
@@ -62,4 +60,9 @@ export {
 	registerFetchData,
 	clearDataRegister,
 	actionFetchAllCustomers,
+	userReducer,
+	updateUserInfo,
+	fetchUserInfo,
+	ordersReducer,
+	createOrder,
 };

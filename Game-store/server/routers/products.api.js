@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const router = Router();
-const jwtMiddleware = require("../middleware/jwtMiddleware");
 const Product = require("../models/product.mongoose");
 
 // Отримуємо всі продукти

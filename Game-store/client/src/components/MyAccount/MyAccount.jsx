@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useUserData } from "../../hooks/useUserData";
 
 import {
@@ -11,14 +11,24 @@ import {
 	IconFavourite,
 	IconExit,
 } from "./StyledMyAccount";
-import { clearDataAuth, clearDataRegister } from "../../reducers";
+import {
+	clearDataAuth,
+	clearDataRegister,
+	fetchUserInfo,
+} from "../../reducers";
 import { useNavigate } from "react-router-dom";
+import { userSelector } from "../../selectors";
+import { useEffect } from "react";
 
 const MyAccount = () => {
-	const { firstName, lastName } = useUserData();
-
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+
+	const user = useSelector(userSelector);
+
+	console.log(user);
+
+	const userToken = useUserData();
 
 	const ExitUser = () => {
 		dispatch(clearDataRegister());
@@ -27,10 +37,14 @@ const MyAccount = () => {
 		navigate("/");
 	};
 
+	useEffect(() => {
+		dispatch(fetchUserInfo(userToken._id));
+	}, []);
+
 	return (
 		<Wrapper>
 			<ContentInner>
-				<Header>
+				{/* <Header>
 					<span>Hello, </span> {firstName} {lastName}
 				</Header>
 				<MainButtons>
@@ -45,7 +59,7 @@ const MyAccount = () => {
 						<IconExit />
 						<span>Вийти</span>
 					</ButtonItem>
-				</MainButtons>
+				</MainButtons> */}
 			</ContentInner>
 		</Wrapper>
 	);
