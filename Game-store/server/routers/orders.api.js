@@ -42,4 +42,12 @@ router.post("/orders", async (req, res) => {
 	}
 });
 
+router.get("/orders", async (request, response) => {
+	const ordersAll = await Order.find();
+	response.status(200).json({
+		success: true,
+		data: ordersAll,
+	});
+});
+
 module.exports = router;

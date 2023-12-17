@@ -46,12 +46,17 @@ router.post("/customers", async (req, res) => {
 			region,
 			isAdmin,
 			orders: [],
+			created_at: new Date(),
 		});
 
 		const savedCustomer = await newCustomer.save();
 
 		const secretKey = generateSecretKey();
-		const token = jwt.sign({ _id: savedCustomer._id }, secretKey, {});
+		const token = jwt.sign(
+			{ _id: savedCustomer._id, isAdmin: savedCustomer.isAdmin },
+			secretKey,
+			{}
+		);
 		res.json({
 			token,
 			customerId: savedCustomer._id,
@@ -87,30 +92,21 @@ router.put("/customers/:customerId", async (req, res) => {
 	}
 });
 
-// Отримати інформацію про користувача за допомогою токену
-// Отримати інформацію про користувача за допомогою _id
-router.get("/customer/:userId", async (req, res) => {
+// Отримання конкретного користувача за його айді
+router.get("/customer/:customerId", async (req, res) => {
+	const customerId = req.params.customerId;
+
 	try {
-		const userId = req.params.userId;
-		const user = await Register.findById(userId);
+		const user = await Register.findById(customerId);
 
 		if (!user) {
 			return res.status(404).json({ message: "Користувача не знайдено" });
 		}
 
-		res.status(200).json({
-			_id: user._id,
-			firstName: user.firstName,
-			lastName: user.lastName,
-			login: user.login,
-			email: user.email,
-			region: user.region,
-			isAdmin: user.isAdmin,
-			orders: user.orders,
-		});
+		res.json({ success: true, user });
 	} catch (error) {
 		console.error(error);
-		res.status(500).json({ message: "Помилка сервера" });
+		res.status(500).json({ success: false, message: "Помилка сервера" });
 	}
 });
 

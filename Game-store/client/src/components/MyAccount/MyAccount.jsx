@@ -16,7 +16,7 @@ import {
 	clearDataRegister,
 	fetchUserInfo,
 } from "../../reducers";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userSelector } from "../../selectors";
 import { useEffect } from "react";
 
@@ -25,10 +25,8 @@ const MyAccount = () => {
 	const navigate = useNavigate();
 
 	const user = useSelector(userSelector);
-
+	const userId = useUserData();
 	console.log(user);
-
-	const userToken = useUserData();
 
 	const ExitUser = () => {
 		dispatch(clearDataRegister());
@@ -36,30 +34,33 @@ const MyAccount = () => {
 
 		navigate("/");
 	};
-
 	useEffect(() => {
-		dispatch(fetchUserInfo(userToken._id));
+		dispatch(fetchUserInfo(userId._id));
 	}, []);
 
 	return (
 		<Wrapper>
 			<ContentInner>
-				{/* <Header>
-					<span>Hello, </span> {firstName} {lastName}
+				<Header>
+					<span>Hello, </span> {user?.firstName} {user?.lastName}
 				</Header>
 				<MainButtons>
-					<ButtonItem>
-						<IconOrders /> <span>Мої Замовлення</span>
-					</ButtonItem>
-					<ButtonItem>
+					<Link to={"my-orders"}>
+						<ButtonItem>
+							<IconOrders />
+							<span>Мої Замовлення</span>
+						</ButtonItem>
+					</Link>
+
+					{/* <ButtonItem>
 						<IconFavourite />
 						<span>Вибрані</span>
-					</ButtonItem>
+					</ButtonItem> */}
 					<ButtonItem onClick={ExitUser}>
 						<IconExit />
 						<span>Вийти</span>
 					</ButtonItem>
-				</MainButtons> */}
+				</MainButtons>
 			</ContentInner>
 		</Wrapper>
 	);

@@ -1,1 +1,1 @@
-export const orderSelector = (state) => state?.orders?.orders || null;
+export const orderSelector = (state) => state?.orders?.orders;

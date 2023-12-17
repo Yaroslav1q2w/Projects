@@ -8,6 +8,7 @@ import { registerAllCustomers } from "../../../../selectors";
 const EditUsers = () => {
 	const dispatch = useDispatch();
 	const customers = useSelector(registerAllCustomers);
+	console.log(customers);
 
 	useEffect(() => {
 		dispatch(actionFetchAllCustomers());

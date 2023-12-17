@@ -29,7 +29,7 @@ import registrationReducer, {
 	actionFetchAllCustomers,
 } from "./registration.reducer";
 import userReducer, { updateUserInfo, fetchUserInfo } from "./user.reducer";
-import ordersReducer, { createOrder } from "./orders.reducer";
+import ordersReducer, { createOrder, fetchAllOrders } from "./orders.reducer";
 
 export {
 	favoriteReducer,
@@ -65,4 +65,5 @@ export {
 	fetchUserInfo,
 	ordersReducer,
 	createOrder,
+	fetchAllOrders,
 };

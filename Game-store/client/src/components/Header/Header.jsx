@@ -8,8 +8,9 @@ import {
 	basketSelector,
 	favouriteSelector,
 	registrationSelector,
+	userSelector,
 } from "../../selectors";
-import { chengeCategory, setPageCount } from "../../reducers";
+import { chengeCategory, fetchUserInfo, setPageCount } from "../../reducers";
 import {
 	HeaderContainer,
 	HeaderWrapp,
@@ -39,15 +40,7 @@ const Header = () => {
 	const isAuth = useSelector(authSelector);
 	const isRegistration = useSelector(registrationSelector);
 
-	const user = useUserData();
-
-	const registerDataString = localStorage.getItem("registerData");
-	const authDataString = localStorage.getItem("authData");
-
-	const registerData = registerDataString
-		? JSON.parse(registerDataString)
-		: null;
-	const authData = authDataString ? JSON.parse(authDataString) : null;
+	const userId = useUserData();
 
 	useEffect(() => {
 		localStorage.setItem("ShoppingCardCount", JSON.stringify(basketCount));
@@ -91,22 +84,21 @@ const Header = () => {
 		if (isRegistration) navigate("/");
 	}, [isAuth, isRegistration]);
 
-	const buttonAuthorization =
-		registerData || authData ? (
-			<LinkMyAccount to="/api/my-account">
-				<UserRegister>
-					<IconMyAccount />
-					<span>My account</span>
-				</UserRegister>
-			</LinkMyAccount>
-		) : (
-			<Linklogin>
-				<UserRegister onClick={toggleDropdown}>
-					<IconMyAccount />
-					<span>Sign Up / Log In</span>
-				</UserRegister>
-			</Linklogin>
-		);
+	const buttonAuthorization = userId ? (
+		<LinkMyAccount to="/api/my-account">
+			<UserRegister>
+				<IconMyAccount />
+				<span>My account</span>
+			</UserRegister>
+		</LinkMyAccount>
+	) : (
+		<Linklogin>
+			<UserRegister onClick={toggleDropdown}>
+				<IconMyAccount />
+				<span>Sign Up / Log In</span>
+			</UserRegister>
+		</Linklogin>
+	);
 
 	return (
 		<HeaderContainer>
@@ -131,7 +123,7 @@ const Header = () => {
 						<span>{basketCount.length + favouriteCount.length}</span>
 					</a>
 
-					{user?.isAdmin && (
+					{userId?.isAdmin && (
 						<EditLink to="/api/edit">
 							<EditIcon />
 						</EditLink>

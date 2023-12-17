@@ -14,9 +14,13 @@ const initialState = {
 export const actionFetchAllCustomers = createAsyncThunk(
 	"todos/fetchAllCustomers",
 	async () => {
-		const response = await axios.get(`${API_URL}/api/customers`);
-
-		return response.data;
+		try {
+			const response = await axios.get(`${API_URL}/api/customers`);
+			return response.data;
+		} catch (error) {
+			console.error(error);
+			throw error;
+		}
 	}
 );
 
@@ -59,12 +63,12 @@ const registrationReducer = createSlice({
 		});
 
 		builder.addCase(actionFetchAllCustomers.pending, (state) => {
-			state.isLoading = true;
+			state.status = "loading";
 			state.allCustomers = [];
 		});
 		builder.addCase(actionFetchAllCustomers.fulfilled, (state, { payload }) => {
 			state.allCustomers = payload;
-			state.isLoading = false;
+			state.status = "leaded";
 		});
 	},
 });

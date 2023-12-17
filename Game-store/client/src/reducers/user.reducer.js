@@ -25,9 +25,9 @@ export const updateUserInfo = createAsyncThunk(
 
 export const fetchUserInfo = createAsyncThunk(
 	"user/fetchUserInfo",
-	async (userId, { rejectWithValue }) => {
+	async (customerId, { rejectWithValue }) => {
 		try {
-			const response = await axios.get(`${API_URL}/api/customer/${userId}`);
+			const response = await axios.get(`${API_URL}/api/customer/${customerId}`);
 			return response.data;
 		} catch (error) {
 			return rejectWithValue(error.response.data);
