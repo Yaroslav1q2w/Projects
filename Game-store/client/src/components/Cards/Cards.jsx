@@ -30,6 +30,7 @@ const Cards = () => {
 	const modal = useSelector(isModalSelector);
 	const isLoading = useSelector(isLoadingSelector);
 
+	console.log(cards);
 	const categoryID = useSelector(categorySelector);
 	const pageCount = useSelector(pageCountSelector);
 	const limitCount = useSelector(currentLimitSelector);
@@ -51,7 +52,7 @@ const Cards = () => {
 			<SectionGames>
 				{isLoading
 					? [...new Array(9)].map((_, index) => <CardsSceleton key={index} />)
-					: cards?.map((card) => (
+					: cards.map((card) => (
 							<GameCard
 								cardProps={card}
 								isOpenModal={() => dispatch(modalOpen())}

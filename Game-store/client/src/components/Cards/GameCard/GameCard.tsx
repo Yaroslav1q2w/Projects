@@ -52,7 +52,13 @@ const GameCard: React.FC<GameProps> = ({
 		<Wrapper>
 			<Link to={`api/products/${_id}`}>
 				<ImageItem>
-					<img src={image} alt={title} width={320} height={180} />
+					<img
+						src={image}
+						alt={title}
+						width={320}
+						height={180}
+						loading="lazy"
+					/>
 					<GameBack>
 						<GameBackWrapp>
 							<h2 className="game__back-title">{title}</h2>

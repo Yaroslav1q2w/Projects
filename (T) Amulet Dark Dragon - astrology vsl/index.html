@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="img/favicon.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+		/>
+		<title>ดื่มด่ำไปกับโลกแห่งดวงดาว</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/date-init.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper/swiper-bundle.min.css"
+		/>
+
+		<!-- Add Swiper JS -->
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="wrapper__block">
+				<h1 class="header__title">ดื่มด่ำไปกับโลกแห่งดวงดาว</h1>
+				<div class="video-block" id="video-block1">
+					<div class="video-wrapper">
+						<video class="video" playsinline src="video/1.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="btns-block" id="test-block1">
+						<button class="test__button" style="display: none">ต่อไป</button>
+					</div>
+				</div>
+
+				<div class="video-block hidden" id="video-block2">
+					<div class="video-wrapper">
+						<video class="video" src="video/2.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="test-block">
+						<h2>เลือก เดือนเกิด</h2>
+						<div class="test-block__buttons" id="test-block2">
+							<button class="test__button">มกราคม</button>
+							<button class="test__button">กุมภาพันธ์</button>
+							<button class="test__button">มีนาคม</button>
+							<button class="test__button">เมษายน</button>
+							<button class="test__button">พฤษภาคม</button>
+							<button class="test__button">มิถุนายน</button>
+							<button class="test__button">กรกฎาคม</button>
+							<button class="test__button">สิงหาคม</button>
+							<button class="test__button">กันยายน</button>
+							<button class="test__button">ตุลาคม</button>
+							<button class="test__button">พฤศจิกายน</button>
+							<button class="test__button">ธันวาคม</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="video-block hidden" id="video-block3">
+					<div class="video-wrapper">
+						<video class="video" playsinline src="video/3.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="test-block">
+						<h2>เลือก วันเกิด</h2>
+						<div class="test-block__buttons" id="test-block3">
+							<button class="test__button">1</button>
+							<button class="test__button">2</button>
+							<button class="test__button">3</button>
+							<button class="test__button">4</button>
+							<button class="test__button">5</button>
+							<button class="test__button">6</button>
+							<button class="test__button">7</button>
+							<button class="test__button">8</button>
+							<button class="test__button">9</button>
+							<button class="test__button">11</button>
+							<button class="test__button">12</button>
+							<button class="test__button">13</button>
+							<button class="test__button">14</button>
+							<button class="test__button">15</button>
+							<button class="test__button">16</button>
+							<button class="test__button">17</button>
+							<button class="test__button">18</button>
+							<button class="test__button">19</button>
+							<button class="test__button">20</button>
+							<button class="test__button">21</button>
+							<button class="test__button">22</button>
+							<button class="test__button">23</button>
+							<button class="test__button">24</button>
+							<button class="test__button">25</button>
+							<button class="test__button">26</button>
+							<button class="test__button">27</button>
+							<button class="test__button">28</button>
+							<button class="test__button">29</button>
+							<button class="test__button">30</button>
+							<button class="test__button">31</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="video-block hidden" id="video-block4">
+					<div class="video-wrapper">
+						<video class="video" src="video/4.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="test-block">
+						<h2>เลือก ปีเกิด</h2>
+						<div class="test-block__buttons" id="test-block4">
+							<button class="test__button">2470</button>
+							<button class="test__button">2480</button>
+							<button class="test__button">2490</button>
+							<button class="test__button">2500</button>
+							<button class="test__button">2510</button>
+							<button class="test__button">2520</button>
+							<button class="test__button">2530</button>
+							<button class="test__button">2540</button>
+							<button class="test__button">2550</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="video-block hidden" id="video-block5">
+					<div class="video-wrapper">
+						<video class="video" src="video/5.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="test-block">
+						<h2>เลือก ปีเกิด</h2>
+						<div class="test-block__buttons hidden" data-year="2470">
+							<button class="test__button">2470</button>
+							<button class="test__button">2471</button>
+							<button class="test__button">2472</button>
+							<button class="test__button">2473</button>
+							<button class="test__button">2474</button>
+							<button class="test__button">2475</button>
+							<button class="test__button">2476</button>
+							<button class="test__button">2477</button>
+							<button class="test__button">2478</button>
+							<button class="test__button">2479</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2480">
+							<button class="test__button">2480</button>
+							<button class="test__button">2481</button>
+							<button class="test__button">2482</button>
+							<button class="test__button">2483</button>
+							<button class="test__button">2484</button>
+							<button class="test__button">2485</button>
+							<button class="test__button">2486</button>
+							<button class="test__button">2487</button>
+							<button class="test__button">2488</button>
+							<button class="test__button">2489</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2490">
+							<button class="test__button">2490</button>
+							<button class="test__button">2491</button>
+							<button class="test__button">2492</button>
+							<button class="test__button">2493</button>
+							<button class="test__button">2494</button>
+							<button class="test__button">2495</button>
+							<button class="test__button">2496</button>
+							<button class="test__button">2497</button>
+							<button class="test__button">2498</button>
+							<button class="test__button">2499</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2500">
+							<button class="test__button">2500</button>
+							<button class="test__button">2501</button>
+							<button class="test__button">2502</button>
+							<button class="test__button">2503</button>
+							<button class="test__button">2504</button>
+							<button class="test__button">2505</button>
+							<button class="test__button">2506</button>
+							<button class="test__button">2507</button>
+							<button class="test__button">2508</button>
+							<button class="test__button">2509</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2510">
+							<button class="test__button">2510</button>
+							<button class="test__button">2511</button>
+							<button class="test__button">2512</button>
+							<button class="test__button">2513</button>
+							<button class="test__button">2514</button>
+							<button class="test__button">2515</button>
+							<button class="test__button">2516</button>
+							<button class="test__button">2517</button>
+							<button class="test__button">2518</button>
+							<button class="test__button">2519</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2520">
+							<button class="test__button">2520</button>
+							<button class="test__button">2521</button>
+							<button class="test__button">2522</button>
+							<button class="test__button">2523</button>
+							<button class="test__button">2524</button>
+							<button class="test__button">2525</button>
+							<button class="test__button">2526</button>
+							<button class="test__button">2527</button>
+							<button class="test__button">2528</button>
+							<button class="test__button">2529</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2530">
+							<button class="test__button">2530</button>
+							<button class="test__button">2531</button>
+							<button class="test__button">2532</button>
+							<button class="test__button">2533</button>
+							<button class="test__button">2534</button>
+							<button class="test__button">2535</button>
+							<button class="test__button">2536</button>
+							<button class="test__button">2537</button>
+							<button class="test__button">2538</button>
+							<button class="test__button">2539</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2540">
+							<button class="test__button">2540</button>
+							<button class="test__button">2541</button>
+							<button class="test__button">2542</button>
+							<button class="test__button">2543</button>
+							<button class="test__button">2544</button>
+							<button class="test__button">2545</button>
+							<button class="test__button">2546</button>
+							<button class="test__button">2547</button>
+							<button class="test__button">2548</button>
+							<button class="test__button">2549</button>
+						</div>
+
+						<div class="test-block__buttons hidden" data-year="2550">
+							<button class="test__button">2550</button>
+							<button class="test__button">2551</button>
+							<button class="test__button">2552</button>
+							<button class="test__button">2553</button>
+							<button class="test__button">2554</button>
+							<button class="test__button">2555</button>
+							<button class="test__button">2556</button>
+							<button class="test__button">2557</button>
+							<button class="test__button">2558</button>
+							<button class="test__button">2559</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="video-block hidden" id="video-block6">
+					<div class="video-wrapper">
+						<video class="video" src="video/6.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="test-block">
+						<h2>กรอก เวลาเกิด</h2>
+						<div class="test-block__input">
+							<span class="input__text">เลือกเวลา </span>
+							<input
+								type="text"
+								id="birth-time"
+								placeholder="--:--"
+								pattern="^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"
+								title="Please enter a valid time in HH:mm format"
+							/>
+							<button id="unknown-time-btn">ไม่ทราบเวลาเกิด</button>
+						</div>
+
+						<button id="continue-btn" class="hidden">ต่อไป</button>
+					</div>
+				</div>
+
+				<div class="video-block hidden" id="video-block7">
+					<div class="video-wrapper">
+						<video class="video" src="video/7.mp4"></video>
+						<div class="play-btn">
+							<img style="max-width: 100px" src="img/play.png" alt="" />
+						</div>
+					</div>
+
+					<div class="test-block">
+						<h2>กรอก ชื่อของคุณ</h2>
+						<div class="test-block__input">
+							<form id="name-form" style="width: 100%">
+								<input
+									type="text"
+									id="name-input"
+									placeholder="กรอกชื่อของคุณ"
+									required
+									minlength="2"
+								/>
+								<button type="button" id="name-input-btn">ต่อไป</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="chat-block d-none">
+				<div class="user-bar">
+					<div class="back"><i class="zmdi zmdi-arrow-left"></i></div>
+					<div class="avatar">
+						<img src="img/avatar.png" alt="หมอช้าง ทศพร ศรีตุลา" />
+					</div>
+					<div class="name">
+						<span>หมอช้าง ทศพร ศรีตุลา</span><span class="status">online</span>
+					</div>
+					<div class="actions more"><i class="zmdi zmdi-more-vert"></i></div>
+					<div class="actions attachment mob__icons">
+						<i class="zmdi zmdi-attachment-alt"></i>
+					</div>
+					<div class="actions mob__icons"><i class="zmdi zmdi-phone"></i></div>
+				</div>
+
+				<div class="main__content">
+					<div class="chat">
+						<div class="chat-content-list">
+							<div class="chat-content-item manager d-none">
+								<img src="./img/avatar.png" alt="" />
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										สวัสดีครับ! ผม หมอช้าง ทศพร ศรีตุลา
+										ผู้ช่วยของผมได้คำนวณดวงของคุณให้เรียบร้อยแล้วนะครับ
+										และสิ่งนี้ทำให้กังวลมาก จากดวง
+										เห็นได้ชัดว่าการเงินของคุณกำลังจะย่ำแย่
+										ความคิดและทัศนคติของคุณคือสิ่งที่ผลักดันเงินออกจากชีวิตของคุณ
+										เพื่อการวิเคราะห์พื้นดวงของคุณที่แม่นยำยิ่งขึ้น
+										โปรดตอบคำถามสองสามข้อ:
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img src="./img/avatar.png" alt="" />
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										คุณรู้สึกเชื่อมโยงอย่างลึกซึ้งกับโลกภายในของคุณซึ่งเต็มไปด้วยความลึกลับและความสามารถทางสัญชาตญาณหรือไม่?
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item user d-none">
+								<div class="chat-content-desc d-none">
+									<div class="user-text">ผู้หญิง</div>
+								</div>
+								<div class="interactive-block" id="gender">
+									<button class="chooseGender video-btn" data-type="m">
+										ใช่
+									</button>
+									<button class="chooseGender video-btn" data-type="w">
+										ไม่ใช่
+									</button>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										คุณรู้สึกถึงความแตกต่างและความแปลกจากผู้คนได้หรือไม่
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item user d-none">
+								<div class="chat-content-desc d-none">
+									<div class="user-text">ผู้หญิง</div>
+								</div>
+								<div class="interactive-block" id="gender">
+									<button class="chooseGender video-btn" data-type="m">
+										ใช่
+									</button>
+									<button class="chooseGender video-btn" data-type="w">
+										ไม่ใช่
+									</button>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										คุณรู้สึกถึงอยากอยู่เงียบ ๆ ในที่สงบและทำงานเงียบๆ
+										คนเดียวหรือไม่
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+							<div class="chat-content-item user d-none">
+								<div class="chat-content-desc d-none">
+									<div class="user-text">ผู้หญิง</div>
+								</div>
+								<div class="interactive-block" id="gender">
+									<button class="chooseGender video-btn" data-type="m">
+										ใช่
+									</button>
+									<button class="chooseGender video-btn" data-type="w">
+										ไม่ใช่
+									</button>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										คุณรู้สึกว่าการสื่อสารและการแสวงหาความรู้ทำให้คุณมีโชคและความก้าวหน้าในชีวิตหรือไม่?
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+							<div class="chat-content-item user d-none">
+								<div class="chat-content-desc d-none">
+									<div class="user-text">ผู้หญิง</div>
+								</div>
+								<div class="interactive-block" id="gender">
+									<button class="chooseGender video-btn" data-type="m">
+										ใช่
+									</button>
+									<button class="chooseGender video-btn" data-type="w">
+										ไม่ใช่
+									</button>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										คุณรู้สึกว่าเสน่ห์และการเจรจาของคุณมีส่วนอย่างยิ่งต่อความสำเร็จในอาชีพการงานของคุณหรือไม่?
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+							<div class="chat-content-item user d-none">
+								<div class="chat-content-desc d-none">
+									<div class="user-text">ผู้หญิง</div>
+								</div>
+								<div class="interactive-block" id="gender">
+									<button class="chooseGender video-btn" data-type="m">
+										ใช่
+									</button>
+									<button class="chooseGender video-btn" data-type="w">
+										ไม่ใช่
+									</button>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										<p>ขอบคุณสำหรับคำตอบ! ข้อมูลความของคุณพร้อมแล้ว</p>
+										<br />
+
+										<p id="name__user-elem"></p>
+										<br />
+										<p>มาดูพื้นดวงเกิดของคุณกัน</p>
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										พื้นดวงของคุณแสดงให้เห็นการผสมผสานของดาวเคราะห์ที่เป็นเอกลักษณ์
+										ซึ่งบ่งบอกถึงความพิเศษของคุณ
+										การแยกวิเคราะห์แผนที่ดังกล่าวต้องใช้ความรู้เชิงลึกและประสบการณ์ที่กว้างขวาง
+										โชคดีที่เราได้เตรียมรายงานโดยละเอียดซึ่งจะช่วยเปิดเผยลักษณะทางโหราศาสตร์ของคุณให้กับคุณ
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										เมื่อพิจารณาข้อมูลของคุณและคำตอบในการทดสอบทั้งหมด
+										บ่งชี้ว่าการเปลี่ยนแปลงทางการเงินครั้งใหญ่จะเกิดขึ้นกับคุณในอีกไม่กี่เดือนข้างหน้า
+										ไม่ว่าสิ่งนี้จะเป็นจริงหรือไม่ก็ขึ้นอยู่กับคุณในการตัดสินใจในตอนนี้
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										การผสมคำถามและคำตอบประเภทนี้เกิดขึ้นได้ยากและสามารถเกิดขึ้นได้เพียงครั้งเดียวในชีวิตของบุคคลเท่านั้น
+										คุณจึงเป็นคนพิเศษ
+										และตอนนี้ก็ถึงเวลาที่คุณต้องเปลี่ยนแปลงชีวิตแล้ว
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										ภายในหนึ่งเดือน ชีวิตของคุณจะเปลี่ยนไปอย่างมาก
+										หนี้ทั้งหมดของคุณจะหายไป เงินทองจะเข้ามาหาคุณจากทุกทิศทุกทาง
+										คุณจะบอกลาปัญหาทางด้านการเงินได้ไปตลอดชีวิตได้
+										สิ่งนี้จะเกิดขึ้นก็ต่อเมื่อคุณฟังสิ่งที่ผมพูดและทำทุกอย่างถูกต้อง
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										ผมแน่ใจว่าดวงของคุณคือสัญญาณของโชคชะตาที่จะเปิดโอกาสให้คุณหมดหนี้
+										หมดปัญหาทางการเงิน และปัญหาชีวิตทั้งหมดของคุณ หากคุณเริ่มสวม
+										"เครื่องราง" ตามคำแนะนำของผม
+										เงินและความมั่งคั่งจะเริ่มเข้ามาหาคุณ!
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										ขอบอกเลยว่าชีวิตคนเรานั้นเรียบง่ายมาก โชคชะตานำคุณไปสู่ปัญหา
+										แต่คุณไม่ต้องกังวลอีกต่อไปหากคุณมีเครื่องรางที่ปกป้องคุณจากเรื่องร้าย
+										ๆ !
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										ผมจะให้วิธีป้องกันตัวเองจากโชคร้าย
+										และเริ่มใช้ชีวิตอย่างมั่งคั่งตามเป้าหมายของคุณ
+										และผมอยากจะบอกเลยว่าบอกว่าไม่ใช่ทุกคนที่จะมีโอกาสนี้
+										แต่ข้อมูลเกี่ยวกับคุณที่คุณเลือกในการทดสอบแสดงให้เห็นว่าคุณสามารถทำเช่นนี้ได้ด้วยความช่วยเหลือของเครื่องราง
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										สิ่งสำคัญคือต้องตระหนักและหลีกเลี่ยงผลกระทบด้านลบเหล่านี้
+										การใส่ใจกับสัญลักษณ์มังกรที่อยู่รอบตัวคุณเป็นกุญแจสำคัญในการปลดล็อกศักยภาพของคุณ
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										ผมจะช่วยคุณให้พ้นจากพลังงานมืดและชำระล้างความโชคร้ายให้คุณ
+										ขอแนะนำให้สวมเครื่องรางพิเศษซึ่งจะช่วยขจัดความโชคร้ายไปจากคุณและเสริมโชคของคุณ
+										ด้วยเครื่องรางนี้ คุณสามารถดึงดูดโชคลาภ
+										ได้รับความสำเร็จทางการเงิน
+										ไม่ว่าจะเป็นการถูกลอตเตอรี่หรือการเลื่อนตำแหน่งในที่ทำงาน
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										สัญลักษณ์บนเครื่องรางหมายถึงอะไร?
+										สัญลักษณ์แห่งการรับกระแสเงินสด
+										เงินจำนวนมากจะเริ่มไหลเข้ามาหาเจ้าของ:
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img
+									class="chat-content-desc-image"
+									src="img/avatar.png"
+									alt=""
+								/>
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										<ul class="list__wrap-img">
+											<li class="list__elem">
+												คุณสามารถเปลี่ยนงานหรือเลื่อนตำแหน่งได้
+											</li>
+											<li class="list__elem">หมดหนี้ และลูกหนี้จะมาใช้หนี้</li>
+											<li class="list__elem">โอกาสใหม่ ๆ รอคุณอยู่</li>
+											<li class="list__elem">
+												ความโชคดีในธุรกิจและการเงินรอคุณอยู่
+											</li>
+											<li class="list__elem">
+												คุณสามารถเริ่มต้นธุรกิจของคุณเอง
+											</li>
+											<li class="list__elem">
+												เงินจำนวนมากจะไหลเข้ามาในชีวิตของคุณ
+											</li>
+										</ul>
+										ด้วยเครื่องศักดิ์สิทธิ์นี้ คุณจะเฮงๆ รวยๆ ตลอดชีวิต
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="chat-content-item manager d-none">
+								<img src="./img/avatar.png" alt="" />
+								<div class="chat-content-desc">
+									<div class="manager-text d-none">
+										พกเครื่องรางนี้ไว้ในกระเป๋าสตางค์ กระเป๋า คล้องคอ
+										หรือทุกที่ที่คุณสะดวก
+										เพื่อไม่ให้เครื่องรางชิ้นนี้ปรากฏต่อหน้าคนรอบข้างบ่อยนัก
+										ปฏิบัติต่อเครื่องรางด้วยความเอาใจใส่และเคารพ
+										คุณต้องแสดงความปรารถนาและคำขอในขณะที่ถือเครื่องรางมังกรอยู่ในมือ
+										และในกรณีนี้
+										คุณจะรู้สึกถึงการเปลี่ยนแปลงในวันถัดไปและในวันต่อ ๆ
+										ไปทั้งหมด!
+									</div>
+
+									<div class="chat-content-typing">
+										<span class="dot"></span><span class="dot"></span
+										><span class="dot"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<h2
+							class="after-text d-none"
+							style="text-align: center; color: #fff"
+						>
+							ส่วนลดนี้มีเวลาจำกัดตั้งแต่
+							<script>
+								dtime("th", 7);
+							</script>
+							จนถึง
+							<script>
+								dtime("th", 0);
+							</script>
+							(เท่านั้น!)
+							<br /><br />
+							เพียงกรอกแบบฟอร์มสั่งซื้อด้านล่างและรับเครื่องรางสำหรับคุณโดยเฉพาะ
+						</h2>
+					</div>
+
+					<div class="after-chat d-none">
+						<form id="myForm" method="POST" action="#">
+							<div
+								class="h2Block center"
+								style="font-size: 30px; color: white; text-align: center"
+							>
+								เพื่อดึงดูดเงินและโชคดี฿
+							</div>
+							<div
+								style="
+									background: rgb(0, 0, 0) none repeat scroll 0% 0%;
+									text-align: center;
+									margin: 10px 0px;
+									padding: 5px;
+									border: 1px solid rgb(255, 255, 255);
+									color: rgb(255, 255, 255);
+									font-size: 22px;
+									font-weight: bold;
+									border-radius: 15px;
+									box-shadow: 1px 1px 40px 0px rgba(32, 32, 32, 0.51);
+								"
+							>
+								รับส่วนลดพิเศษ
+								<img src="img/discount-2789871_1280.png" width="100" />
+								<font style="text-decoration: line-through">1,980 </font><br />
+
+								<font style="font-size: 34px; color: red" size="25">990</font>
+								บาท
+							</div>
+							<div
+								style="
+									width: 100%;
+									max-width: 400px;
+									height: 300px;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									margin: 15px auto;
+								"
+							>
+								<img
+									loading="lazy"
+									alt="img"
+									class="amulet-ph"
+									src="img/image6.png"
+									style="
+										margin: 0 auto;
+										display: block;
+										width: 100%;
+										max-width: 280px;
+									"
+								/>
+							</div>
+							<input
+								id="name"
+								name="name"
+								value=""
+								class="textbox set-user-name"
+								placeholder="ชื่อ"
+								autocomplete="name"
+								required=""
+								type="text"
+								minlength="2"
+							/>
+							<input
+								class="textbox"
+								name="phone"
+								placeholder="หมายเลขโทรศัพท์"
+								autocomplete="tel"
+								required=""
+								type="tel"
+								minlength="9"
+								maxlength="14"
+							/>
+							<button class="submit_btn order-btn" type="submit">
+								สั่งซื้อ
+							</button>
+						</form>
+
+						<section class="comments" id="comment-component-text">
+							<div id="comment_num" class="">ความคิดเห็น:</div>
+							<div class="form-comment">
+								<div class="txt-cmt">
+									<div class="form-comment__img">
+										<img
+											id="comment-img-dummy"
+											src="img/default-avatar.jpg"
+											alt=""
+										/>
+									</div>
+									<div class="form-comment__content">
+										<input
+											type="text"
+											placeholder="ชื่อ"
+											id="yourName"
+											class="your-name"
+										/>
+										<textarea
+											class="txt-content"
+											placeholder="เพิ่มความคิดเห็น"
+										></textarea>
+										<button class="add-comment-button">ทิ้งข้อความไว้</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image12.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">น้ำฝน</h2>
+									<div class="comment__text">
+										เครื่องรางชิ้นนี้สวยมากๆค่ะ เพิ่งได้รับมา
+										รู้สึกถึงพลังงานบวกที่แผ่ไปตามร่างกาย
+										แถมยังถูกลอตเตอรี่ด้วยค่ะ นี่เป็นครั้งแรกเลย
+
+										<br />
+										<img class="comment__img" src="img/image33.jpg" alt="" />
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">4</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 0);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image37.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">ดารารัตน์ แก้วมีสุข</h2>
+									<div class="comment__text">
+										ตกใจมาก! ไม่อยากจะเชื่อเลยค่ะ ไม่ขอเล่ารายละเอียดนะคะ
+										แต่ดูดวงแม่นมาก ทุกอย่างเหมือนที่พูดเลยค่ะ!
+										แต่พี่โชคดีมากที่ทำตามคำแนะนำ ขออวดเครื่องรางหน่อยนะคะ:
+
+										<br />
+										<!-- <img class="comment__img" src="img/comm2-off.jpg" alt="" /> -->
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">6</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 0);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image15.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">จินดา จินดา</h2>
+									<div class="comment__text">
+										โชคดีมากค่ะ เพราะเครื่องรางนี้พี่ถูกลอตตารี่รางวัลที่ 1
+										หลายใบเลย
+										ตอนนี้คนที่ธนาคารชอบโทรมาขายประกันไม่หยุดเลยค่ะl!ขอบคุณมากค่ะ
+										!
+
+										<br />
+										<img class="comment__img" src="img/image4.jpg" alt="" />
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">5</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">1</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 0);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image1.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">อาชา บุตรทองคำ</h2>
+									<div class="comment__text">
+										ก่อนหน้าผมไม่เชื่อและไม่ปฏิบัติตามคำแนะนำหลังทำนาย..ตอนนี้เคราะห์ร้ายเข้ามาเยือนแล้ว...หมาตัวโปรดตาย
+										โชคร้ายมาเยือนบ่อย ๆ ..ผมเลยไปดูดวงอีกรอบ
+										รอบนี้ผมบูชาเครื่องรางมาด้วย เข้าใจเลยครับพอเข้าตาจน
+										เจอเรื่องร้าย ๆ หลายเรื่องติดกันก็ต้องเชื่อเรื่องแบบนี้บ้าง
+
+										<br />
+										<!-- <img class="comment__img" src="img/comm4-off.jpg" alt="" /> -->
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">6</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 1);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image11.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">แวว วรารัตน์</h2>
+									<div class="comment__text">
+										เล่าให้แม่ฟังเกี่ยวกับคำทำนาย แถมเครื่องรางแตกไปครึ่งนึง
+										และหลังจากนั้นก็ถูกไล่ออกเพราะฉันลบไฟล์สำคัญในคอมพิวเตอร์ที่ทำงานโดยไม่ได้ตั้งใจ
+										และตอนนี้ไม่สามารถกู้คืนได้... จะแก้ไขทุกอย่างได้ยังไงบ้างคะ
+
+										<br />
+										<!-- <img class="comment__img" src="img/comm5-off.jpg" alt="" /> -->
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">4</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 1);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image22.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">ศศิกานต์ ฤทัยหมาย</h2>
+									<div class="comment__text">
+										ขอบคุณมากค่า! แนะนำเลยค่ะ ดวงแม่นตามที่พูดจริง
+										เครื่องรางก็ดีจริงค่ะ
+
+										<br />
+										<!-- <img class="comment__img" src="img/comm6-off.gif" alt="" /> -->
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">3</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 1);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image44.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">ดลยา</h2>
+									<div class="comment__text">
+										ของส่งช้ามาก ก็เขาบอกว่าเครื่องรางจะถูกจัดส่งภายใน 3 วัน
+										สุดท้ายดิฉันก็ต้องรอ 4 วัน
+										แต่อย่างน้อยๆผลลัพธ์ของมันก็ออกมาดี เพราะว่าอยู่ดีๆ
+										เจ้านายโทรหาดิฉันแล้วเสนอการเลื่อนตำแหน่งให้
+
+										<br />
+										<img class="comment__img" src="img/image40.gif" alt="" />
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">9</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 2);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image28.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">วัลลภ</h2>
+									<div class="comment__text">
+										ไม่น่าเลย! ผมต้องเสียแฟนของผมไปเพราะเครื่องรางนี้...
+										เธอเข้ารับคำปรึกษาจากพ่อหมอเช่นเดียวกับผม
+										ตอนนี้เธอได้ย้ายไปอยู่สวีเดนแล้ว มันเป็นความฝันของเธอ
+										ถึงตอนนี้ผมจะยังอยู่ประเทศไทยแต่ผมก็รวยขึ้นมากๆ
+										และผมก็ยังรอเธอกลับมาจากสวีเดน
+										อีกแค่เดือนเดียวเท่านั้นเธอก็จะกลับมาแล้ว!
+
+										<br />
+										<img class="comment__img" src="img/image17.jpg" alt="" />
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">6</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 2);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<div class="comment">
+								<img class="comment__image" src="img/image16.jpg" alt=" " />
+								<div class="comment__content">
+									<h2 class="comment__name">ปิ่น</h2>
+									<div class="comment__text">
+										หนูแน่ใจว่า ส่วนใหญ่คนที่รวยๆมักจะสวมเครื่องรางแบบนี้
+										เพราะเราไม่สามารถอธิบายได้เลยว่าทำไมพวกเขาถึงโชคดีขนาดนั้นในชีวิต
+										555
+
+										<br />
+										<!-- <img class="comment__img" src="img/image17.jpg" alt="" /> -->
+									</div>
+									<p class="comment__details">
+										<button class="comments__like">
+											<img src="img/like-btn.svg" alt="" />
+											<span class="likes">6</span>
+											ชอบ
+										</button>
+										<button class="comments__dislike">
+											<img src="img/dislike-btn.svg" alt="" />
+											<span class="dislikes">0</span>
+											ไม่ชอบ
+										</button>
+										<a class="make-comment" href="#new_comment"
+											><img src="img/comment.svg" alt="" />ตอบ</a
+										>
+										<span class="comment__time">
+											<script>
+												dtime("th", 3);
+											</script>
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<style>
+								.npr-article-content img {
+									margin: 20px auto;
+									display: block;
+								}
+								#comment-component-text * {
+									margin: 0;
+									padding: 0;
+									box-sizing: border-box;
+								}
+								#comment-component-text {
+									background-color: #fff;
+									padding: 20px;
+									border-top: 4px solid #365398;
+									color: #000;
+									border: 2px solid rgb(241, 243, 244);
+									border-radius: 10px;
+									margin: 50px auto;
+								}
+								#comment-component-text #comment_num {
+									border-bottom: 1px dashed #365398;
+									color: #365398;
+									font-weight: bold;
+								}
+								#comment-component-text .comment,
+								#comment-component-text .txt-cmt {
+									margin: auto !important;
+									width: 100%;
+								}
+								#comment-component-text .txt-cmt {
+									display: flex;
+									align-items: flex-start;
+									padding: 20px 0;
+								}
+								#comment-component-text .txt-cmt .form-comment__img {
+									padding: 0 5px;
+									width: 80px;
+								}
+								#comment-component-text img {
+									max-width: 100%;
+									line-height: 1;
+									display: inline-block;
+									width: 65px;
+								}
+								#comment-component-text .form-comment__content {
+									width: 100%;
+									padding: 0 5px;
+								}
+								#comment-component-text .your-name,
+								#comment-component-text .txt-content {
+									font-size: inherit;
+								}
+								#comment-component-text .your-name {
+									border: 1px solid #ddd;
+									padding: 5px 10px;
+									width: 100%;
+									margin-bottom: 0;
+									max-width: 700px;
+									border-radius: none;
+								}
+								#comment-component-text .txt-content {
+									width: 100%;
+									min-height: 40px;
+									display: block;
+									margin: 15px 0 5px 0;
+									padding: 10px;
+									resize: none;
+									border: 1px solid #ddd;
+									box-sizing: border-box;
+									max-width: 700px;
+								}
+								#comment-component-text .add-comment-button {
+									background-color: #4267b2;
+									border: 1px solid #4267b2;
+									border: none;
+									color: #fff;
+									font-size: 14px;
+									border-radius: 2px;
+									padding: 0 8px;
+									line-height: 22px;
+									cursor: pointer;
+									font-weight: bold;
+									text-decoration: none;
+									width: initial;
+								}
+								#comment-component-text .comment {
+									border-top: 1px dashed #ccc;
+									display: flex;
+									align-items: flex-start;
+									padding: 25px 0;
+									margin: 0 -10px;
+									white-space: normal;
+								}
+								#comment-component-text .comment:last-of-type {
+									border-bottom: 1px dashed #ccc;
+								}
+								#comment-component-text .comment__content {
+									padding: 0 10px;
+									width: 100%;
+								}
+								#comment-component-text .comment__content .comment__name {
+									margin-top: 0;
+									color: #365398;
+									font-size: 18px;
+									text-align: left;
+									text-align-last: left;
+									font-weight: 700;
+								}
+								#comment-component-text .comment .comment__text {
+									margin: 0 0 7px 0;
+									font-size: 16px;
+									line-height: 1.4;
+								}
+								#comment-component-text .comment__details {
+									font-size: 12px;
+									color: #365398;
+									line-height: 2;
+								}
+								#comment-component-text .comment__details a,
+								#comment-component-text .comment__details span {
+									text-decoration: none;
+									color: #365398;
+									font-size: 12px;
+									line-height: 1.4;
+									font-weight: 400;
+									cursor: pointer;
+								}
+								#comment-component-text .comment__details img {
+									border-radius: 0;
+								}
+								#comment-component-text .comment__details img {
+									width: 16px;
+									position: relative;
+									top: 2px;
+								}
+								#comment-component-text .comment .comment__text img {
+									display: block;
+									width: 300px;
+									margin: 8px 0 0;
+									border-radius: 0 !important;
+									cursor: pointer;
+								}
+								#comment-component-text .form-comment {
+									font-size: 20px;
+								}
+								#comment-component-text .comment__details button {
+									background: transparent;
+									border: none;
+									color: #365398;
+									cursor: pointer;
+								}
+								#comment-component-text .make-comment {
+									display: inline-block;
+									white-space: nowrap;
+								}
+								#comment-component-text .comment__details button::after,
+								#comment-component-text .comment__details .make-comment::after {
+									content: "‧";
+									display: inline-block;
+									width: 13px;
+									text-align: center;
+								}
+								#comment-component-text .comment__time {
+									white-space: nowrap;
+								}
+								#comment-component-text .comment__time:hover {
+									cursor: default;
+								}
+								.comment__img {
+									cursor: pointer;
+								}
+								#comment-img-dummy {
+									border-radius: 50%;
+								}
+								@media screen and (max-width: 500px) {
+									.comment {
+										position: relative;
+										right: 5px;
+									}
+									#comment-img-dummy {
+										line-height: 1;
+										display: inline-block;
+										max-width: initial !important;
+									}
+								}
+								.events-stop {
+									pointer-events: none;
+								}
+							</style>
+						</section>
+
+						<a href="#myForm" class="bottom-btn">ดูต่อ</a>
+
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="./img/image25.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image14.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image26.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image39.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image8.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image10.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image13.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image34.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image2.png" alt="" />
+								</div>
+								<div class="swiper-slide">
+									<img src="./img/image21.png" alt="" />
+								</div>
+							</div>
+							<!-- Add Navigation -->
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+						</div>
+
+						<footer class="footer">
+							<p>ลิขสิทธิ์ © 2567 โดย Copyrightindex.com</p>
+							<p>
+								สงวนลิขสิทธิ์ ห้ามทำซ้ำ แจกจ่าย หรือส่งในรูปแบบใด ๆ
+								หรือด้วยวิธีการใด ๆ รวมถึงการทำสำเนา บันทึก
+								หรือวิธีการทางอิเล็กทรอนิกส์หรือเชิงกลอื่น ๆ
+								โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษรจากผู้ เผยแพร่
+								ยกเว้นในกรณีที่มีการอ้างอิงโดยย่อในรีวิวสำคัญและการใช้งานที่ไม่ใช่เชิงพาณิชย์อื่น
+								ๆ ที่ได้รับอนุญาตตามกฎหมายลิขสิทธิ์
+							</p>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/script.js"></script>
+		<script src="js/comments.js"></script>
+	</body>
+</html>
