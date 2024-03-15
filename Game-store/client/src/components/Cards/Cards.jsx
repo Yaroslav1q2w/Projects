@@ -5,6 +5,8 @@ import CardsSceleton from "../CardsSceleton";
 import MenuCategory from "../MenuCategory";
 import Pagination from "../Pagination";
 import { useSelector, useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+
 import {
 	increaseBasket,
 	modalOpen,
@@ -19,7 +21,8 @@ import {
 	pageCountSelector,
 	currentLimitSelector,
 } from "../../selectors";
-import { Container, SectionGames } from "./StyledCards";
+import { Container, SectionGames, HeaderNavigation } from "./StyledCards";
+import SearchComponent from "../SearchComponent";
 
 const Cards = () => {
 	const [selectedProduct, setSelectedProduct] = useState([]);
@@ -30,10 +33,16 @@ const Cards = () => {
 	const modal = useSelector(isModalSelector);
 	const isLoading = useSelector(isLoadingSelector);
 
-	console.log(cards);
 	const categoryID = useSelector(categorySelector);
 	const pageCount = useSelector(pageCountSelector);
 	const limitCount = useSelector(currentLimitSelector);
+
+	const [searchParams] = useSearchParams();
+	const postQuery = searchParams.get("search") || "";
+
+	const handleSearch = (term) => {
+		searchParams.set("search", term);
+	};
 
 	useEffect(() => {
 		let category = categoryID > 0 ? `category=${categoryID}` : "";
@@ -47,7 +56,10 @@ const Cards = () => {
 
 	return (
 		<Container>
-			<MenuCategory />
+			<HeaderNavigation>
+				<MenuCategory />
+				<SearchComponent onSearch={handleSearch} />
+			</HeaderNavigation>
 
 			<SectionGames>
 				{isLoading
@@ -61,9 +73,7 @@ const Cards = () => {
 							/>
 					  ))}
 			</SectionGames>
-
 			<Pagination />
-
 			{modal && (
 				<Modal
 					header="Підтвердіть додавання"

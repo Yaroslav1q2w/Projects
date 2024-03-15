@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Box } from "@mui/material";
 
 export const Container = styled.section`
 	position: relative;
@@ -219,9 +218,4 @@ export const FooterButton = styled.div`
 	@media screen and (max-width: 500px) {
 		right: 40px;
 	}
-`;
-
-export const Loader = styled(Box)`
-	z-index: 10;
-	position: relative;
 `;

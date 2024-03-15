@@ -91,4 +91,19 @@ export const ButtonSubmit = styled.div`
 	}
 `;
 
+export const BasketItems = styled.div`
+	padding: 80px 12px 0px;
+
+	.empty-basket {
+		font-size: 30px;
+		font-weight: bold;
+		display: flex;
+		justify-content: center;
+	}
+
+	@media screen and (max-width: 700px) {
+		padding: 40px 12px 0px;
+	}
+`;
+
 export const Quantity = styled.div``;

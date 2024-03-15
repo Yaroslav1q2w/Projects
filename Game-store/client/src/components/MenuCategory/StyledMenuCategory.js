@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const CategoryWrap = styled.div`
-	margin-left: 30px;
-	margin-bottom: 46px;
+	margin-left: 6px;
 `;
 
 export const CategoryList = styled.ul`

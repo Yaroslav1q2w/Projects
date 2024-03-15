@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { isModalSelector } from "../../selectors";
 import { increaseBasket, modalClose, modalOpen } from "../../reducers";
-import { CircularProgress } from "@mui/material";
+import Loader from "../../components/Loader";
 
 import {
 	Container,
@@ -13,7 +13,6 @@ import {
 	HeaderContent,
 	PageDescription,
 	FooterButton,
-	Loader,
 } from "./StyledGamePage";
 
 import Button from "../../components/Button";
@@ -44,84 +43,73 @@ const GamePage: React.FC = () => {
 		window.scrollTo(0, 0);
 	}, [card_id]);
 
+	if (loader) {
+		return <Loader />;
+	}
+
 	return (
-		<>
-			{loader ? (
-				<Loader
-					sx={{
-						display: "flex",
-						mt: 16,
-						justifyContent: "center",
-						color: "grey.500",
-					}}
-				>
-					<CircularProgress color="inherit" size={90} />
-				</Loader>
-			) : (
-				<Container>
-					<div
-						className="page__game-img"
-						style={{ backgroundImage: `url(${game?.image})` }}
+		<Container>
+			<div
+				className="page__game-img"
+				style={{ backgroundImage: `url(${game?.image})` }}
+			/>
+			<ContainerWrapp>
+				<MainWrapp>
+					<div className="main__wrap-header">
+						<Link to="#" className="btn-back" onClick={goBack}>
+							<RightArrowSvg />
+						</Link>
+						<HeaderPoster>
+							<img src={game?.image} alt={game?.title} />
+						</HeaderPoster>
+						<HeaderContent>
+							<h3 className="game__page-title">{game?.title}</h3>
+							<h4 className="game__page-subname">{game?.title}</h4>
+							<p className="game__page-info">
+								Жанр:<span className="colored">{game?.genre}</span>
+							</p>
+							<p className="game__page-info">
+								Дата випуску:
+								<span className="colored">{game?.data}</span>
+							</p>
+							<p className="game__page-info">
+								Розробник:
+								<span className="colored">{game?.developer}</span>
+							</p>
+							<p className="game__page-info">
+								Платформи:
+								<span className="colored">{game?.platforms}</span>
+							</p>
+							<p className="game__page-info">
+								Мови інтерфейсу:
+								<span className="colored">{game?.language}</span>
+							</p>
+						</HeaderContent>
+					</div>
+					<PageDescription>{game?.the_plot}</PageDescription>
+				</MainWrapp>
+
+				<FooterButton>
+					<Button
+						children="Додати до кошику"
+						className="footer__button-elem"
+						onClick={() => {
+							dispatch(modalOpen());
+							setSelectedProduct(game);
+						}}
 					/>
-					<ContainerWrapp>
-						<MainWrapp>
-							<div className="main__wrap-header">
-								<Link to="#" className="btn-back" onClick={goBack}>
-									<RightArrowSvg />
-								</Link>
-								<HeaderPoster>
-									<img src={game?.image} alt={game?.title} />
-								</HeaderPoster>
-								<HeaderContent>
-									<h3 className="game__page-title">{game?.title}</h3>
-									<h4 className="game__page-subname">{game?.title}</h4>
-									<p className="game__page-info">
-										Жанр:<span className="colored">{game?.genre}</span>
-									</p>
-									<p className="game__page-info">
-										Дата випуску:
-										<span className="colored">{game?.data}</span>
-									</p>
-									<p className="game__page-info">
-										Розробник:
-										<span className="colored">{game?.developer}</span>
-									</p>
-									<p className="game__page-info">
-										Платформи:
-										<span className="colored">{game?.platforms}</span>
-									</p>
-									<p className="game__page-info">
-										Мови інтерфейсу:
-										<span className="colored">{game?.language}</span>
-									</p>
-								</HeaderContent>
-							</div>
-							<PageDescription>{game?.the_plot}</PageDescription>
-						</MainWrapp>
+				</FooterButton>
+			</ContainerWrapp>
 
-						<FooterButton>
-							<Button
-								children="Додати до кошику"
-								className="footer__button-elem"
-								onClick={() => {
-									dispatch(modalOpen());
-									setSelectedProduct(game);
-								}}
-							/>
-						</FooterButton>
-					</ContainerWrapp>
-
-					{modal && selectedProduct && (
-						<Modal
-							header="Підтвердіть додавання"
-							text={`Додати ${selectedProduct.title} до кошика?`}
-							closeModal={() => dispatch(modalClose())}
-							onClick={() => dispatch(increaseBasket(selectedProduct))}
-						/>
-					)}
-				</Container>
+			{modal && selectedProduct && (
+				<Modal
+					header="Підтвердіть додавання"
+					text={`Додати ${selectedProduct.title} до кошика?`}
+					closeModal={() => dispatch(modalClose())}
+					onClick={() => dispatch(increaseBasket(selectedProduct))}
+				/>
 			)}
-		</>
+		</Container>
 	);
 };
 
