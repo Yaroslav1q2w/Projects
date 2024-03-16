@@ -15,38 +15,33 @@ router.get("/allProducts", async (request, response) => {
 // Отримуємо всі продукти по сторінкам та категоріям
 
 router.get("/products", async (request, response) => {
-	const { category } = request.query;
+	const { category, search, _limit = 9, _page = 1 } = request.query;
 
-	const limit = request.query._limit;
-	const page = request.query._page || 1;
+	const query = {};
+	if (category) {
+		query.category = category;
+	}
+	if (search) {
+		query.title = { $regex: search, $options: "i" };
+	}
 
-	if (!category) {
-		const productsAll = await Product.find()
-			.skip((page - 1) * limit)
-			.limit(limit);
+	try {
+		const limit = parseInt(_limit);
+		const page = parseInt(_page);
+		const skip = (page - 1) * limit;
 
-		const count = await Product.find().countDocuments();
-
-		response.status(200).json({
-			success: true,
-			data: productsAll,
-			totalPages: Math.ceil(count / limit),
-		});
-	} else {
-		const productsCategory = await Product.find({
-			category: category,
-		})
-			.skip((page - 1) * limit)
-			.limit(limit);
-
-		const count = await Product.find({ category: category }).countDocuments();
-		console.log(count);
+		const [products, total] = await Promise.all([
+			Product.find(query).skip(skip).limit(limit),
+			Product.countDocuments(query),
+		]);
 
 		response.status(200).json({
 			success: true,
-			data: productsCategory,
-			totalPages: Math.ceil(count / limit),
+			data: products,
+			totalPages: Math.ceil(total / limit),
 		});
+	} catch (error) {
+		response.status(500).json({ success: false, error: error.message });
 	}
 });
 

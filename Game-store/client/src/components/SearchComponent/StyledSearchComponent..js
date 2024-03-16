@@ -4,6 +4,10 @@ export const Form = styled.form`
 	display: flex;
 	justify-content: center;
 	margin: 20px;
+
+	@media screen and (max-width: 820px) {
+		width: 70%;
+	}
 `;
 
 export const Input = styled.input`

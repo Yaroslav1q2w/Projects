@@ -10,18 +10,29 @@ export const HeaderNavigation = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media screen and (max-width: 820px) {
+		flex-direction: column;
+		gap: 10px;
+	}
 `;
 
 export const SectionGames = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 0 26px;
-	gap: 20px 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 46px 30px 0;
+	gap: 10px 40px;
 	margin-bottom: 20px;
-	padding-top: 46px;
 
-	@media screen and (max-width: 700px) {
+	@media screen and (max-width: 1000px) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media screen and (max-width: 690px) {
+		grid-template-columns: 1fr;
+	}
+
+	@media screen and (max-width: 400px) {
 		gap: 10px 20px;
 		padding: 30px 10px;
 	}

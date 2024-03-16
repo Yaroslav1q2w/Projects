@@ -10,11 +10,13 @@ const initialState = {
 };
 
 export const actionFetchCards = createAsyncThunk(
-	"todos/fetchCards",
-	async ({ category, limit, page }) => {
-		const response = await sendRequest(
-			`${API_URL}/api/products?${category}&${limit}&${page}`
-		);
+	"cards/fetchCards",
+	async ({ category, limit, page, search }) => {
+		let query = `?_limit=${limit}&_page=${page}`;
+		if (category) query += `&category=${category}`;
+		if (search) query += `&search=${search}`;
+
+		const response = await sendRequest(`${API_URL}/api/products${query}`);
 		return response;
 	}
 );

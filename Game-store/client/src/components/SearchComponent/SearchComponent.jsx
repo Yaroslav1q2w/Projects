@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Form, Input } from "./StyledSearchComponent.";
 import { useSearchParams } from "react-router-dom";
 
@@ -7,7 +7,20 @@ const SearchComponent = ({ onSearch }) => {
 	const searchTerm = searchParams.get("search") || "";
 
 	const handleSearchChange = (event) => {
-		setSearchParams({ search: event.target.value });
+		const value = event.target.value.trim();
+		const newSearchParams = new URLSearchParams();
+
+		if (value) {
+			newSearchParams.set("search", value);
+		}
+
+		for (const [key, val] of searchParams.entries()) {
+			if (key !== "search") {
+				newSearchParams.set(key, val);
+			}
+		}
+
+		setSearchParams(newSearchParams, { replace: true });
 	};
 
 	useEffect(() => {
