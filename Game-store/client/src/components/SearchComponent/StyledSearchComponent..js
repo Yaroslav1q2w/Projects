@@ -20,7 +20,7 @@ export const Input = styled.input`
 	color: rgb(255, 245, 204);
 	outline: none;
 	font-family: "Alegreya Sans SC", sans-serif;
-
+	border-radius: 0;
 	transition: border 0.4s;
 
 	::placeholder {
