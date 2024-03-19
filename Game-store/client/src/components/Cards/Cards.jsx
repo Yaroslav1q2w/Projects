@@ -53,10 +53,6 @@ const Cards = () => {
 		window.scrollTo(0, 0);
 	}, [dispatch, categoryID, limitCount, pageCount, searchQuery]);
 
-	if (isLoading) {
-		return <Loader />;
-	}
-
 	return (
 		<Container>
 			<HeaderNavigation>
@@ -64,16 +60,21 @@ const Cards = () => {
 				<SearchComponent onSearch={setSearchQuery} />
 			</HeaderNavigation>
 
-			<SectionGames>
-				{cards.map((card) => (
-					<GameCard
-						cardProps={card}
-						isOpenModal={() => dispatch(modalOpen())}
-						key={card.article}
-						addToCard={() => setSelectedProduct(card)}
-					/>
-				))}
-			</SectionGames>
+			{isLoading ? (
+				<Loader />
+			) : (
+				<SectionGames>
+					{cards.map((card) => (
+						<GameCard
+							cardProps={card}
+							isOpenModal={() => dispatch(modalOpen())}
+							key={card.article}
+							addToCard={() => setSelectedProduct(card)}
+						/>
+					))}
+				</SectionGames>
+			)}
+
 			<Pagination />
 			{modal && (
 				<Modal
