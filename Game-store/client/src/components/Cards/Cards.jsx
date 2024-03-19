@@ -23,6 +23,7 @@ import {
 import { Container, SectionGames, HeaderNavigation } from "./StyledCards";
 import SearchComponent from "../SearchComponent";
 import { useSearchParams } from "react-router-dom";
+import Loader from "../Loader";
 
 const Cards = () => {
 	const [selectedProduct, setSelectedProduct] = useState([]);
@@ -52,6 +53,10 @@ const Cards = () => {
 		window.scrollTo(0, 0);
 	}, [dispatch, categoryID, limitCount, pageCount, searchQuery]);
 
+	if (isLoading) {
+		return <Loader />;
+	}
+
 	return (
 		<Container>
 			<HeaderNavigation>
@@ -60,16 +65,14 @@ const Cards = () => {
 			</HeaderNavigation>
 
 			<SectionGames>
-				{isLoading
-					? [...new Array(9)].map((_, index) => <CardsSceleton key={index} />)
-					: cards.map((card) => (
-							<GameCard
-								cardProps={card}
-								isOpenModal={() => dispatch(modalOpen())}
-								key={card.article}
-								addToCard={() => setSelectedProduct(card)}
-							/>
-					  ))}
+				{cards.map((card) => (
+					<GameCard
+						cardProps={card}
+						isOpenModal={() => dispatch(modalOpen())}
+						key={card.article}
+						addToCard={() => setSelectedProduct(card)}
+					/>
+				))}
 			</SectionGames>
 			<Pagination />
 			{modal && (
